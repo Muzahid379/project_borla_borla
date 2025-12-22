@@ -5,6 +5,13 @@ class AppColors {
   static const Color textDark = Color(0xFF1E1E1E);
   static const Color hint = Color(0xFFBDBDBD);
 
+  static const Color transparentColor = Colors.transparent;
+  static const Color primaryColor = Color(0xff00A654);
+  static const Color textColor = Color(0xff484848);
+  static const Color iconColor = Color(0xff00A654);
+  static const Color hintTextColor = Color(0xff666666);
+  static const Color textFieldBorderColor = Color(0xffE6E6E6);
+
   static const LinearGradient primaryGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
