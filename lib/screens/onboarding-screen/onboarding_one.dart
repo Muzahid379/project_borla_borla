@@ -1,0 +1,583 @@
+import 'package:flutter/material.dart';
+
+class onboardingOne extends StatefulWidget {
+  const onboardingOne({super.key});
+
+  @override
+  State<onboardingOne> createState() => _onboardingOneState();
+}
+
+class _onboardingOneState extends State<onboardingOne> {
+
+  PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  final List<Map<String, String>> onboardingData = [
+    {
+      "image": "assets/images/onboard1.png",
+      "title1": "Schedule and Track your",
+      "title2": "Pickup With Ease!",
+      "subtitle1": "Instantly book your garbage pick-up or schedule it",
+      "subtitle2": "for later, and track your tricycle rider’s real-time",
+      "subtitle3": "location until collection."
+    },
+    {
+      "image": "assets/images/onboard2.png",
+      "title1": "Schedule and Track your",
+      "title2": "Pickup With Ease!",
+      "subtitle1": "Instantly book your garbage pick-up or schedule it",
+      "subtitle2": "for later, and track your tricycle rider’s real-time",
+      "subtitle3": "location until collection."
+    },
+    {
+      "image": "assets/images/onboard3.png",
+      "title1": "Schedule and Track your",
+      "title2": "Pickup With Ease!",
+      "subtitle1": "Instantly book your garbage pick-up or schedule it",
+      "subtitle2": "for later, and track your tricycle rider’s real-time",
+      "subtitle3": "location until collection."
+    },
+  ];
+
+  // void _completeOnboarding() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   await prefs.setBool('seenOnboarding', true);
+  //   Navigator.pushReplacement(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => landingPage()),
+  //   );
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // body: Column(
+      //   children: [
+      //
+      //     Padding(
+      //       padding: const EdgeInsets.all(18.0),
+      //       child: Image.asset('assets/images/onboard1.png', fit: BoxFit.scaleDown,),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.fromLTRB(20,10,20,10),
+      //       child: Column(
+      //
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         crossAxisAlignment: CrossAxisAlignment.center,
+      //         children: [
+      //
+      //           Text('Schedule and Track your', style: TextStyle(
+      //
+      //               fontSize: 28,
+      //               fontWeight: FontWeight.w500
+      //
+      //           ),),
+      //           Text('Pickup With Ease!', style: TextStyle(
+      //
+      //               fontSize: 28,
+      //               fontWeight: FontWeight.w500
+      //
+      //           ),),
+      //
+      //           Text('Instantly book your garbage pick-up or schedule it', style: TextStyle(
+      //
+      //               fontSize: 14,
+      //               fontWeight: FontWeight.w400,
+      //               color: Colors.grey
+      //
+      //           ),),
+      //
+      //           Text('for later, and track your tricycle rider’s real-time', style: TextStyle(
+      //
+      //               fontSize: 14,
+      //               fontWeight: FontWeight.w400,
+      //               color: Colors.grey
+      //
+      //           ),),
+      //
+      //           Text('location until collection.', style: TextStyle(
+      //
+      //               fontSize: 14,
+      //               fontWeight: FontWeight.w400,
+      //               color: Colors.grey
+      //
+      //           ),),
+      //
+      //         ],
+      //       ),
+      //     ),
+      //
+      //     Row(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: List.generate(3, (index) => buildDot(index),),
+      //     ),
+      //
+      //
+      //     Row(
+      //
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //
+      //       children: [
+      //
+      //         ElevatedButton(
+      //           style: ElevatedButton.styleFrom(
+      //               minimumSize: const Size(100, 50),
+      //               shape: RoundedRectangleBorder(
+      //                   borderRadius: BorderRadius.circular(16)
+      //               )
+      //           ),
+      //           onPressed: (){},
+      //           child: Padding(
+      //             padding: const EdgeInsets.fromLTRB(30,16,30,16),
+      //             child: Text('Skip'),
+      //           ),
+      //         ),
+      //
+      //
+      //
+      //         ElevatedButton(
+      //
+      //
+      //             style: ElevatedButton.styleFrom(
+      //               backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
+      //               foregroundColor: Colors.white,
+      //               minimumSize: const Size(100, 50),
+      //               shape: RoundedRectangleBorder(
+      //                 borderRadius: BorderRadius.circular(12),
+      //               ),
+      //             ),
+      //
+      //             // style: ElevatedButton.styleFrom(
+      //             //     shape: RoundedRectangleBorder(
+      //             //         borderRadius: BorderRadius.circular(16)
+      //             //     )
+      //             // ),
+      //
+      //
+      //             onPressed: (){},
+      //             child: Padding(
+      //               padding: const EdgeInsets.all(16.0),
+      //               child: Text('Continue'),
+      //             )),
+      //
+      //       ],
+      //
+      //     )
+      //
+      //
+      //
+      //
+      //
+      //
+      //   ],
+      // ),
+
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromRGBO(255, 246, 217, 1),
+              Color.fromRGBO(255, 255, 255, 1),
+            ],
+          ),
+        ),
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                Expanded(
+                  child: PageView.builder(
+                    controller: _pageController,
+                    onPageChanged: (value) {
+                      setState(() {
+                        _currentPage = value;
+                      });
+                    },
+                    itemCount: onboardingData.length,
+                    itemBuilder: (context, index) => VideoOnboardingPage(
+                      imagePath: onboardingData[index]["image"]!,
+                      titlePath1: onboardingData[index]["title1"]!,
+                      titlePath2: onboardingData[index]["title2"]!,
+                      subtitlePath1: onboardingData[index]["subtitle1"]!,
+                      subtitlePath2: onboardingData[index]["subtitle2"]!,
+                      subtitlePath3: onboardingData[index]["subtitle3"]!,
+                    ),
+                  ),
+                ),
+                //const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    onboardingData.length,
+                        (index) => buildDot(index),
+                  ),
+                ),
+
+                //const SizedBox(height: 35),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                //   child: ElevatedButton(
+                //     onPressed: () {
+                //       if (_currentPage == onboardingData.length - 1) {
+                //         _completeOnboarding();
+                //       } else {
+                //         _pageController.nextPage(
+                //           duration: const Duration(milliseconds: 500),
+                //           curve: Curves.easeInOut,
+                //         );
+                //       }
+                //     },
+                //     style: ElevatedButton.styleFrom(
+                //       backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
+                //       foregroundColor: Colors.white,
+                //       minimumSize: const Size(350, 50),
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(30),
+                //       ),
+                //     ),
+                //     child: Text(
+                //       _currentPage == onboardingData.length - 1
+                //           ? "Get Started"
+                //           : "Next",
+                //       style: GoogleFonts.poppins(
+                //         fontSize: 18,
+                //       ),
+                //     ),
+                //   ),
+                // ),
+
+                const SizedBox(height: 46),
+
+                _currentPage == 2 ? Row(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                      children: [
+
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.zero, // important
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            minimumSize: const Size(100, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(255, 214, 0, 1),
+                                  Color.fromRGBO(255,149,0, 1),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Container(
+                              alignment: Alignment.center,
+                              // padding: const EdgeInsets.symmetric(
+                              //   horizontal: 24,
+                              //   vertical: 14,
+                              // ),
+                              padding: const EdgeInsets.fromLTRB(150, 16, 150, 16),
+                              child: const Text(
+                                'Get Started',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  //fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+
+
+                      ],
+
+                    ) : Row(
+
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                  children: [
+
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color.fromRGBO(255, 214, 0, 1),
+                            Color.fromRGBO(255,149,0, 1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.all(2), // border thickness
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(100, 50),
+                          backgroundColor: Colors.white, // white button
+                          shadowColor: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14), // inner radius
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(50, 14, 50, 14),
+                          // child: Text(
+                          //   'Skip',
+                          //   style: TextStyle(
+                          //     color: Colors.black, // or any color you want
+                          //     fontWeight: FontWeight.w600,
+                          //   ),
+                          // ),
+
+                          child: ShaderMask(
+                            shaderCallback: (bounds) => LinearGradient(
+                              colors: [
+                                Color.fromRGBO(255, 214, 0, 1),
+                                Color.fromRGBO(255,149,0, 1),
+                              ],
+                            ).createShader(bounds),
+                            child: Text(
+                              'Skip',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // ElevatedButton(
+                    //
+                    //
+                    //     style: ElevatedButton.styleFrom(
+                    //
+                    //       backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
+                    //       foregroundColor: Colors.white,
+                    //       minimumSize: const Size(100, 50),
+                    //       shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(12),
+                    //       ),
+                    //     ),
+                    //
+                    //
+                    //
+                    //     // style: ElevatedButton.styleFrom(
+                    //     //     shape: RoundedRectangleBorder(
+                    //     //         borderRadius: BorderRadius.circular(16)
+                    //     //     )
+                    //     // ),
+                    //
+                    //
+                    //     onPressed: (){},
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(16.0),
+                    //       child: Text('Continue'),
+                    //     )),
+
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.zero, // important
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        minimumSize: const Size(100, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color.fromRGBO(255, 214, 0, 1),
+                              Color.fromRGBO(255,149,0, 1),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          // padding: const EdgeInsets.symmetric(
+                          //   horizontal: 24,
+                          //   vertical: 14,
+                          // ),
+                          padding: const EdgeInsets.fromLTRB(60, 16, 60, 16),
+                          child: const Text(
+                            'Continue',
+                            style: TextStyle(
+                              color: Colors.white,
+                              //fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+
+
+                  ],
+
+                ),
+
+                const SizedBox(height: 80),
+              ],
+            ),
+            // Positioned(
+            //   top: 50,
+            //   right: 20,
+            //   child: _currentPage != onboardingData.length - 1
+            //       ? TextButton(
+            //     onPressed: () {
+            //       _pageController.animateToPage(
+            //         onboardingData.length - 1,
+            //         duration: const Duration(milliseconds: 500),
+            //         curve: Curves.easeInOut,
+            //       );
+            //     },
+            //     child: const Text(
+            //       "Skip",
+            //       style: TextStyle(fontSize: 16, color: Colors.white),
+            //     ),
+            //   )
+            //       : const SizedBox(),
+            // ),
+          ],
+        ),
+      ),
+    );
+
+  }
+
+  Widget buildDot(int index) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      margin: const EdgeInsets.symmetric(horizontal: 1),
+      height: 8,
+      width: _currentPage == index? 56 : 10,
+      decoration: BoxDecoration(
+        gradient: _currentPage == index ? LinearGradient(
+            colors: [
+              Color.fromRGBO(255, 214, 0, 1),
+              Color.fromRGBO(255,149,0, 1),
+            ]
+        ) : LinearGradient(
+            colors: [
+              Color.fromRGBO(189, 189, 189, 1),
+              Color.fromRGBO(189, 189, 189, 1),
+            ]
+        ) ,
+        borderRadius: BorderRadius.circular(20),
+        //shape: BoxShape.circle,
+      ),
+    );
+  }
+
+}
+
+class VideoOnboardingPage extends StatefulWidget {
+  final String imagePath;
+  final String titlePath1;
+  final String titlePath2;
+  final String subtitlePath1;
+  final String subtitlePath2;
+  final String subtitlePath3;
+
+  const VideoOnboardingPage({
+    Key? key,
+    required this.imagePath,
+    required this.titlePath1,
+    required this.titlePath2,
+    required this.subtitlePath1,
+    required this.subtitlePath2,
+    required this.subtitlePath3,
+  }) : super(key: key);
+
+  @override
+  State<VideoOnboardingPage> createState() => _VideoOnboardingPageState();
+}
+
+class _VideoOnboardingPageState extends State<VideoOnboardingPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Column(
+
+      children: [
+
+
+        Padding(
+              padding: const EdgeInsets.fromLTRB(0,12,0,12),
+              child: Image.asset(widget.imagePath, fit: BoxFit.scaleDown,),
+            ),
+
+
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20,10,20,10),
+          child: Column(
+            children: [
+              Text(
+                widget.titlePath1,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+              Text(
+                widget.titlePath2,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+
+              //const SizedBox(height: 20),
+              Text(
+                widget.subtitlePath1,
+                //textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                ),
+              ),
+              Text(
+                widget.subtitlePath2,
+                //textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                ),
+              ),
+              Text(
+                widget.subtitlePath3,
+                //textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
