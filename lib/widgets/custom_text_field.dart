@@ -21,19 +21,29 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       obscureText: obscureText,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14),
+          borderSide:  BorderSide(
+            color: Colors.grey.shade300,
+            width: 1.2,
+          ),
+        ),
         hintText: hint,
         hintStyle: const TextStyle(color: AppColors.hint),
         prefixIcon: prefix,
         suffixIcon: suffix,
         filled: true,
-        fillColor: Colors.grey.shade100,
+        //fillColor: Colors.grey.shade100,
+        fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
-          vertical: 12,
+          vertical: 18,
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(
+            color: Colors.white54
+          ),
         ),
       ),
     );

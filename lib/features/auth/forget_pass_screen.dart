@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/features/auth/otp_screen.dart';
 
 import '../../theme/auth_header.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
 import '../../widgets/social_login_button.dart';
 import 'login_screen.dart';
+import 'otp_screen_two.dart';
 
 class ForgetPassScreen extends StatefulWidget {
   const ForgetPassScreen({super.key});
@@ -55,42 +59,44 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                   padding: const EdgeInsets.all(24),
                   child: Column(
 
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
 
-                    children: [
+                  children: [
 
-                      const SizedBox(height: 26),
+                    const SizedBox(height: 26),
 
-                      Text('Email ID', style: TextStyle(
-                          fontWeight: FontWeight.w700,
+                    Text('Email ID', style: TextStyle(
+                        fontWeight: FontWeight.w700,
                         fontSize: 16
-                      ),),
+                    ),),
 
-                      const SizedBox(height: 24),
+                    const SizedBox(height: 24),
 
-                      CustomTextField(
-                        hint: 'Enter your email',
-                        prefix: const Icon(Icons.email),
-                      ),
-
-
-
-                      const SizedBox(height: 16),
+                    CustomTextField(
+                      hint: 'Enter your email',
+                      prefix: const Icon(Icons.email),
+                    ),
 
 
-                      const SizedBox(height: 8),
+
+                    const SizedBox(height: 16),
 
 
-                      const SizedBox(height: 16),
-
-                      GradientButton(
-                        text: 'Send Code',
-                        onPressed: () {},
-                      ),
+                    const SizedBox(height: 8),
 
 
-                    ],
-                  ),
+                    const SizedBox(height: 16),
+
+                    GradientButton(
+                      text: 'Send Code',
+                      onPressed: () {
+                        Get.to(OtpScreen());
+                      },
+                    ),
+
+
+                  ],
+                ),
                 ),
               )
 

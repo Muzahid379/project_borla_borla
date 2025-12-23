@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/onboarding-screen/onboarding_two.dart';
 
 class onboardingOne extends StatefulWidget {
   const onboardingOne({super.key});
@@ -23,154 +26,26 @@ class _onboardingOneState extends State<onboardingOne> {
     },
     {
       "image": "assets/images/onboard2.png",
-      "title1": "Schedule and Track your",
-      "title2": "Pickup With Ease!",
-      "subtitle1": "Instantly book your garbage pick-up or schedule it",
-      "subtitle2": "for later, and track your tricycle rider’s real-time",
-      "subtitle3": "location until collection."
+      "title1": "Pay Securely And Rate",
+      "title2": "Your Rider Every Time",
+      "subtitle1": "Make hassle-free payments via MOMO or cash,",
+      "subtitle2": "and share feedback to help improve service",
+      "subtitle3": "quality."
     },
     {
       "image": "assets/images/onboard3.png",
-      "title1": "Schedule and Track your",
-      "title2": "Pickup With Ease!",
-      "subtitle1": "Instantly book your garbage pick-up or schedule it",
-      "subtitle2": "for later, and track your tricycle rider’s real-time",
-      "subtitle3": "location until collection."
+      "title1": "Choose Your Waste Type",
+      "title2": "And Quantity Easily!",
+      "subtitle1": "From household to commercial or recyclable",
+      "subtitle2": "waste, select exactly what you want collected and",
+      "subtitle3": "let Borla Borla handle the rest."
     },
   ];
 
-  // void _completeOnboarding() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   await prefs.setBool('seenOnboarding', true);
-  //   Navigator.pushReplacement(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => landingPage()),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: Column(
-      //   children: [
-      //
-      //     Padding(
-      //       padding: const EdgeInsets.all(18.0),
-      //       child: Image.asset('assets/images/onboard1.png', fit: BoxFit.scaleDown,),
-      //     ),
-      //     Padding(
-      //       padding: const EdgeInsets.fromLTRB(20,10,20,10),
-      //       child: Column(
-      //
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         crossAxisAlignment: CrossAxisAlignment.center,
-      //         children: [
-      //
-      //           Text('Schedule and Track your', style: TextStyle(
-      //
-      //               fontSize: 28,
-      //               fontWeight: FontWeight.w500
-      //
-      //           ),),
-      //           Text('Pickup With Ease!', style: TextStyle(
-      //
-      //               fontSize: 28,
-      //               fontWeight: FontWeight.w500
-      //
-      //           ),),
-      //
-      //           Text('Instantly book your garbage pick-up or schedule it', style: TextStyle(
-      //
-      //               fontSize: 14,
-      //               fontWeight: FontWeight.w400,
-      //               color: Colors.grey
-      //
-      //           ),),
-      //
-      //           Text('for later, and track your tricycle rider’s real-time', style: TextStyle(
-      //
-      //               fontSize: 14,
-      //               fontWeight: FontWeight.w400,
-      //               color: Colors.grey
-      //
-      //           ),),
-      //
-      //           Text('location until collection.', style: TextStyle(
-      //
-      //               fontSize: 14,
-      //               fontWeight: FontWeight.w400,
-      //               color: Colors.grey
-      //
-      //           ),),
-      //
-      //         ],
-      //       ),
-      //     ),
-      //
-      //     Row(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: List.generate(3, (index) => buildDot(index),),
-      //     ),
-      //
-      //
-      //     Row(
-      //
-      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //
-      //       children: [
-      //
-      //         ElevatedButton(
-      //           style: ElevatedButton.styleFrom(
-      //               minimumSize: const Size(100, 50),
-      //               shape: RoundedRectangleBorder(
-      //                   borderRadius: BorderRadius.circular(16)
-      //               )
-      //           ),
-      //           onPressed: (){},
-      //           child: Padding(
-      //             padding: const EdgeInsets.fromLTRB(30,16,30,16),
-      //             child: Text('Skip'),
-      //           ),
-      //         ),
-      //
-      //
-      //
-      //         ElevatedButton(
-      //
-      //
-      //             style: ElevatedButton.styleFrom(
-      //               backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
-      //               foregroundColor: Colors.white,
-      //               minimumSize: const Size(100, 50),
-      //               shape: RoundedRectangleBorder(
-      //                 borderRadius: BorderRadius.circular(12),
-      //               ),
-      //             ),
-      //
-      //             // style: ElevatedButton.styleFrom(
-      //             //     shape: RoundedRectangleBorder(
-      //             //         borderRadius: BorderRadius.circular(16)
-      //             //     )
-      //             // ),
-      //
-      //
-      //             onPressed: (){},
-      //             child: Padding(
-      //               padding: const EdgeInsets.all(16.0),
-      //               child: Text('Continue'),
-      //             )),
-      //
-      //       ],
-      //
-      //     )
-      //
-      //
-      //
-      //
-      //
-      //
-      //   ],
-      // ),
 
       body: Container(
         decoration: const BoxDecoration(
@@ -215,38 +90,6 @@ class _onboardingOneState extends State<onboardingOne> {
                   ),
                 ),
 
-                //const SizedBox(height: 35),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                //   child: ElevatedButton(
-                //     onPressed: () {
-                //       if (_currentPage == onboardingData.length - 1) {
-                //         _completeOnboarding();
-                //       } else {
-                //         _pageController.nextPage(
-                //           duration: const Duration(milliseconds: 500),
-                //           curve: Curves.easeInOut,
-                //         );
-                //       }
-                //     },
-                //     style: ElevatedButton.styleFrom(
-                //       backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
-                //       foregroundColor: Colors.white,
-                //       minimumSize: const Size(350, 50),
-                //       shape: RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(30),
-                //       ),
-                //     ),
-                //     child: Text(
-                //       _currentPage == onboardingData.length - 1
-                //           ? "Get Started"
-                //           : "Next",
-                //       style: GoogleFonts.poppins(
-                //         fontSize: 18,
-                //       ),
-                //     ),
-                //   ),
-                // ),
 
                 const SizedBox(height: 46),
 
@@ -257,7 +100,11 @@ class _onboardingOneState extends State<onboardingOne> {
                       children: [
 
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+
+                            Get.to(onboardingTwo());
+
+                          },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero, // important
                             backgroundColor: Colors.transparent,
@@ -279,10 +126,6 @@ class _onboardingOneState extends State<onboardingOne> {
                             ),
                             child: Container(
                               alignment: Alignment.center,
-                              // padding: const EdgeInsets.symmetric(
-                              //   horizontal: 24,
-                              //   vertical: 14,
-                              // ),
                               padding: const EdgeInsets.fromLTRB(150, 16, 150, 16),
                               child: const Text(
                                 'Get Started',
@@ -325,16 +168,11 @@ class _onboardingOneState extends State<onboardingOne> {
                             borderRadius: BorderRadius.circular(14), // inner radius
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(onboardingTwo());
+                        },
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(50, 14, 50, 14),
-                          // child: Text(
-                          //   'Skip',
-                          //   style: TextStyle(
-                          //     color: Colors.black, // or any color you want
-                          //     fontWeight: FontWeight.w600,
-                          //   ),
-                          // ),
 
                           child: ShaderMask(
                             shaderCallback: (bounds) => LinearGradient(
@@ -355,36 +193,19 @@ class _onboardingOneState extends State<onboardingOne> {
                       ),
                     ),
 
-                    // ElevatedButton(
-                    //
-                    //
-                    //     style: ElevatedButton.styleFrom(
-                    //
-                    //       backgroundColor: const Color.fromRGBO(82, 0, 255, 1),
-                    //       foregroundColor: Colors.white,
-                    //       minimumSize: const Size(100, 50),
-                    //       shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(12),
-                    //       ),
-                    //     ),
-                    //
-                    //
-                    //
-                    //     // style: ElevatedButton.styleFrom(
-                    //     //     shape: RoundedRectangleBorder(
-                    //     //         borderRadius: BorderRadius.circular(16)
-                    //     //     )
-                    //     // ),
-                    //
-                    //
-                    //     onPressed: (){},
-                    //     child: Padding(
-                    //       padding: const EdgeInsets.all(16.0),
-                    //       child: Text('Continue'),
-                    //     )),
 
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_currentPage == onboardingData.length - 1) {
+                         // _completeOnboarding();
+
+                        } else {
+                          _pageController.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero, // important
                         backgroundColor: Colors.transparent,
@@ -406,10 +227,6 @@ class _onboardingOneState extends State<onboardingOne> {
                         ),
                         child: Container(
                           alignment: Alignment.center,
-                          // padding: const EdgeInsets.symmetric(
-                          //   horizontal: 24,
-                          //   vertical: 14,
-                          // ),
                           padding: const EdgeInsets.fromLTRB(60, 16, 60, 16),
                           child: const Text(
                             'Continue',

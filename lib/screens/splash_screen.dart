@@ -16,9 +16,58 @@ class _SplashScreenState extends State<SplashScreen> {
 
         alignment: Alignment.center,
 
-        color: Colors.blue,
+        decoration: BoxDecoration(
 
-        child: Image.asset('assets/images/logo.png'),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(64),
+              blurRadius: 12,
+              offset: const Offset(0, 6),
+            ),
+          ],
+          gradient: const LinearGradient(
+
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight ,
+            colors: [
+              Color.fromRGBO(255, 246, 217, 1),
+              Color.fromRGBO(255, 255, 255, 1),
+            ],
+          ),
+        ),
+
+
+
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              bottom: 0,
+              child: Container(
+                width: 120,
+                height: 20,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withAlpha(50),
+                      blurRadius: 20,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            Transform.translate(
+              offset: const Offset(0, 0),
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 180,
+              ),
+            ),
+          ],
+        )
+
 
 
       ),

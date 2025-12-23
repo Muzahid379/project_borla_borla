@@ -1,72 +1,8 @@
-// import 'package:flutter/material.dart';
-// import '../../theme/app_color.dart';
-// import '../../theme/auth_header.dart';
-// import '../../widgets/custom_text_field.dart';
-// import '../../widgets/gradient_button.dart';
-//
-// class LoginScreen extends StatelessWidget {
-//   const LoginScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: AppColors.white,
-//       body: SafeArea(
-//         child: Column(
-//           children: [
-//             // const AuthHeader(
-//             //   title: 'Welcome Back!',
-//             //   subtitle: 'Sign in to continue your journey with Borla Borla',
-//             // ),
-//
-//             Expanded(
-//               child: Padding(
-//                 padding: const EdgeInsets.all(24),
-//                 child: Column(
-//                   children: [
-//                     CustomTextField(
-//                       hint: 'Phone Number',
-//                       prefix: const Icon(Icons.phone),
-//                     ),
-//
-//                     const SizedBox(height: 16),
-//
-//                     CustomTextField(
-//                       hint: 'Password',
-//                       obscureText: true,
-//                       suffix: const Icon(Icons.visibility_off),
-//                     ),
-//
-//                     const SizedBox(height: 12),
-//
-//                     Align(
-//                       alignment: Alignment.centerRight,
-//                       child: TextButton(
-//                         onPressed: () {},
-//                         child: const Text(
-//                           'Forgot Password?',
-//                           style: TextStyle(color: Colors.orange),
-//                         ),
-//                       ),
-//                     ),
-//
-//                     const SizedBox(height: 16),
-//
-//                     GradientButton(
-//                       text: 'Log In',
-//                       onPressed: () {},
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/features/auth/forget_pass_screen.dart';
+import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/theme/auth_header.dart';
 
 import '../../widgets/custom_text_field.dart';
@@ -178,7 +114,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(ForgetPassScreen());
+                        },
                         child: ShaderMask(
                           shaderCallback: (bounds) =>
                               const LinearGradient(
@@ -203,7 +141,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   GradientButton(
                     text: 'Log In',
-                    onPressed: () {},
+                    onPressed: () {
+
+                    },
                   ),
 
                   const SizedBox(height: 24),
@@ -250,7 +190,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),),
                       //SizedBox(width: 2,),
                       TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Get.to(SelectRoleScreen());
+                        },
                         child: ShaderMask(
                           shaderCallback: (bounds) =>
                             const LinearGradient(
