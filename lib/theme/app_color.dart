@@ -11,6 +11,11 @@ class AppColors {
   static const Color iconColor = Color(0xff00A654);
   static const Color hintTextColor = Color(0xff666666);
   static const Color textFieldBorderColor = Color(0xffE6E6E6);
+  static const Color green500 = Color(0xff00A654);
+  static const Color green100 = Color(0xffB0E3CA);
+  static const Color gray300 = Color(0xff898989);
+  static const Color gray400 = Color(0xff727272);
+  static const Color gray500 = Color(0xff4F4F4F);
 
   static const LinearGradient primaryGradient = LinearGradient(
     begin: Alignment.topLeft,

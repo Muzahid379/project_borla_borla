@@ -42,7 +42,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.3.3
   phone_form_field: ^10.0.16
-
+  flutter_svg: ^2.2.3
+  cached_network_image: ^3.4.1
+  image_picker: ^1.2.1
+  url_launcher: ^6.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

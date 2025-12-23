@@ -2,10 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/commonScreens/notification/notification_screen.dart';
+import 'package:project_borla/role/commonScreens/privacyPolicy/privacy_policy_screen.dart';
 import 'package:project_borla/role/commonScreens/profile/edit_profile_screen.dart';
+import 'package:project_borla/role/commonScreens/termsOfConditions/terms_of_conditions.dart';
 import 'package:project_borla/role/components/text/common_text.dart';
 
 import '../../components/gradient_scafold.dart';
+import '../aboutUs/about_us.dart';
 import 'innerWidget/language_bottom_sheet.dart';
 import 'innerWidget/logout_bottom_sheet.dart';
 import 'innerWidget/settingsListItems.dart';
@@ -105,15 +108,24 @@ class ProfileScreen extends StatelessWidget {
                   Get.to(()=> NotificationsScreen());
                 },
               ),
-              const SettingsListItem(
+              SettingsListItem(
+                onTap: () {
+                  Get.to(()=> AboutUs());
+                },
                 icon: Icons.info_outline,
                 title: 'About Us',
               ),
-              const SettingsListItem(
+              SettingsListItem(
+                onTap: () {
+                  Get.to(()=> PrivacyPolicyScreen());
+                },
                 icon: Icons.privacy_tip_outlined,
                 title: 'Privacy policy',
               ),
-              const SettingsListItem(
+              SettingsListItem(
+                onTap: () {
+                  Get.to(()=> TermsOfConditions());
+                },
                 icon: Icons.description_outlined,
                 title: 'Terms & Conditions',
               ),

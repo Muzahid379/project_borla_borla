@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../../../components/text/common_text.dart';
 
@@ -89,9 +88,10 @@ class _LanguageSelectionBottomSheetState
                       SnackBar(
                         content: CommonText(
                           text:
-                          'Language changed to $selectedLanguage (App will restart)',
+                          'Language changed to $selectedLanguage',
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
+                          color: AppColors.white,
                         ),
                       ),
                     );

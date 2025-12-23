@@ -69,7 +69,7 @@ void showLogoutBottomSheet(BuildContext context) {
                       onPressed: () {
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: CommonText(text: 'Logged out successfully')),
+                          const SnackBar(content: CommonText(text: 'Logged out successfully', color: AppColors.white,)),
                         );
                         // TODO: Perform actual logout logic
                       },

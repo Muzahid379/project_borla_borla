@@ -29,6 +29,23 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 
+	<!-- Camera -->
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs camera access to take photos.</string>
+
+    <!-- Gallery (Read) -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs photo library access to select images.</string>
+
+    <!-- Gallery (Write / Save) -->
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app needs permission to save photos to your library.</string>
+
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>tel</string>
+    </array>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
     <string>This app needs location access to show maps</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

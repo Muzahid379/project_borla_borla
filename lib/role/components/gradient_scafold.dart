@@ -23,18 +23,23 @@ class GradientScaffold extends StatelessWidget {
         extendBodyBehindAppBar: true,
         appBar: appBar == null
             ? null
-            : AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.light,
+            : PreferredSize(
+          preferredSize: const Size.fromHeight(50), // custom height
+          child: AppBar(
+            leadingWidth: 50,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+              statusBarIconBrightness: Brightness.dark,
+              statusBarBrightness: Brightness.light,
+            ),
+            title: appBar!.title,
+            actions: appBar!.actions,
+            leading: appBar!.leading,
           ),
-          title: appBar!.title,
-          actions: appBar!.actions,
-          leading: appBar!.leading,
-        ),
+        )
+        ,
         body: Container(
           width: double.infinity,
           height: double.infinity,
