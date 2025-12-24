@@ -3,14 +3,14 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_two.dart';
 
-class onboardingOne extends StatefulWidget {
-  const onboardingOne({super.key});
+class OnboardingOne extends StatefulWidget {
+  const OnboardingOne({super.key});
 
   @override
-  State<onboardingOne> createState() => _onboardingOneState();
+  State<OnboardingOne> createState() => _OnboardingOneState();
 }
 
-class _onboardingOneState extends State<onboardingOne> {
+class _OnboardingOneState extends State<OnboardingOne> {
 
   PageController _pageController = PageController();
   int _currentPage = 0;
@@ -102,7 +102,7 @@ class _onboardingOneState extends State<onboardingOne> {
                         ElevatedButton(
                           onPressed: () {
 
-                            Get.to(onboardingTwo());
+                            Get.to(OnboardingTwo());
 
                           },
                           style: ElevatedButton.styleFrom(
@@ -169,7 +169,7 @@ class _onboardingOneState extends State<onboardingOne> {
                           ),
                         ),
                         onPressed: () {
-                          Get.to(onboardingTwo());
+                          Get.to(OnboardingTwo());
                         },
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(50, 14, 50, 14),

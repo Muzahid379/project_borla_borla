@@ -6,8 +6,8 @@ import 'package:project_borla/screens/select_role_screen.dart';
 
 import 'onboarding_one.dart';
 
-class onboardingTwo extends StatelessWidget {
-  onboardingTwo({super.key});
+class OnboardingTwo extends StatelessWidget {
+  OnboardingTwo({super.key});
 
   final Map<String, String> onboardingData =
     {

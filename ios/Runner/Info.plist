@@ -46,10 +46,12 @@
       <string>tel</string>
     </array>
 
-	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs location access to show maps</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>This app needs location access to show maps</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs location access to show your position on the map.</string>
+    <key>NSLocationAlwaysUsageDescription</key>  <!-- Optional for background -->
+    <string>This app needs location access in background.</string>
 
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
