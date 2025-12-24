@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/features/auth/otp_screen_two.dart';
 
 import '../../theme/auth_header.dart';
 import '../../widgets/custom_text_field.dart';
@@ -148,8 +151,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         const SizedBox(height: 32),
 
                         GradientButton(
-                          text: 'Log In',
-                          onPressed: () {},
+                          text: 'Sign Up',
+                          onPressed: () {
+                            Get.to(OtpScreen());
+                          },
                         ),
 
                         const SizedBox(height: 30),

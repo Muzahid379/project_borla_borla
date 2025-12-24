@@ -8,13 +8,19 @@ import 'package:project_borla/features/auth/register_screen.dart';
 import 'package:project_borla/features/auth/set_pass_screen.dart';
 import 'package:project_borla/role/commonScreens/profile/profile_screen.dart';
 import 'package:project_borla/role/garbageCollector/activity/activity_screen.dart';
+import 'package:project_borla/screens/home-screens/home_screen_one.dart';
 import 'package:project_borla/screens/location_picker_screen.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_one.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_two.dart';
+import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
+import 'package:project_borla/screens/search-place-screens/saved_places_screen.dart';
+import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/screens/splash_screen.dart';
 
 import 'features/auth/otp_screen.dart';
 import 'features/auth/otp_screen_two.dart';
+
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,6 +41,26 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       splitScreenMode: true,
       designSize: const Size(393, 852),
+    return GetMaterialApp(
+
+      debugShowCheckedModeBanner: false,
+
+      // initialRoute: '/register',
+      initialRoute: '/search',
+
+      getPages: [
+
+        GetPage(name: '/', page: () => SplashScreen(), transition: Transition.fade),
+        GetPage(name: '/register', page: () => RegisterScreen(), transition: Transition.fade),
+        GetPage(name: '/onboard1', page: () => onboardingOne(), transition: Transition.fade),
+        GetPage(name: '/role', page: () => SelectRoleScreen(), transition: Transition.fade),
+        GetPage(name: '/home', page: () => HomeScreenOne(), transition: Transition.fade),
+        GetPage(name: '/savedPlaces', page: () => SavedPlacesScreen(), transition: Transition.fade),
+        GetPage(name: '/map', page: () => LocationPickerScreen(), transition: Transition.fade),
+        GetPage(name: '/search', page: () => LocationSearchScreen(), transition: Transition.fade),
+
+
+      ],
 
       child: GetMaterialApp(
         //home: SplashScreen() ,

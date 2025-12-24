@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/features/auth/set_pass_screen.dart';
 import '../../theme/auth_header.dart';
 import '../../widgets/gradient_button.dart';
 import '../../widgets/otp_input.dart';
@@ -75,35 +78,6 @@ class _OtpScreenState extends State<OtpScreen> {
                       const SizedBox(height: 6),
                       GestureDetector(
                         onTap: () {},
-                        // child: const Text(
-                        //   'Resend Code',
-                        //   style: TextStyle(
-                        //     color: Colors.orange,
-                        //     fontSize: 16,
-                        //     fontWeight: FontWeight.w600,
-                        //   ),
-                        // ),
-
-                          // child: ShaderMask(
-                          //   shaderCallback: (bounds) =>
-                          //       const LinearGradient(
-                          //         colors: [
-                          //           Color.fromRGBO(255, 214, 0, 1),
-                          //           Color.fromRGBO(255, 149, 0, 1),
-                          //         ],
-                          //       ).createShader(bounds),
-                          //   child: const Text(
-                          //     'Resend Code',
-                          //     style: TextStyle(
-                          //       decoration: TextDecoration.underline,
-                          //       decorationColor: Colors.orange,
-                          //       decorationThickness: 3,
-                          //       color: Colors.white,
-                          //       fontSize: 16,
-                          //       fontWeight: FontWeight.w600,
-                          //     ),
-                          //   ),
-                          // )
 
                         child: ShaderMask(
                           shaderCallback: (bounds) => const LinearGradient(
@@ -144,7 +118,8 @@ class _OtpScreenState extends State<OtpScreen> {
                   GradientButton(
                     text: 'Verify',
                     onPressed:  () {
-                      debugPrint('OTP entered: $otp');
+                      //debugPrint('OTP entered: $otp');
+                      Get.to(SetPassScreen());
                     },
                   ),
                 ],

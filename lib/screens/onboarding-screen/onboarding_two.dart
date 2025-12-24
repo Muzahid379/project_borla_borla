@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/features/auth/login_screen.dart';
+import 'package:project_borla/screens/select_role_screen.dart';
 
 import 'onboarding_one.dart';
 
@@ -53,7 +57,11 @@ class onboardingTwo extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 21),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      Get.to(LoginScreen());
+
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero, // important
                       backgroundColor: Colors.transparent,
@@ -116,7 +124,9 @@ class onboardingTwo extends StatelessWidget {
                           borderRadius: BorderRadius.circular(14), // inner radius
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(SelectRoleScreen());
+                      },
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(134, 14, 134, 14),
 
