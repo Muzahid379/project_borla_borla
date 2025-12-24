@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../home/controller/driver_home_controller.dart';
 
 class CommonMap extends StatelessWidget {
-  const CommonMap({
-    super.key,
-    required this.controller,
-  });
+  CommonMap({super.key,});
 
-  final DriverHomeController controller;
+  final DriverHomeController controller = Get.find<DriverHomeController>();
 
   @override
   Widget build(BuildContext context) {

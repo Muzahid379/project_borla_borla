@@ -5,6 +5,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 class DriverHomeController extends GetxController with GetTickerProviderStateMixin{
+
+  static DriverHomeController get instance => Get.put(DriverHomeController());
+
   late GoogleMapController mapController;
 
   final RxBool isOnline = false.obs;
@@ -45,6 +48,7 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   // RxBool isJobRequested = false.obs;
 
   var jobRequests = <JobRequestModel>[].obs;
+  RxBool isBottomSheet = false.obs;
 
   @override
   void onInit() {

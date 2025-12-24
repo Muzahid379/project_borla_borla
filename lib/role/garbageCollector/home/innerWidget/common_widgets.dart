@@ -1,13 +1,17 @@
 // ---------------- ACTION BUTTONS ----------------
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/role/garbageCollector/home/customer_info_screen.dart';
 
+import '../../../../gen/custom_assets/assets.gen.dart';
 import '../../../../theme/app_color.dart';
+import '../../../commonScreens/chat/chatting_screen.dart';
 import '../../../components/button/common_button.dart';
 import '../../../components/dotted_line.dart';
 import '../../../components/text/common_text.dart';
 import '../controller/driver_home_controller.dart';
 
-Widget actionButtons(BuildContext context) {
+Widget actionButtons(BuildContext context,) {
   return Row(
     children: [
       Expanded(
@@ -22,6 +26,10 @@ Widget actionButtons(BuildContext context) {
       SizedBox(width: 20,),
       Expanded(
         child: CommonButton(
+          onTap: (){
+            DriverHomeController.instance.isBottomSheet.value = true;
+            Get.to(()=> CustomerInfoScreen());
+          },
           // onTap: controller.acceptJob,
           buttonRadius: 12,
           titleText: "Accept",
@@ -58,10 +66,32 @@ Widget userRow(DriverHomeController controller) {
           ],
         ),
       ),
-
-      // Countdown Ring
-      countdownRing(controller),
+      controller.isBottomSheet.value?
+      Row(
+        children: [
+          InkWell(
+              onTap: () {
+                Get.to(()=> ChattingScreen());
+              },
+              child: circleAction(Assets.icons.messageIcon.image(height: 20, width: 20))),
+          const SizedBox(width: 12),
+          circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
+        ],
+      )
+      : countdownRing(controller),
     ],
+  );
+}
+
+Widget circleAction(Image icon) {
+  return Container(
+    width: 40,
+    height: 40,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      border: Border.all(color: AppColors.primaryColor),
+    ),
+    child: Center(child: icon),
   );
 }
 

@@ -42,7 +42,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
       body: Stack(
         children: [
           /// Google Map
-          CommonMap(controller: controller),
+          CommonMap(),
 
           /// Pulsing Marker Overlay
           Obx(() {

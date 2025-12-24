@@ -1,0 +1,328 @@
+// dart format width=80
+
+/// GENERATED CODE - DO NOT MODIFY BY HAND
+/// *****************************************************
+///  FlutterGen
+/// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
+
+import 'package:flutter/widgets.dart';
+
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/Location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/Location.png');
+
+  /// File path: assets/icons/aboutUsIcon.png
+  AssetGenImage get aboutUsIcon =>
+      const AssetGenImage('assets/icons/aboutUsIcon.png');
+
+  /// File path: assets/icons/applicationReview.png
+  AssetGenImage get applicationReview =>
+      const AssetGenImage('assets/icons/applicationReview.png');
+
+  /// File path: assets/icons/arriveLocationIcon.png
+  AssetGenImage get arriveLocationIcon =>
+      const AssetGenImage('assets/icons/arriveLocationIcon.png');
+
+  /// File path: assets/icons/callIcon.png
+  AssetGenImage get callIcon =>
+      const AssetGenImage('assets/icons/callIcon.png');
+
+  /// File path: assets/icons/creditCardIcon.png
+  AssetGenImage get creditCardIcon =>
+      const AssetGenImage('assets/icons/creditCardIcon.png');
+
+  /// File path: assets/icons/daySunIcon.png
+  AssetGenImage get daySunIcon =>
+      const AssetGenImage('assets/icons/daySunIcon.png');
+
+  /// File path: assets/icons/driverIcon.png
+  AssetGenImage get driverIcon =>
+      const AssetGenImage('assets/icons/driverIcon.png');
+
+  /// File path: assets/icons/globalIcon.png
+  AssetGenImage get globalIcon =>
+      const AssetGenImage('assets/icons/globalIcon.png');
+
+  /// File path: assets/icons/locationCirclePointer.png
+  AssetGenImage get locationCirclePointer =>
+      const AssetGenImage('assets/icons/locationCirclePointer.png');
+
+  /// File path: assets/icons/locationPointer.png
+  AssetGenImage get locationPointer =>
+      const AssetGenImage('assets/icons/locationPointer.png');
+
+  /// File path: assets/icons/lockIcon.png
+  AssetGenImage get lockIcon =>
+      const AssetGenImage('assets/icons/lockIcon.png');
+
+  /// File path: assets/icons/logOutIcon.png
+  AssetGenImage get logOutIcon =>
+      const AssetGenImage('assets/icons/logOutIcon.png');
+
+  /// File path: assets/icons/messageIcon.png
+  AssetGenImage get messageIcon =>
+      const AssetGenImage('assets/icons/messageIcon.png');
+
+  /// File path: assets/icons/nightMoonIcon.png
+  AssetGenImage get nightMoonIcon =>
+      const AssetGenImage('assets/icons/nightMoonIcon.png');
+
+  /// File path: assets/icons/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/icons/notification.png');
+
+  /// File path: assets/icons/paymentSuccess.png
+  AssetGenImage get paymentSuccess =>
+      const AssetGenImage('assets/icons/paymentSuccess.png');
+
+  /// File path: assets/icons/privacyPolicy.png
+  AssetGenImage get privacyPolicy =>
+      const AssetGenImage('assets/icons/privacyPolicy.png');
+
+  /// File path: assets/icons/terms&Conditions.png
+  AssetGenImage get termsConditions =>
+      const AssetGenImage('assets/icons/terms&Conditions.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    location,
+    aboutUsIcon,
+    applicationReview,
+    arriveLocationIcon,
+    callIcon,
+    creditCardIcon,
+    daySunIcon,
+    driverIcon,
+    globalIcon,
+    locationCirclePointer,
+    locationPointer,
+    lockIcon,
+    logOutIcon,
+    messageIcon,
+    nightMoonIcon,
+    notification,
+    paymentSuccess,
+    privacyPolicy,
+    termsConditions,
+  ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/apple.png
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
+
+  /// File path: assets/images/background.png
+  AssetGenImage get background =>
+      const AssetGenImage('assets/images/background.png');
+
+  /// File path: assets/images/cross.png
+  AssetGenImage get cross => const AssetGenImage('assets/images/cross.png');
+
+  /// File path: assets/images/fourth_pin.png
+  AssetGenImage get fourthPin =>
+      const AssetGenImage('assets/images/fourth_pin.png');
+
+  /// File path: assets/images/google.png
+  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
+  /// File path: assets/images/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
+
+  /// File path: assets/images/location_pin.png
+  AssetGenImage get locationPin =>
+      const AssetGenImage('assets/images/location_pin.png');
+
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// File path: assets/images/map.png
+  AssetGenImage get map => const AssetGenImage('assets/images/map.png');
+
+  /// File path: assets/images/noImage.jpg
+  AssetGenImage get noImage => const AssetGenImage('assets/images/noImage.jpg');
+
+  /// File path: assets/images/noProfile.jpg
+  AssetGenImage get noProfile =>
+      const AssetGenImage('assets/images/noProfile.jpg');
+
+  /// File path: assets/images/onboard1.png
+  AssetGenImage get onboard1 =>
+      const AssetGenImage('assets/images/onboard1.png');
+
+  /// File path: assets/images/onboard2.png
+  AssetGenImage get onboard2 =>
+      const AssetGenImage('assets/images/onboard2.png');
+
+  /// File path: assets/images/onboard3.png
+  AssetGenImage get onboard3 =>
+      const AssetGenImage('assets/images/onboard3.png');
+
+  /// File path: assets/images/onboard4.png
+  AssetGenImage get onboard4 =>
+      const AssetGenImage('assets/images/onboard4.png');
+
+  /// File path: assets/images/patternLeft.png
+  AssetGenImage get patternLeft =>
+      const AssetGenImage('assets/images/patternLeft.png');
+
+  /// File path: assets/images/patternRight.png
+  AssetGenImage get patternRight =>
+      const AssetGenImage('assets/images/patternRight.png');
+
+  /// File path: assets/images/rider.png
+  AssetGenImage get rider => const AssetGenImage('assets/images/rider.png');
+
+  /// File path: assets/images/scheduleImg.png
+  AssetGenImage get scheduleImg =>
+      const AssetGenImage('assets/images/scheduleImg.png');
+
+  /// File path: assets/images/second_pin.png
+  AssetGenImage get secondPin =>
+      const AssetGenImage('assets/images/second_pin.png');
+
+  /// File path: assets/images/target_icon.png
+  AssetGenImage get targetIcon =>
+      const AssetGenImage('assets/images/target_icon.png');
+
+  /// File path: assets/images/third_pin.png
+  AssetGenImage get thirdPin =>
+      const AssetGenImage('assets/images/third_pin.png');
+
+  /// File path: assets/images/user.png
+  AssetGenImage get user => const AssetGenImage('assets/images/user.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    apple,
+    background,
+    cross,
+    fourthPin,
+    google,
+    icon,
+    locationPin,
+    logo,
+    map,
+    noImage,
+    noProfile,
+    onboard1,
+    onboard2,
+    onboard3,
+    onboard4,
+    patternLeft,
+    patternRight,
+    rider,
+    scheduleImg,
+    secondPin,
+    targetIcon,
+    thirdPin,
+    user,
+  ];
+}
+
+class Assets {
+  const Assets._();
+
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const String mapStyle = 'assets/map_style.json';
+
+  /// List of all assets
+  static List<String> get values => [mapStyle];
+}
+
+class AssetGenImage {
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+    this.animation,
+  });
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+  final AssetGenImageAnimation? animation;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.medium,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class AssetGenImageAnimation {
+  const AssetGenImageAnimation({
+    required this.isAnimation,
+    required this.duration,
+    required this.frames,
+  });
+
+  final bool isAnimation;
+  final Duration duration;
+  final int frames;
+}
