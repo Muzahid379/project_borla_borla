@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_borla/role/components/text/common_text.dart';
 import 'package:project_borla/role/garbageCollector/activity/innerWidget/job_activity_card.dart';
-import '../../components/image/common_image.dart';
+
 
 class ScheduleScreen extends StatelessWidget {
   const ScheduleScreen({super.key});
