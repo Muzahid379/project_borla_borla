@@ -92,7 +92,7 @@ Widget locationSection() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Column(
-        children: const [
+        children: [
           Icon(Icons.radio_button_checked,
               color: AppColors.primaryColor, size: 18),
           SizedBox(height: 6),
@@ -113,7 +113,7 @@ Widget locationSection() {
             const SizedBox(height: 12),
             Row(
               children: [
-                const Expanded(child: HorizontalDottedLine()),
+                Expanded(child: HorizontalDottedLine()),
                 distanceChip(),
               ],
             ),

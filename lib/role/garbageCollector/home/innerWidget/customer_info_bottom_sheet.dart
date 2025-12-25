@@ -90,7 +90,7 @@ Widget bottomSheetLocationSection() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Column(
-        children: const [
+        children: [
           Icon(Icons.radio_button_checked,
               color: AppColors.primaryColor, size: 18),
           SizedBox(height: 6),

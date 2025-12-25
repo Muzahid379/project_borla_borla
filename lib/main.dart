@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
 import 'package:project_borla/role/commonScreens/profile/profile_screen.dart';
+import 'package:project_borla/role/components/navBar/nav_bar.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
 import 'package:project_borla/screens/location_picker_screen.dart';
 import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
@@ -11,6 +12,7 @@ import 'package:project_borla/screens/search-place-screens/saved_places_screen.d
 import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/screens/splash_screen.dart';
 
+import 'role/garbageCollector/earnings/earnings_screen.dart';
 import 'role/garbageCollector/home/driver_home_screen.dart';
 import 'screens/onboarding-screen/onboarding_one.dart';
 
@@ -85,7 +87,9 @@ class _MyAppState extends State<MyApp> {
           ],
 
           // Optional fallback
-          home: DriverHomeScreen(),
+          home: NavbarScreen(),
+          // home: EarningsScreen(),
+          // home: DriverHomeScreen(),
         );
       },
     );

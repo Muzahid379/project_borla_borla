@@ -1,13 +1,16 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/role/components/button/common_button.dart';
 import 'package:project_borla/role/components/custom_container.dart';
 import 'package:project_borla/role/components/text/common_text.dart';
+import 'package:project_borla/role/garbageCollector/home/arrived_screen.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 import '../../../gen/custom_assets/assets.gen.dart';
 import '../../components/commonBackButton/common_back_button.dart';
 import '../map/common_map.dart';
+import 'innerWidget/arrived_bottom_sheet.dart';
 
 class NavigateDestinationScreen extends StatelessWidget {
   const NavigateDestinationScreen({super.key});
@@ -28,7 +31,7 @@ class NavigateDestinationScreen extends StatelessWidget {
 
 
           Positioned(
-            bottom: 100,
+            bottom: 120,
             left: 30,
             right: 30,
             child: CustomContainer(
@@ -44,9 +47,11 @@ class NavigateDestinationScreen extends StatelessWidget {
                 SizedBox(width: 12,),
                 Expanded(
                     child: CommonText(
-                      textAlign: TextAlign.start,
+                        textAlign: TextAlign.start,
                         fontWeight: FontWeight.w400,
-                        text: "85 4th Ave, Street Side Road, NY 10003, Accra, Ghana"))
+                        text: "85 4th Ave, Street Side Road, NY 10003, Accra, Ghana"
+                    )
+                )
               ],
             )),
           ),
@@ -56,6 +61,9 @@ class NavigateDestinationScreen extends StatelessWidget {
             left: 20,
             right: 20,
             child: CommonButton(
+              onTap: () {
+                Get.to(()=> ArrivedScreen());
+              },
               titleText: "Navigate to Destination",
               buttonRadius: 12,
             ),

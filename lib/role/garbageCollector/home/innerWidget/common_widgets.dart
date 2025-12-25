@@ -1,6 +1,7 @@
 // ---------------- ACTION BUTTONS ----------------
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_borla/role/components/custom_container.dart';
 import 'package:project_borla/role/garbageCollector/home/customer_info_screen.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';
@@ -130,7 +131,7 @@ Widget locationSection() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Column(
-        children: const [
+        children: [
           Icon(Icons.radio_button_checked,
               color: AppColors.primaryColor, size: 18),
           SizedBox(height: 6),
@@ -194,9 +195,12 @@ Widget distanceChip() {
 // ---------------- PAYMENT ----------------
 Widget paymentRow() {
   return Row(
-    children: const [
-      Icon(Icons.payment_outlined,
-          color: AppColors.primaryColor),
+    children: [
+      CustomContainer(
+        padding: EdgeInsets.all(10),
+        borderRadius: 100,
+          color: AppColors.gray100,
+          child: Center(child: Assets.icons.creditCardIcon.image(height: 20, width: 20))),
       SizedBox(width: 12),
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,

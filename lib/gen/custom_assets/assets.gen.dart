@@ -22,6 +22,14 @@ class $AssetsIconsGen {
   AssetGenImage get aboutUsIcon =>
       const AssetGenImage('assets/icons/aboutUsIcon.png');
 
+  /// File path: assets/icons/activityIcon.png
+  AssetGenImage get activityIcon =>
+      const AssetGenImage('assets/icons/activityIcon.png');
+
+  /// File path: assets/icons/activitySolidIcon.png
+  AssetGenImage get activitySolidIcon =>
+      const AssetGenImage('assets/icons/activitySolidIcon.png');
+
   /// File path: assets/icons/applicationReview.png
   AssetGenImage get applicationReview =>
       const AssetGenImage('assets/icons/applicationReview.png');
@@ -46,9 +54,25 @@ class $AssetsIconsGen {
   AssetGenImage get driverIcon =>
       const AssetGenImage('assets/icons/driverIcon.png');
 
+  /// File path: assets/icons/earningIcon.png
+  AssetGenImage get earningIcon =>
+      const AssetGenImage('assets/icons/earningIcon.png');
+
+  /// File path: assets/icons/earningSolidIcon.png
+  AssetGenImage get earningSolidIcon =>
+      const AssetGenImage('assets/icons/earningSolidIcon.png');
+
   /// File path: assets/icons/globalIcon.png
   AssetGenImage get globalIcon =>
       const AssetGenImage('assets/icons/globalIcon.png');
+
+  /// File path: assets/icons/homeIcon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/icons/homeIcon.png');
+
+  /// File path: assets/icons/homeSolidIcon.png
+  AssetGenImage get homeSolidIcon =>
+      const AssetGenImage('assets/icons/homeSolidIcon.png');
 
   /// File path: assets/icons/locationCirclePointer.png
   AssetGenImage get locationCirclePointer =>
@@ -86,21 +110,43 @@ class $AssetsIconsGen {
   AssetGenImage get privacyPolicy =>
       const AssetGenImage('assets/icons/privacyPolicy.png');
 
+  /// File path: assets/icons/profileIcon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/icons/profileIcon.png');
+
+  /// File path: assets/icons/profileSolidIcon.png
+  AssetGenImage get profileSolidIcon =>
+      const AssetGenImage('assets/icons/profileSolidIcon.png');
+
+  /// File path: assets/icons/shadowStarIcon.png
+  AssetGenImage get shadowStarIcon =>
+      const AssetGenImage('assets/icons/shadowStarIcon.png');
+
   /// File path: assets/icons/terms&Conditions.png
   AssetGenImage get termsConditions =>
       const AssetGenImage('assets/icons/terms&Conditions.png');
+
+  /// File path: assets/icons/trasparentStarIcon.png
+  AssetGenImage get trasparentStarIcon =>
+      const AssetGenImage('assets/icons/trasparentStarIcon.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
     location,
     aboutUsIcon,
+    activityIcon,
+    activitySolidIcon,
     applicationReview,
     arriveLocationIcon,
     callIcon,
     creditCardIcon,
     daySunIcon,
     driverIcon,
+    earningIcon,
+    earningSolidIcon,
     globalIcon,
+    homeIcon,
+    homeSolidIcon,
     locationCirclePointer,
     locationPointer,
     lockIcon,
@@ -110,7 +156,11 @@ class $AssetsIconsGen {
     notification,
     paymentSuccess,
     privacyPolicy,
+    profileIcon,
+    profileSolidIcon,
+    shadowStarIcon,
     termsConditions,
+    trasparentStarIcon,
   ];
 }
 

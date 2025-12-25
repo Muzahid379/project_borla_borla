@@ -3,16 +3,18 @@ import 'package:project_borla/theme/app_color.dart';
 
 
 class VerticalDottedLine extends StatelessWidget {
-  const VerticalDottedLine({super.key});
+  int dotCount;
+  double height;
+  VerticalDottedLine({super.key, this.dotCount = 5, this.height = 40});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
-          5,
+          dotCount,
               (_) => Container(
             width: 1,
             height: 4,
@@ -25,13 +27,14 @@ class VerticalDottedLine extends StatelessWidget {
 }
 
 class HorizontalDottedLine extends StatelessWidget {
-  const HorizontalDottedLine({super.key});
+  int dotCount;
+  HorizontalDottedLine({super.key, this.dotCount = 14});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: List.generate(
-        14,
+        dotCount,
             (_) => Expanded(
           child: Container(
             height: 1,

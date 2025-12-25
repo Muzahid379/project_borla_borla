@@ -26,7 +26,7 @@ class CommonTextField extends StatelessWidget {
     this.paddingVertical = 16,
     this.borderRadius = 10,
     this.inputFormatters,
-    this.fillColor = AppColors.transparentColor,
+    this.fillColor = AppColors.transparent,
     this.hintTextColor = AppColors.hintTextColor,
     this.labelTextColor = AppColors.hintTextColor,
     this.textColor = AppColors.textColor,
