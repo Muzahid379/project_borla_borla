@@ -82,7 +82,7 @@ Widget circleAction(Image icon) {
       shape: BoxShape.circle,
       border: Border.all(color: AppColors.primaryColor),
     ),
-    child: icon,
+    child: Center(child: icon),
   );
 }
 

@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/theme/app_color.dart';
 
+import '../../../../language/language_service.dart';
+import '../../../../utils/app_texts.dart';
 import '../../../components/text/common_text.dart';
 
 
@@ -23,6 +26,14 @@ class _LanguageSelectionBottomSheetState
     {'name': 'Ghana', 'greeting': 'Akwaaba'},
   ];
 
+  void changeToEnglish() {
+    Get.updateLocale(const Locale('en', 'US'));
+  }
+
+  void changeToGhana() {
+    Get.updateLocale(const Locale('ak', 'GH'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,8 +49,8 @@ class _LanguageSelectionBottomSheetState
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Title
-              const CommonText(
-                text: 'Choose your language',
+              CommonText(
+                text: AppTexts.chooseLanguage,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
@@ -49,7 +60,7 @@ class _LanguageSelectionBottomSheetState
 
               // Subtitle
               CommonText(
-                text: 'Changing the language will initiate a restart',
+                text: AppTexts.languageRestartNote,
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
                 color: Colors.grey[600]!,
@@ -71,6 +82,11 @@ class _LanguageSelectionBottomSheetState
                       setState(() {
                         selectedLanguage = lang['name']!;
                       });
+                      if(selectedLanguage == 'English'){
+                        changeToEnglish();
+                      }else{
+                        changeToGhana();
+                      }
                     },
                   );
                 }).toList(),
@@ -82,18 +98,26 @@ class _LanguageSelectionBottomSheetState
                 width: double.infinity,
                 height: 56.h,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    // 🔹 1. Change app language + save to storage
+                    if (selectedLanguage == 'English') {
+                      await LanguageService.changeLocale(
+                        const Locale('en', 'US'),
+                      );
+                    } else {
+                      await LanguageService.changeLocale(
+                        const Locale('ak', 'GH'),
+                      );
+                    }
+
+                    // 🔹 2. Close bottom sheet
                     Navigator.pop(context);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: CommonText(
-                          text:
-                          'Language changed to $selectedLanguage',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.white,
-                        ),
-                      ),
+
+                    // 🔹 3. Feedback to user
+                    Get.snackbar(
+                      'Success',
+                      'Language changed to $selectedLanguage',
+                      snackPosition: SnackPosition.BOTTOM,
                     );
                   },
                   style: ElevatedButton.styleFrom(

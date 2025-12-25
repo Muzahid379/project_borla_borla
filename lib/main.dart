@@ -12,17 +12,24 @@ import 'package:project_borla/screens/search-place-screens/saved_places_screen.d
 import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/screens/splash_screen.dart';
 
+import 'language/app_translation.dart';
+import 'language/language_service.dart';
 import 'role/garbageCollector/earnings/earnings_screen.dart';
 import 'role/garbageCollector/home/driver_home_screen.dart';
 import 'screens/onboarding-screen/onboarding_one.dart';
 
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final Locale savedLocale = await LanguageService.getLocale();
+
+  runApp(MyApp(locale: savedLocale));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  final Locale? locale;
+
+  const MyApp({super.key, this.locale});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -39,54 +46,11 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-
           // initialRoute: '/register',
           // initialRoute: '/search',
-
-          getPages: [
-            GetPage(
-              name: '/',
-              page: () => SplashScreen(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/register',
-              page: () => RegisterScreen(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/onboard1',
-              page: () => OnboardingOne(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/role',
-              page: () => SelectRoleScreen(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/home',
-              page: () => HomeScreenOne(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/savedPlaces',
-              page: () => SavedPlacesScreen(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/map',
-              page: () => LocationPickerScreen(),
-              transition: Transition.fade,
-            ),
-            GetPage(
-              name: '/search',
-              page: () => LocationSearchScreen(),
-              transition: Transition.fade,
-            ),
-          ],
-
-          // Optional fallback
+          translations: AppTranslations(),
+          locale: widget.locale ?? const Locale('en', 'US'), // default language
+          fallbackLocale: const Locale('en', 'US'),
           home: NavbarScreen(),
           // home: EarningsScreen(),
           // home: DriverHomeScreen(),
