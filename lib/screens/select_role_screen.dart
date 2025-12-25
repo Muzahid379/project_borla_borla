@@ -77,7 +77,7 @@ class _SelectRoleScreenState extends State<SelectRoleScreen> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.asset(
-                              'assets/images/user.png',
+                              'assets/images/user1.png',
                               width: 360,
                             ),
                           ),

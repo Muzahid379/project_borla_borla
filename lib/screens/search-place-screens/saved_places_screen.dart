@@ -67,7 +67,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
 
                       SizedBox(width: 90),
 
-                      Text('Add Place', style: TextStyle(
+                      Text('Saved Places', style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w500
                       ),)
