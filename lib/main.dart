@@ -29,9 +29,6 @@ import 'package:project_borla/utils/app_routes.dart';
 
 import 'language/app_translation.dart';
 import 'language/language_service.dart';
-import 'role/garbageCollector/earnings/earnings_screen.dart';
-import 'role/garbageCollector/home/driver_home_screen.dart';
-import 'screens/onboarding-screen/onboarding_one.dart';
 
 
 Future<void> main() async {
@@ -64,14 +61,14 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
 
           // initialRoute: '/register',
-          initialRoute: AppRoute.onboard1,
+          initialRoute: AppRoute.splashScreen,
           //home: ,
 
           getPages: [
 
             GetPage(name: '/', page: () => SplashScreen(), transition: Transition.fade),
             GetPage(name: '/register', page: () => RegisterScreen(), transition: Transition.fade),
-            GetPage(name: '/onboard1', page: () => onboardingOne(), transition: Transition.fade),
+            GetPage(name: '/onboard1', page: () => OnboardingOne(), transition: Transition.fade),
             GetPage(name: '/role', page: () => SelectRoleScreen(), transition: Transition.fade),
             GetPage(name: '/home', page: () => HomeScreenOne(), transition: Transition.fade),
             GetPage(name: '/savedPlaces', page: () => SavedPlacesScreen(), transition: Transition.fade),
@@ -98,7 +95,7 @@ class _MyAppState extends State<MyApp> {
           translations: AppTranslations(),
           locale: widget.locale ?? const Locale('en', 'US'), // default language
           fallbackLocale: const Locale('en', 'US'),
-          home: NavbarScreen(),
+          // home: NavbarScreen(),
 
         );
       },
