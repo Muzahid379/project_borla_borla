@@ -14,8 +14,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        //alignment: AlignmentDirectional.topCenter,
-        fit: StackFit.passthrough,
+
         children: [
           Positioned(
             top: 0,
@@ -79,6 +78,115 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                   suffix: Image.asset('assets/images/cross.png'),
 
                 ),
+
+                SizedBox(height: 14),
+
+                Row(
+                  children: [
+
+                    Container(
+                      width: 160,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.grey.shade500,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 8,
+                          ),
+                          side: const BorderSide(
+                            color: Colors.black12,
+                            width: 1,
+                          ),
+
+                        ),
+
+                        child: Row(
+                          children: [
+                            Image.asset('assets/images/tab_icon_one.png', scale: 0.9,),
+                            SizedBox(width: 6,),
+                            Text('Select from map', style: TextStyle(
+
+                                fontSize: 15
+
+                            ),)
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(width: 12),
+
+                    Container(
+                      width: 140,
+                      child: ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.grey.shade500,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 8,
+                          ),
+                          side: const BorderSide(
+                            color: Colors.black12,
+                            width: 1,
+                          ),
+
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset('assets/images/saved_icon.png', scale: 0.9,),
+                            SizedBox(width: 6,),
+                            Text('Saved Places', style: TextStyle(
+
+                                fontSize: 15
+
+                            ),)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 22),
+
+                Row(
+                  children: [
+                    Text('Results for', style: TextStyle(
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black54
+                    ),),
+                    Text(' "2nd Crescent Link"', style: TextStyle(
+                      color: Colors.amber,
+                        fontSize: 19,
+                        fontWeight: FontWeight.w600
+                    ),),
+
+                    SizedBox(width: 26),
+
+                    Text('0 Found', style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.amber,
+                    ),),
+
+                  ],
+                ),
+
+                SizedBox(height: 26),
+
+                Image.asset('assets/images/not_found.png'),
+
+
+
+
+
 
 
 

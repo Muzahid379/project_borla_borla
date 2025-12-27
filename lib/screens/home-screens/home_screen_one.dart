@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_borla/screens/search-place-screens/location_search_screen_two.dart';
 
 import '../../features/fragments/bottom_nav_bar.dart';
 
@@ -30,6 +31,10 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
     // progressTaskScreen(),
     // completedTaskScreen(),
     // canceledTaskScreen()
+    LocationSearchScreenTwo(),
+    LocationSearchScreenTwo(),
+    LocationSearchScreenTwo(),
+    LocationSearchScreenTwo(),
 
   ];
 
@@ -42,7 +47,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
     return Scaffold(
 
       body: WidgetOptions.elementAt(tabIndex),
-      bottomNavigationBar: bttmNavBar(tabIndex, onItemTapped),
+      bottomNavigationBar: bttmNavBar(tabIndex, onItemTapped, context),
 
 
 
