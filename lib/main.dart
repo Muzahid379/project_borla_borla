@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          // initialRoute: '/register',
+          initialRoute: '/register',
           // initialRoute: '/search',
           translations: AppTranslations(),
           locale: widget.locale ?? const Locale('en', 'US'), // default language

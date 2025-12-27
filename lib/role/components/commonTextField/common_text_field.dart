@@ -25,6 +25,7 @@ class CommonTextField extends StatelessWidget {
     this.paddingHorizontal = 16,
     this.paddingVertical = 16,
     this.borderRadius = 10,
+    this.borderWidth = 1,
     this.inputFormatters,
     this.fillColor = AppColors.transparent,
     this.hintTextColor = AppColors.hintTextColor,
@@ -55,6 +56,7 @@ class CommonTextField extends StatelessWidget {
   final double paddingHorizontal;
   final double paddingVertical;
   final double borderRadius;
+  final double borderWidth;
 
   // Input config
   final int? maxLength;
@@ -103,7 +105,7 @@ class CommonTextField extends StatelessWidget {
   InputDecoration _inputDecoration() {
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(borderRadius.r),
-      borderSide: BorderSide(color: borderColor, width: 2),
+      borderSide: BorderSide(color: borderColor, width: borderWidth,),
     );
 
     return InputDecoration(

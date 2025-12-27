@@ -11,6 +11,7 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   late GoogleMapController mapController;
 
   final RxBool isOnline = false.obs;
+  final RxBool isScheduleRequest = true.obs;
 
   final Rx<LatLng> driverPosition =
       const LatLng(5.6037, -0.1870).obs; // Accra
@@ -37,6 +38,13 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
     if(value){
       _setupTimer();
     }
+  }
+
+  ////////////////////////////////////
+  final isExpanded = false.obs;
+
+  void toggle() {
+    isExpanded.toggle();
   }
 
   ////////////////////////////////////

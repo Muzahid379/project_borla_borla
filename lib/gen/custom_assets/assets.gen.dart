@@ -38,6 +38,10 @@ class $AssetsIconsGen {
   AssetGenImage get arriveLocationIcon =>
       const AssetGenImage('assets/icons/arriveLocationIcon.png');
 
+  /// File path: assets/icons/calenderIcon.png
+  AssetGenImage get calenderIcon =>
+      const AssetGenImage('assets/icons/calenderIcon.png');
+
   /// File path: assets/icons/callIcon.png
   AssetGenImage get callIcon =>
       const AssetGenImage('assets/icons/callIcon.png');
@@ -50,6 +54,10 @@ class $AssetsIconsGen {
   AssetGenImage get daySunIcon =>
       const AssetGenImage('assets/icons/daySunIcon.png');
 
+  /// File path: assets/icons/dobCalenderIcon.png
+  AssetGenImage get dobCalenderIcon =>
+      const AssetGenImage('assets/icons/dobCalenderIcon.png');
+
   /// File path: assets/icons/driverIcon.png
   AssetGenImage get driverIcon =>
       const AssetGenImage('assets/icons/driverIcon.png');
@@ -61,6 +69,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/earningSolidIcon.png
   AssetGenImage get earningSolidIcon =>
       const AssetGenImage('assets/icons/earningSolidIcon.png');
+
+  /// File path: assets/icons/ghanaCurrency.png
+  AssetGenImage get ghanaCurrency =>
+      const AssetGenImage('assets/icons/ghanaCurrency.png');
 
   /// File path: assets/icons/globalIcon.png
   AssetGenImage get globalIcon =>
@@ -130,6 +142,14 @@ class $AssetsIconsGen {
   AssetGenImage get trasparentStarIcon =>
       const AssetGenImage('assets/icons/trasparentStarIcon.png');
 
+  /// File path: assets/icons/wasteBoxIcon.png
+  AssetGenImage get wasteBoxIcon =>
+      const AssetGenImage('assets/icons/wasteBoxIcon.png');
+
+  /// File path: assets/icons/weightIcon.png
+  AssetGenImage get weightIcon =>
+      const AssetGenImage('assets/icons/weightIcon.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     location,
@@ -138,12 +158,15 @@ class $AssetsIconsGen {
     activitySolidIcon,
     applicationReview,
     arriveLocationIcon,
+    calenderIcon,
     callIcon,
     creditCardIcon,
     daySunIcon,
+    dobCalenderIcon,
     driverIcon,
     earningIcon,
     earningSolidIcon,
+    ghanaCurrency,
     globalIcon,
     homeIcon,
     homeSolidIcon,
@@ -161,6 +184,8 @@ class $AssetsIconsGen {
     shadowStarIcon,
     termsConditions,
     trasparentStarIcon,
+    wasteBoxIcon,
+    weightIcon,
   ];
 }
 
@@ -176,6 +201,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/cross.png
   AssetGenImage get cross => const AssetGenImage('assets/images/cross.png');
+
+  /// File path: assets/images/emptyProfile.png
+  AssetGenImage get emptyProfile =>
+      const AssetGenImage('assets/images/emptyProfile.png');
 
   /// File path: assets/images/fourth_pin.png
   AssetGenImage get fourthPin =>
@@ -255,6 +284,7 @@ class $AssetsImagesGen {
     apple,
     background,
     cross,
+    emptyProfile,
     fourthPin,
     google,
     icon,

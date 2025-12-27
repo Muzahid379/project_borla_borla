@@ -5,16 +5,27 @@ import 'package:get/get.dart';
 import 'package:project_borla/role/components/button/common_button.dart';
 import 'package:project_borla/role/components/custom_container.dart';
 import 'package:project_borla/role/components/gradient_scafold.dart';
+import 'package:project_borla/role/garbageCollector/earnings/innerWidget/recent_transactions.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 import '../../../gen/custom_assets/assets.gen.dart';
 import '../../components/text/common_text.dart';
 import 'controller/earnings_controller.dart';
+import 'innerWidget/topup_dialog.dart';
+import 'innerWidget/withdraw_dialog.dart';
 
 class EarningsScreen extends StatelessWidget {
   EarningsScreen({super.key});
 
   final EarningsController controller = Get.put(EarningsController());
+
+  void showWithdrawDialog(BuildContext context, child) {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (_) =>  child,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +53,7 @@ class EarningsScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               /// Balance Card
-              _buildBalanceCard(),
+              _buildBalanceCard(context),
 
               const SizedBox(height: 30),
 
@@ -81,6 +92,8 @@ class EarningsScreen extends StatelessWidget {
                   ),
                 ],
               ),
+
+              RecentTransactionsWidget()
 
             ],
           ),
@@ -175,7 +188,7 @@ class EarningsScreen extends StatelessWidget {
   }
 
   /// ---------------- BALANCE CARD ----------------
-  Widget _buildBalanceCard() {
+  Widget _buildBalanceCard(BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -209,14 +222,32 @@ class EarningsScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 const SizedBox(height: 20),
-                CommonButton(
-                  onTap: () {
-
-                  },
-                  buttonRadius: 8,
-                  firstGradient: AppColors.green400,
-                  secondGradient: AppColors.green400,
-                  titleText: 'Withdraw',
+                Row(
+                  spacing: 16,
+                  children: [
+                    Expanded(
+                      child: CommonButton(
+                        onTap: () {
+                          showWithdrawDialog(context, TopUpDialog());
+                        },
+                        buttonRadius: 8,
+                        firstGradient: AppColors.black200,
+                        secondGradient: AppColors.black200,
+                        titleText: '+ Top Up',
+                      ),
+                    ),
+                    Expanded(
+                      child: CommonButton(
+                        onTap: () {
+                          showWithdrawDialog(context, WithdrawDialog());
+                        },
+                        buttonRadius: 8,
+                        firstGradient: AppColors.green400,
+                        secondGradient: AppColors.green400,
+                        titleText: 'Withdraw',
+                      ),
+                    ),
+                  ],
                 )
               ],
             ),
