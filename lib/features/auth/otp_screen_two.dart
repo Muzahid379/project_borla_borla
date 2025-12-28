@@ -10,7 +10,8 @@ import '../../widgets/otp_input.dart';
 
 
 class OtpScreen extends StatefulWidget {
-  const OtpScreen({super.key});
+  bool isSignup;
+  OtpScreen({super.key, this.isSignup = true});
 
   @override
   State<OtpScreen> createState() => _OtpScreenState();
@@ -123,10 +124,12 @@ class _OtpScreenState extends State<OtpScreen> {
                   GradientButton(
                     text: 'Verify',
                     onPressed:  () {
+                      if(widget.isSignup){
+                        Get.to(()=> HomeScreenOne());
+                      }else{
+                        Get.to(()=> SetPassScreen());
+                      }
                       //debugPrint('OTP entered: $otp');
-                      // Get.to(()=> SetPassScreen());
-                      // Get.to(()=> HomeScreenOne());
-                      // Get.offAll();
                     },
                   ),
                 ],

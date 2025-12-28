@@ -88,7 +88,7 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                     GradientButton(
                       text: 'Send Code',
                       onPressed: () {
-                        Get.to(()=> OtpScreen());
+                        Get.to(()=> OtpScreen(isSignup: false,));
                       },
                     ),
 
