@@ -1,22 +1,23 @@
+
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:project_borla/features/auth/otp_screen_two.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/features/auth/login_screen.dart';
+import 'package:project_borla/role/components/button/common_button.dart';
+import 'package:project_borla/theme/app_color.dart';
+import '../../../gen/custom_assets/assets.gen.dart';
+import '../../../theme/auth_header.dart';
+import '../../../widgets/custom_text_field.dart';
+import '../../../widgets/social_login_button.dart';
+import 'driver_otp_screen.dart';
 
-import '../../theme/auth_header.dart';
-import '../../widgets/custom_text_field.dart';
-import '../../widgets/gradient_button.dart';
-import '../../widgets/social_login_button.dart';
-
-
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class DriverRegisterScreen extends StatefulWidget {
+  const DriverRegisterScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<DriverRegisterScreen> createState() => _DriverRegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _DriverRegisterScreenState extends State<DriverRegisterScreen> {
 
   bool agree = false ;
 
@@ -25,17 +26,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
 
         body: Stack(
-
             alignment: AlignmentDirectional.bottomStart,
-
             children: [
-
               Container(
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
-                      Color.fromRGBO(255, 214, 0, 1),
-                      Color.fromRGBO(255,149,0, 1),
+                      AppColors.green500,
+                      AppColors.green500
                     ],
                   ),
                 ),
@@ -43,11 +41,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     title: 'Create Your New Account',
                     subtitle: 'Register now and explore the world your way.'),
               ),
+              Positioned(
+                top: 0,
+                  right: -60,
+                  child: Assets.images.backgroundShadow.image(height: 300, width: 400)),
 
               Container(
-
-                //alignment: Alignment.center,
-
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                       top: Radius.circular(34)
@@ -63,15 +62,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
-
                         const SizedBox(height: 8),
-
                         Text('Name', style: TextStyle(
                             fontWeight: FontWeight.w700
                         ),),
-
                         const SizedBox(height: 12),
-
                         CustomTextField(
                           hint: 'Enter your name',
                           //prefix: const Icon(Icons.phone),
@@ -150,10 +145,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                         const SizedBox(height: 32),
 
-                        GradientButton(
-                          text: 'Sign Up',
-                          onPressed: () {
-                            Get.to(()=> OtpScreen());
+                        CommonButton(
+                          titleText: 'Sign Up',
+                          buttonRadius: 12,
+                          onTap: () {
+                            Get.to(()=> DriverOtpScreen());
                           },
                         ),
 
@@ -203,21 +199,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),),
                             //SizedBox(width: 2,),
                             TextButton(
-                              onPressed: (){},
-                              child: ShaderMask(
-                                shaderCallback: (bounds) =>
-                                    const LinearGradient(
-                                      colors: [
-                                        Color.fromRGBO(255, 214, 0, 1),
-                                        Color.fromRGBO(255, 149, 0, 1),
-                                      ],
-                                    ).createShader(bounds),
-                                child: const Text(
-                                  'Sign In',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                              onPressed: (){
+                                Get.offAll(()=> LoginScreen());
+                              },
+                              child: const Text(
+                                'Sign In',
+                                style: TextStyle(
+                                  color: AppColors.green500,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),)
                           ],

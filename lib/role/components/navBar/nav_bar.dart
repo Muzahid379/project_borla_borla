@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../../gen/custom_assets/assets.gen.dart';
 import 'controller/nav_bar_controller.dart';
 
-class NavbarScreen extends StatelessWidget {
-  NavbarScreen({super.key});
+class DriverNavbar extends StatelessWidget {
+  DriverNavbar({super.key});
 
   final MainNavController controller = Get.put(MainNavController());
 

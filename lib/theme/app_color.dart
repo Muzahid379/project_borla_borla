@@ -34,6 +34,11 @@ class AppColors {
   static const Color gray400 = Color(0xff727272);
   static const Color gray500 = Color(0xff4F4F4F);
 
+  static const Color orange50 = Color(0xffFFF9E6);
+  static const Color orange200 = Color(0xffFFD600);
+  static const Color orange300 = Color(0xffFEC400);
+  static const Color orange500 = Color(0xffFF9500);
+
   static const Color blue50 = Color(0xffDEE8FF);
   static const Color blue = Color(0xff92DEFF);
   static const Color deepBlue = Color(0xff2166C0);

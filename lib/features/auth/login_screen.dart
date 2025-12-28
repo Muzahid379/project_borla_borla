@@ -191,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //SizedBox(width: 2,),
                       TextButton(
                         onPressed: (){
-                          Get.to(SelectRoleScreen());
+                          Get.to(()=> SelectRoleScreen());
                         },
                         child: ShaderMask(
                           shaderCallback: (bounds) =>

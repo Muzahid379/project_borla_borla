@@ -142,6 +142,9 @@ class $AssetsIconsGen {
   AssetGenImage get trasparentStarIcon =>
       const AssetGenImage('assets/icons/trasparentStarIcon.png');
 
+  /// File path: assets/icons/vanIcon.png
+  AssetGenImage get vanIcon => const AssetGenImage('assets/icons/vanIcon.png');
+
   /// File path: assets/icons/wasteBoxIcon.png
   AssetGenImage get wasteBoxIcon =>
       const AssetGenImage('assets/icons/wasteBoxIcon.png');
@@ -184,6 +187,7 @@ class $AssetsIconsGen {
     shadowStarIcon,
     termsConditions,
     trasparentStarIcon,
+    vanIcon,
     wasteBoxIcon,
     weightIcon,
   ];
@@ -199,6 +203,18 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
 
+  /// File path: assets/images/backgroundShadow.png
+  AssetGenImage get backgroundShadow =>
+      const AssetGenImage('assets/images/backgroundShadow.png');
+
+  /// File path: assets/images/camera_btn.png
+  AssetGenImage get cameraBtn =>
+      const AssetGenImage('assets/images/camera_btn.png');
+
+  /// File path: assets/images/circle_image.png
+  AssetGenImage get circleImage =>
+      const AssetGenImage('assets/images/circle_image.png');
+
   /// File path: assets/images/cross.png
   AssetGenImage get cross => const AssetGenImage('assets/images/cross.png');
 
@@ -210,8 +226,17 @@ class $AssetsImagesGen {
   AssetGenImage get fourthPin =>
       const AssetGenImage('assets/images/fourth_pin.png');
 
+  /// File path: assets/images/general.png
+  AssetGenImage get general => const AssetGenImage('assets/images/general.png');
+
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
+  /// File path: assets/images/home.png
+  AssetGenImage get home => const AssetGenImage('assets/images/home.png');
+
+  /// File path: assets/images/home2.png
+  AssetGenImage get home2 => const AssetGenImage('assets/images/home2.png');
 
   /// File path: assets/images/icon.png
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
@@ -226,12 +251,25 @@ class $AssetsImagesGen {
   /// File path: assets/images/map.png
   AssetGenImage get map => const AssetGenImage('assets/images/map.png');
 
+  /// File path: assets/images/metal.png
+  AssetGenImage get metal => const AssetGenImage('assets/images/metal.png');
+
   /// File path: assets/images/noImage.jpg
   AssetGenImage get noImage => const AssetGenImage('assets/images/noImage.jpg');
 
   /// File path: assets/images/noProfile.jpg
   AssetGenImage get noProfile =>
       const AssetGenImage('assets/images/noProfile.jpg');
+
+  /// File path: assets/images/not_found.png
+  AssetGenImage get notFound =>
+      const AssetGenImage('assets/images/not_found.png');
+
+  /// File path: assets/images/notify.png
+  AssetGenImage get notify => const AssetGenImage('assets/images/notify.png');
+
+  /// File path: assets/images/notify2.png
+  AssetGenImage get notify2 => const AssetGenImage('assets/images/notify2.png');
 
   /// File path: assets/images/onboard1.png
   AssetGenImage get onboard1 =>
@@ -249,6 +287,12 @@ class $AssetsImagesGen {
   AssetGenImage get onboard4 =>
       const AssetGenImage('assets/images/onboard4.png');
 
+  /// File path: assets/images/organic.png
+  AssetGenImage get organic => const AssetGenImage('assets/images/organic.png');
+
+  /// File path: assets/images/paper.png
+  AssetGenImage get paper => const AssetGenImage('assets/images/paper.png');
+
   /// File path: assets/images/patternLeft.png
   AssetGenImage get patternLeft =>
       const AssetGenImage('assets/images/patternLeft.png');
@@ -257,8 +301,15 @@ class $AssetsImagesGen {
   AssetGenImage get patternRight =>
       const AssetGenImage('assets/images/patternRight.png');
 
+  /// File path: assets/images/plastic.png
+  AssetGenImage get plastic => const AssetGenImage('assets/images/plastic.png');
+
   /// File path: assets/images/rider.png
   AssetGenImage get rider => const AssetGenImage('assets/images/rider.png');
+
+  /// File path: assets/images/saved_icon.png
+  AssetGenImage get savedIcon =>
+      const AssetGenImage('assets/images/saved_icon.png');
 
   /// File path: assets/images/scheduleImg.png
   AssetGenImage get scheduleImg =>
@@ -268,9 +319,16 @@ class $AssetsImagesGen {
   AssetGenImage get secondPin =>
       const AssetGenImage('assets/images/second_pin.png');
 
+  /// File path: assets/images/tab_icon_one.png
+  AssetGenImage get tabIconOne =>
+      const AssetGenImage('assets/images/tab_icon_one.png');
+
   /// File path: assets/images/target_icon.png
   AssetGenImage get targetIcon =>
       const AssetGenImage('assets/images/target_icon.png');
+
+  /// File path: assets/images/thanks.png
+  AssetGenImage get thanks => const AssetGenImage('assets/images/thanks.png');
 
   /// File path: assets/images/third_pin.png
   AssetGenImage get thirdPin =>
@@ -279,32 +337,64 @@ class $AssetsImagesGen {
   /// File path: assets/images/user.png
   AssetGenImage get user => const AssetGenImage('assets/images/user.png');
 
+  /// File path: assets/images/user1.png
+  AssetGenImage get user1 => const AssetGenImage('assets/images/user1.png');
+
+  /// File path: assets/images/user2.png
+  AssetGenImage get user2 => const AssetGenImage('assets/images/user2.png');
+
+  /// File path: assets/images/wallet.png
+  AssetGenImage get wallet => const AssetGenImage('assets/images/wallet.png');
+
+  /// File path: assets/images/wallet2.png
+  AssetGenImage get wallet2 => const AssetGenImage('assets/images/wallet2.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     apple,
     background,
+    backgroundShadow,
+    cameraBtn,
+    circleImage,
     cross,
     emptyProfile,
     fourthPin,
+    general,
     google,
+    home,
+    home2,
     icon,
     locationPin,
     logo,
     map,
+    metal,
     noImage,
     noProfile,
+    notFound,
+    notify,
+    notify2,
     onboard1,
     onboard2,
     onboard3,
     onboard4,
+    organic,
+    paper,
     patternLeft,
     patternRight,
+    plastic,
     rider,
+    savedIcon,
     scheduleImg,
     secondPin,
+    tabIconOne,
     targetIcon,
+    thanks,
     thirdPin,
     user,
+    user1,
+    user2,
+    wallet,
+    wallet2,
   ];
 }
 

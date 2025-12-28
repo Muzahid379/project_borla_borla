@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
-
-import '../features/auth/login_screen.dart';
+import 'package:project_borla/role/components/text/common_text.dart';
+import 'package:project_borla/theme/app_color.dart';
+import '../gen/custom_assets/assets.gen.dart';
+import '../role/garbageCollector/auth/driver_register_screen.dart';
 import '../theme/auth_header.dart';
-import '../widgets/custom_text_field.dart';
 import '../widgets/gradient_button.dart';
-import '../widgets/social_login_button.dart';
 
 class SelectRoleScreen extends StatefulWidget {
   const SelectRoleScreen({super.key});
@@ -19,6 +19,7 @@ class SelectRoleScreen extends StatefulWidget {
 class _SelectRoleScreenState extends State<SelectRoleScreen> {
 
   bool agree = false ;
+  RxString selectedRole = "".obs;
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +42,13 @@ class _SelectRoleScreenState extends State<SelectRoleScreen> {
                 ),
                 child: AuthHeader(title: 'Choose your Role below', subtitle: 'Enter your role how you want to get started'),
               ),
+              Positioned(
+                  top: 0,
+                  right: -60,
+                  child: Assets.images.backgroundShadow.image(height: 300, width: 400)),
 
               Container(
-
                 //alignment: Alignment.center,
-
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                       top: Radius.circular(34)
@@ -53,7 +56,7 @@ class _SelectRoleScreenState extends State<SelectRoleScreen> {
                   color: Colors.white,
                 ),
                 height: 666,
-                child: Padding(
+                child: SingleChildScrollView(
                   padding: const EdgeInsets.all(24),
                   child: Column(
 
@@ -63,68 +66,48 @@ class _SelectRoleScreenState extends State<SelectRoleScreen> {
 
                       const SizedBox(height: 12),
 
-                      InkWell(
-
-                        onTap: (){},
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: Colors.blue,
-                              width: 4,
-                            ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.asset(
-                              'assets/images/user1.png',
-                              width: 360,
-                            ),
-                          ),
-                        )
-
-
-                      ),
+                      Obx(() => userSelectionWidget(
+                          onTap: () {
+                            selectedRole.value = 'User';
+                          },
+                          gradientColor1: selectedRole.value == "User"? AppColors.orange200 : AppColors.gray200,
+                          gradientColor2: selectedRole.value == "User"? AppColors.orange500 : AppColors.gray200,
+                          borderWidth: selectedRole.value == "User"? 2.0 : 1.0,
+                          assetImage: Assets.images.user1.image(height: 145.h, width: 208.w,),
+                          role: "User"
+                      ),),
 
                       const SizedBox(height: 30),
 
-                      InkWell(
-
-                          onTap: (){},
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              border: Border.all(
-                                color: Colors.blue,
-                                width: 4,
-                              ),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: Image.asset(
-                                'assets/images/rider.png',
-                                width: 360,
-                              ),
-                            ),
-                          )
-
-
-                      ),
-
+                      Obx(() => userSelectionWidget(
+                          onTap: () {
+                            selectedRole.value = 'Rider';
+                          },
+                          gradientColor1: selectedRole.value == "Rider"? AppColors.orange200 : AppColors.gray200,
+                          gradientColor2: selectedRole.value == "Rider"? AppColors.orange500 : AppColors.gray200,
+                          borderWidth: selectedRole.value == "Rider"? 2.0 : 1.0,
+                          assetImage: Assets.images.rider.image(height: 145.h, width: 208.w,),
+                          role: "Rider"
+                      ),),
 
                       const SizedBox(height: 50),
 
                       GradientButton(
                         text: 'Join Now',
                         onPressed: () {
-                          Get.to(RegisterScreen());
+                          if(selectedRole.value != ""){
+                            if(selectedRole.value == "User"){
+                              Get.to(()=> RegisterScreen());
+                            }else{
+                              Get.to(()=> DriverRegisterScreen());
+                            }
+                          }else{
+                            Get.snackbar("Select a role please", "They try again", snackPosition: SnackPosition.BOTTOM);
+                          }
                         },
                       ),
 
                       const SizedBox(height: 24),
-
-
-
 
                     ],
                   ),
@@ -136,5 +119,35 @@ class _SelectRoleScreenState extends State<SelectRoleScreen> {
 
 
     );
+  }
+
+  Widget userSelectionWidget({VoidCallback? onTap, gradientColor1, gradientColor2, borderWidth, assetImage, role}) {
+    return InkWell(
+                      onTap: onTap,
+                      child: Container(
+                        padding: EdgeInsets.all(borderWidth),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [gradientColor1, gradientColor2],
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: AppColors.orange50
+                          ),
+                          child: Row(
+                            children: [
+                              assetImage,
+                              Expanded(child: CommonText(text: role, fontSize: 24, fontWeight: FontWeight.w600, color: AppColors.orange300,))
+                            ],
+                          ),
+                        ),
+                      )
+
+
+                    );
   }
 }

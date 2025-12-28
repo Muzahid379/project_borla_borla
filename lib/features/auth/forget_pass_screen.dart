@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:project_borla/features/auth/otp_screen.dart';
-
 import '../../theme/auth_header.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
@@ -90,7 +88,7 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                     GradientButton(
                       text: 'Send Code',
                       onPressed: () {
-                        Get.to(OtpScreen());
+                        Get.to(()=> OtpScreen());
                       },
                     ),
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'app_color.dart';
+
+import '../gen/custom_assets/assets.gen.dart';
 
 class AuthHeader extends StatelessWidget {
   final String title;
@@ -19,11 +20,8 @@ class AuthHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
-
-          Image.asset('assets/images/icon.png',  ),
-
-          const SizedBox(height: 16),
+          const SizedBox(height:30),
+          Assets.icons.vanIcon.image(height: 50, width: 60),
           Text(
             title,
             style: const TextStyle(
