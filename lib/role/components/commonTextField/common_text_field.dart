@@ -153,7 +153,7 @@ class CommonTextField extends StatelessWidget {
   }
 
   Widget _passwordToggle() {
-    return GestureDetector(
+    return Obx(() => GestureDetector(
       onTap: () => _obscureText.toggle(),
       child: Padding(
         padding: EdgeInsetsDirectional.only(end: 10.w),
@@ -165,6 +165,6 @@ class CommonTextField extends StatelessWidget {
           color: textColor,
         ),
       ),
-    );
+    ),);
   }
 }

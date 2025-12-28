@@ -2,12 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/features/auth/login_screen.dart';
+import 'package:project_borla/role/commonScreens/profile/controller/profile_controller.dart';
 import 'package:project_borla/role/components/button/common_button.dart';
+import 'package:project_borla/role/components/commonTextField/common_text_field.dart';
 import 'package:project_borla/theme/app_color.dart';
 import '../../../gen/custom_assets/assets.gen.dart';
 import '../../../theme/auth_header.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../../../widgets/social_login_button.dart';
+import '../../commonScreens/profile/innerWidget/profile_items.dart';
 import 'driver_otp_screen.dart';
 
 class DriverRegisterScreen extends StatefulWidget {
@@ -19,7 +22,7 @@ class DriverRegisterScreen extends StatefulWidget {
 
 class _DriverRegisterScreenState extends State<DriverRegisterScreen> {
 
-  bool agree = false ;
+  ProfileController controller = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -63,55 +66,8 @@ class _DriverRegisterScreenState extends State<DriverRegisterScreen> {
 
                       children: [
                         const SizedBox(height: 8),
-                        Text('Name', style: TextStyle(
-                            fontWeight: FontWeight.w700
-                        ),),
-                        const SizedBox(height: 12),
-                        CustomTextField(
-                          hint: 'Enter your name',
-                          //prefix: const Icon(Icons.phone),
-                        ),
 
-                        const SizedBox(height: 24),
-
-                        Text('Phone Number', style: TextStyle(
-                            fontWeight: FontWeight.w700
-                        ),),
-
-                        const SizedBox(height: 12),
-
-                        CustomTextField(
-                          hint: 'Enter phone number',
-                          prefix: const Icon(Icons.phone),
-                        ),
-
-                        const SizedBox(height: 24),
-
-                        Text('Email', style: TextStyle(
-                            fontWeight: FontWeight.w700
-                        ),),
-
-                        const SizedBox(height: 12),
-
-                        CustomTextField(
-                          hint: 'Enter your email',
-                          prefix: const Icon(Icons.email),
-                        ),
-
-                        const SizedBox(height: 24),
-
-                        Text('Location', style: TextStyle(
-                            fontWeight: FontWeight.w700
-                        ),),
-
-                        const SizedBox(height: 12),
-
-                        CustomTextField(
-                          hint: 'Enter your location',
-                          prefix: const Icon(Icons.location_on_outlined),
-                        ),
-
-
+                        profileItems(context, controller),
 
                         const SizedBox(height: 24),
 
@@ -120,11 +76,9 @@ class _DriverRegisterScreenState extends State<DriverRegisterScreen> {
                         ),),
 
                         const SizedBox(height: 12),
-
-                        CustomTextField(
-                          hint: 'Password',
-                          obscureText: true,
-                          suffix: const Icon(Icons.visibility_off),
+                        CommonTextField(
+                          hintText: 'Password',
+                          isPassword: true,
                         ),
 
                         const SizedBox(height: 24),
@@ -134,14 +88,10 @@ class _DriverRegisterScreenState extends State<DriverRegisterScreen> {
                         ),),
 
                         const SizedBox(height: 12),
-
-                        CustomTextField(
-                          hint: 'Password',
-                          obscureText: true,
-                          suffix: const Icon(Icons.visibility_off),
+                        CommonTextField(
+                          hintText: 'Confirm Password',
+                          isPassword: true,
                         ),
-
-
 
                         const SizedBox(height: 32),
 
