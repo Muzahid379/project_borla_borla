@@ -15,55 +15,6 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
   int selectedIndex = -1;
 
-  // Widget buildCategoryCard({
-  //   required int index,
-  //   required String image,
-  // })
-  // {
-  //   final bool isSelected = selectedIndex == index;
-  //
-  //   return GestureDetector(
-  //     onTap: () {
-  //       setState(() {
-  //         selectedIndex = index;
-  //       });
-  //     },
-  //     child: Container(
-  //       padding: EdgeInsets.all(0), // 👈 border thickness
-  //       decoration: BoxDecoration(
-  //         borderRadius: BorderRadius.circular(14),
-  //         gradient: isSelected
-  //             ?  LinearGradient(
-  //           colors: [
-  //             Color(0xFFFFC107),
-  //             Color(0xFFFF9800),
-  //           ],
-  //         )
-  //             : LinearGradient(
-  //           colors: [
-  //             Colors.amberAccent,
-  //             Colors.amberAccent,
-  //           ],
-  //         ),
-  //       ),
-  //       child: Card(
-  //         shape: RoundedRectangleBorder(
-  //           borderRadius: BorderRadius.circular(12),
-  //           side: BorderSide(
-  //             color: isSelected ? Colors.amber : Colors.transparent,
-  //             width: 0.01,
-  //           ),
-  //         ),
-  //         elevation: 0,
-  //         color: Colors.white,
-  //         child: Padding(
-  //           padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-  //           child: Image.asset(image, scale: 0.9),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget buildCategoryCard({
     required int index,

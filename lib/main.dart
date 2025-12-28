@@ -6,8 +6,14 @@ import 'package:project_borla/features/auth/login_screen.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
 import 'package:project_borla/features/auth/set_pass_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/payment_screen.dart';
 import 'package:project_borla/screens/home-screens/thank_you_screen.dart';
+import 'package:project_borla/screens/info-screens/about_us_screen.dart';
+import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
+import 'package:project_borla/screens/info-screens/policy_screen.dart';
+import 'package:project_borla/screens/info-screens/terms_and_conditions_screen.dart';
 import 'package:project_borla/screens/location_picker_screen.dart';
+import 'package:project_borla/screens/map-screens/map_screen_two.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_one.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_two.dart';
 import 'package:project_borla/screens/scheduled-screens/cancel_ride_screen.dart';
@@ -57,38 +63,10 @@ class _MyAppState extends State<MyApp> {
 
           debugShowCheckedModeBanner: false,
 
-          // initialRoute: '/register',
-          initialRoute: AppRoute.onboard1,
-          //home: ,
+           //initialRoute: '/notify',
+          initialRoute: AppRoute.homeTwo,
+          getPages: AppRoute.pages,
 
-          getPages: [
-
-            GetPage(name: '/', page: () => SplashScreen(), transition: Transition.fade),
-            GetPage(name: '/register', page: () => RegisterScreen(), transition: Transition.fade),
-            GetPage(name: '/onboard1', page: () => onboardingOne(), transition: Transition.fade),
-            GetPage(name: '/role', page: () => SelectRoleScreen(), transition: Transition.fade),
-            GetPage(name: '/home', page: () => HomeScreenOne(), transition: Transition.fade),
-            GetPage(name: '/savedPlaces', page: () => SavedPlacesScreen(), transition: Transition.fade),
-            GetPage(name: '/map', page: () => LocationPickerScreen(), transition: Transition.fade),
-            GetPage(name: '/search', page: () => LocationSearchScreen(), transition: Transition.fade),
-            GetPage(name: '/wasteCategory', page: () => WasteCategoryScreen(), transition: Transition.fade),
-            GetPage(name: '/wasteQty', page: () => WasteQtyScreen(), transition: Transition.fade),
-            GetPage(name: '/addPlace', page: () => AddPlaceScreen(), transition: Transition.fade),
-            GetPage(name: '/editPlace', page: () => EditPlace(), transition: Transition.fade),
-            GetPage(name: '/today', page: () => ScheduleRideTwo(), transition: Transition.fade),
-            GetPage(name: '/cancelRide', page: () => CancelRideScreen(), transition: Transition.fade),
-            GetPage(name: '/thanks', page: () => ThankYouScreen(), transition: Transition.fade),
-            GetPage(name: '/searchTwo', page: () => LocationSearchScreenTwo(), transition: Transition.fade),
-            GetPage(name: '/homeTwo', page: () => HomeScreenOne(), transition: Transition.fade),
-
-
-          ],
-
-          //home: SplashScreen() ,
-          //home: RegisterScreen() ,
-          //home: onboardingTwo(),
-          //home: LocationPickerScreen(),
-          //debugShowCheckedModeBanner: false,
 
         );
       },

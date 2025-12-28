@@ -1,8 +1,21 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
+import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/payment_screen.dart';
+import 'package:project_borla/screens/home-screens/thank_you_screen.dart';
+import 'package:project_borla/screens/info-screens/about_us_screen.dart';
+import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
+import 'package:project_borla/screens/info-screens/policy_screen.dart';
+import 'package:project_borla/screens/info-screens/terms_and_conditions_screen.dart';
+import 'package:project_borla/screens/map-screens/map_screen_two.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_one.dart';
+import 'package:project_borla/screens/profile-screens/address_screen.dart';
+import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
+import 'package:project_borla/screens/profile-screens/edit_profile_screen_copy.dart';
+import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
+import 'package:project_borla/screens/scheduled-screens/cancel_ride_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
 import 'package:project_borla/screens/search-place-screens/add_place_screen.dart';
 import 'package:project_borla/screens/search-place-screens/edit_place.dart';
@@ -12,6 +25,7 @@ import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_category_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_qty_screen.dart';
 
+import '../screens/search-place-screens/location_search_screen_two.dart';
 import '../screens/splash_screen.dart';
 
 class AppRoute {
@@ -31,81 +45,45 @@ class AppRoute {
   static const String editPlace = "/editPlace";
 
   static const String today = "/today";
-  //=====================================================home catagory screen;
-  // static const String spaWellnessScreen = "/spaWellnessScreen";
-  // static const String discoverMaurlitiusScreen = "/discoverMaurlitiusScreen";
-  // static const String hospitalityScreen = "/hospitalityScreen";
-  // static const String activityScreen = "/activityScreen";
-  // static const String gastronomyScreen = "/gastronomyScreen";
-  // static const String helthServiceScreen = "/helthServiceScreen";
-  // static const String taxiServiceScreen = "/taxiServiceScreen";
-  // static const String bookingServiceScreen = "/bookingServiceScreen";
-  // static const String livingServiceScreen = "/livingServiceScreen";
-  // static const String investServiceScreen = "/investServiceScreen";
-  // static const String realProperticeScreen = "/realProperticeScreen";
-  // static const String productCatalogueScreen = "/productCatalogueScreen";
-  // static const String detailsScreen = "/detailsScreen";
-  // static const String notificationScreen = "/notificationScreen";
-  // static const String supermarket = "/supermarket";
-  // static const String hypermarkets = "/hypermarkets";
-  // static const String shopMore = "/shopMore";
-  // static const String paybills = "/paybills";
-  // static const String happingScreen = "/happingScreen";
-  //
-  // //======================================================profile screens
-  // static const String editProfileScreen = "/editProfileScreen";
-  // static const String editVenueScreen = "/editVenueScreen";
-  // static const String privacyPolicyScreen = "/privacyPolicyScreen";
-  // static const String bookingScreen = "/bookingScreen";
-  // static const String termConditionScreen = "/termConditionScreen";
-  // static const String beVenueScreen = "/beVenueScreen";
-  // static const String settingScreen = "/settingScreen";
-  // static const String contactScreen = "/contactScreen";
-  // static const String changePassScreen = "/changePassScreen";
-  // static const String subscriptionScreen = "/subscriptionScreen";
-  // //=====================================================================for creators
-  //
-  // //=====================================================================creators auth
-  // static const String creatorSplashScreen = "/creatorSplashScreen";
-  // static const String creatorOnboardingScreen = "/creatorOnboardingScreen";
-  // static const String creatorBottomNavScreen = "/creatorBottomNavScreen";
-  // static const String creatorSignUpChooserScreen =
-  //     "/creatorSignUpChooserScreen";
-  // static const String creatorSignInScreen = "/creatorSignInScreen";
-  // static const String creatorSignUpScreen = "/creatorSignUpScreen";
-  // static const String creatorOtpScreen = "/creatorOtpScreen";
-  // static const String creatorForgetPassScreen = "/creatorForgetPassScreen";
-  // static const String creatorResetPassScreen = "/creatorResetPassScreen";
-  // static const String creatorCompleteProfileScreen =
-  //     "/creatorCompleteProfileScreen";
-  //
-  // //=====================================================================creators home
-  // static const String creatorNavBar = "/creatorNavBar";
-  // static const String creatorHomeScreen = "/creatorHomeScreen";
-  // static const String creatorStatisticScreen = "/creatorStatisticScreen";
-  // static const String reportScreen = "/reportScreen";
-  //
-  // static const String notifiSubscription = "/notifiSubscription";
-  // static const String notifiComunityScreen = "/notifiComunityScreen";
-  // static const String uploadRecomendedVideo = "/uploadRecomendedVideo";
-  // static const String accountRecoveryScreen = "/accountRecoveryScreen";
-  // static const String happeningUPcomingScreen = "/happeningUPcomingScreen";
+  static const String payment = "/payment";
+  static const String cancelRide  = "/cancelRide";
+  static const String thanks = "/thanks";
+  static const String searchTwo = "/searchTwo";
+  static const String homeTwo = "/homeTwo";
+  static const String mapTwo = "/mapTwo";
+  static const String terms = "/terms";
+  static const String about = "/about";
+  static const String privacy = "/privacy";
+  static const String notify = "/notify";
+  static const String profile = "/profile";
+  static const String editProfile = "/editProfile";
+  static const String changePass = "/changePass";
+  static const String address = "/address";
+  static const String userHome = "/userHome";
+
+
 
   static List<GetPage> pages = [
     GetPage(
         name: splashScreen,
         page: () => SplashScreen(),
         transition: Transition.rightToLeftWithFade),
-    //===============================for creators================
-    //===============================auth screen=========>
+
     GetPage(
         name: registerScreen,
         page: () => RegisterScreen(),
         transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: payment,
+        page: () => PaymentScreen(),
+        transition: Transition.rightToLeftWithFade),
+
     GetPage(
         name: onboard1,
         page: () => onboardingOne(),
         transition: Transition.rightToLeftWithFade),
+
     GetPage(
         name: role,
         page: () => SelectRoleScreen(),
@@ -131,8 +109,6 @@ class AppRoute {
         page: () => WasteQtyScreen(),
         transition: Transition.rightToLeftWithFade),
 
-    //===============================home screen=========>
-
     GetPage(
         name: addPlace,
         page: () => AddPlaceScreen(),
@@ -146,203 +122,68 @@ class AppRoute {
         name: today,
         page: () => ScheduleRideTwo(),
         transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: creatorStatisticScreen,
-    //     page: () => CreatorStatisticScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: reportScreen,
-    //     page: () => CreatorReportScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: notifiSubscription,
-    //     page: () => NotifiSubscription(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: notifiComunityScreen,
-    //     page: () => NotifiComunityScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // //===============================auth screen=========>
-    // GetPage(
-    //     name: splashScreen,
-    //     page: () => SplashScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: onboardingScreen,
-    //     page: () => OnboardingScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: bottomNavScreen,
-    //     page: () => CommonBottomNavBar(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: signUpChooserScreen,
-    //     page: () => SigninSignupChooserScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: signInScreen,
-    //     page: () => SignInScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: signUpScreen,
-    //     page: () => SignUpScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: otpScreen,
-    //     page: () => OtpScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: completeProfileScreen,
-    //     page: () => CompleteProfileScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: forgetPassScreen,
-    //     page: () => ForgetPasswordScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: resetPassScreen,
-    //     page: () => ResetPassScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // GetPage(
-    //     name: qrCodeScanner,
-    //     page: () => QrCodeScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: subscriptionScreen,
-    //     page: () => SubscriptionScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // //================================================auth screen================================>
-    // GetPage(
-    //     name: seeAllCatagoryScreen,
-    //     page: () => SeeAllCatagoryScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: spaWellnessScreen,
-    //     page: () => SpaWellnessScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: discoverMaurlitiusScreen,
-    //     page: () => DiscoverMauritiusScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: hospitalityScreen,
-    //     page: () => HospitalityScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: activityScreen,
-    //     page: () => AcitivityScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // //================================================home screen================================>
-    // GetPage(
-    //     name: gastronomyScreen,
-    //     page: () => GestronomyScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: happingScreen,
-    //     page: () => HappingScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: helthServiceScreen,
-    //     page: () => HelthServiceScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: taxiServiceScreen,
-    //     page: () => TexiServiceScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: bookingServiceScreen,
-    //     page: () => BookingReserveScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: livingServiceScreen,
-    //     page: () => LivingServiceScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: investServiceScreen,
-    //     page: () => InvestServiceScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: realProperticeScreen,
-    //     page: () => RealStatePropertiesScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: productCatalogueScreen,
-    //     page: () => ProductCatalogueScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: supermarket,
-    //     page: () => Supermarkets(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: hypermarkets,
-    //     page: () => Hypermarkets(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: shopMore,
-    //     page: () => ShopeMore(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: paybills,
-    //     page: () => PayBills(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // GetPage(
-    //     name: uploadRecomendedVideo,
-    //     page: () => UploadRecomendedVideo(),
-    //     transition: Transition.rightToLeftWithFade),
-    //
-    // //================================================profile screen================================>
-    // GetPage(
-    //     name: editProfileScreen,
-    //     page: () => EditProfileScreens(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: editVenueScreen,
-    //     page: () => EditVenueScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: bookingScreen,
-    //     page: () => BookingScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: privacyPolicyScreen,
-    //     page: () => PrivacyPolicyScreens(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: termConditionScreen,
-    //     page: () => TermsConditions(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: settingScreen,
-    //     page: () => SettingsScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: contactScreen,
-    //     page: () => ContactScreens(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: beVenueScreen,
-    //     page: () => BeVenueScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: changePassScreen,
-    //     page: () => ChangePasswordScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: notificationScreen,
-    //     page: () => NotificationScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: accountRecoveryScreen,
-    //     page: () => AccountRecoverScreen(),
-    //     transition: Transition.rightToLeftWithFade),
-    // GetPage(
-    //     name: happeningUPcomingScreen,
-    //     page: () => HappeningUpcomingScreen(),
-    //     transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: cancelRide,
+        page: () => CancelRideScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: thanks,
+        page: () => ThankYouScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: searchTwo,
+        page: () =>  LocationSearchScreenTwo(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: homeTwo,
+        page: () => HomeScreenOne(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: mapTwo,
+        page: () => MapScreenTwo(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: terms,
+        page: () => TermsOfConditions(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: about,
+        page: () => AboutUsScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: privacy,
+        page: () => PolicyScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: notify,
+        page: () => NotificationsScreenCopy(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: profile,
+        page: () => ProfileScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: editProfile,
+        page: () => EditProfileScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: changePass,
+        page: () => ChangePasswordScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: address,
+        page: () => AddressScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: userHome,
+        page: () => HomeMapScreen(),
+        transition: Transition.rightToLeftWithFade),
+
   ];
+
+
+
 }
+

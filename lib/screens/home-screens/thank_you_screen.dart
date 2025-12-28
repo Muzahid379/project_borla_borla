@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_borla/bottom-sheets/choose_ride_sheet.dart';
+import 'package:project_borla/bottom-sheets/current_location_sheet.dart';
+import 'package:project_borla/bottom-sheets/search_location_sheet.dart';
 
+import '../../bottom-sheets/payment_sheet.dart';
+import '../../bottom-sheets/rating_sheet.dart';
 import '../../widgets/gradient_button.dart';
 
 class ThankYouScreen extends StatefulWidget {
@@ -10,6 +15,89 @@ class ThankYouScreen extends StatefulWidget {
 }
 
 class _ThankYouScreenState extends State<ThankYouScreen> {
+
+
+  void ShowSearchLocationSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+        context: context,
+        backgroundColor: Colors.transparent,
+        isScrollControlled: true,
+        //showDragHandle: true,
+        useSafeArea: true,
+        builder: (context) => SearchLocationSheet(),
+
+    );
+
+
+  }
+
+  void ShowCurrentLocationSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => CurrentLocationSheet(),
+
+    );
+
+
+  }
+
+  void ShowRatingSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => RatingSheet(),
+
+    );
+
+
+  }
+
+  void ShowChooseRideSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => ChooseRideSheet(),
+
+    );
+
+
+  }
+
+  void ShowPaymentSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      barrierColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => PaymentSheet(),
+
+    );
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +135,11 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
                 text: 'Back To Home',
                 onPressed: () {
                   //Get.to(RegisterScreen());
+                  //ShowSearchLocationSheet(context);
+                  //ShowCurrentLocationSheet(context);
+                  //ShowRatingSheet(context);
+                  //ShowChooseRideSheet(context);
+                  ShowPaymentSheet(context);
                 },
               ),
             ),

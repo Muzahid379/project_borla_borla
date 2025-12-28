@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_borla/bottom-sheets/finding_rider_sheet.dart';
 
 
 class ScheduleRideTwo extends StatelessWidget {
@@ -51,7 +52,28 @@ class _ScheduleRideDialogState extends State<ScheduleRideDialog> {
   int minute = 0;
   bool isAM = true;
 
-  final double itemExtent = 60.0;  // Increased from 50 to 60 for better touch target
+  final double itemExtent = 60.0;
+  // Increased from 50 to 60 for better touch target
+
+
+  void ShowFindingRiderSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      barrierColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => FindingRiderSheet(),
+
+    );
+
+  }
+
+
+
 
   @override
   void initState() {
@@ -415,6 +437,8 @@ class _ScheduleRideDialogState extends State<ScheduleRideDialog> {
                         // Handle the scheduled time here
                         print('Scheduled ride for: $selectedDateTime');
                         Navigator.pop(context);
+                        ShowFindingRiderSheet(context);
+
                       },
                       child: const Text(
                         'Set Schedule',
