@@ -1,0 +1,78 @@
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:project_borla/screens/activity-screens/schedule_screen_copy.dart';
+import 'package:project_borla/theme/app_color.dart';
+
+import '../../theme/common_text_two.dart';
+import '../../theme/gradient_scaffold_copy.dart';
+import 'activity-controller/activity_controller_copy.dart';
+import 'activity-widgets/job_tabbar_copy.dart';
+import 'history_screen_copy.dart';
+
+import 'ongoing_screen_copy.dart';
+
+
+class ActivityScreen extends StatelessWidget {
+  ActivityScreen({super.key});
+
+  final ActivityController activityController =
+  Get.put(ActivityController());
+
+  @override
+  Widget build(BuildContext context) {
+    return GradientScaffold(
+      appBar: AppBar(
+        title: const CommonText(
+          text: "Activity",
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          color: AppColors.textDark,
+        ),
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            JobsTabBar(),
+
+            /// Animated content
+            Expanded(
+              child: Obx(
+                    () => AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  switchInCurve: Curves.easeIn,
+                  switchOutCurve: Curves.easeOut,
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+
+                  /// IMPORTANT: key changes when tab changes
+                  child: _buildTabContent(
+                    activityController.selectedIndex.value,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabContent(int index) {
+    switch (index) {
+      case 0:
+        return OngoingScreen(key: ValueKey(0),);
+      case 1:
+        return const ScheduleScreen(key: ValueKey(1));
+      case 2:
+        return const HistoryScreen(key: ValueKey(2));
+      default:
+        return const SizedBox();
+    }
+  }
+}

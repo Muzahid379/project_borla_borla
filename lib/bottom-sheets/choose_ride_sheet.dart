@@ -1,0 +1,404 @@
+import 'package:flutter/material.dart';
+
+import '../widgets/gradient_button.dart';
+
+class ChooseRideSheet extends StatefulWidget {
+  const ChooseRideSheet({super.key});
+
+  @override
+  State<ChooseRideSheet> createState() => _ChooseRideSheetState();
+}
+
+class _ChooseRideSheetState extends State<ChooseRideSheet> {
+
+
+  int index1 = 1 ;
+  int index2 = 2 ;
+  int index3 = 3 ;
+  int index4 = 4 ;
+  int selectedIndex = -1 ;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 600,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          //color: Color.fromRGBO(255, 237, 176, 1),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+
+        child: Column(
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            const SizedBox(height: 12),
+
+            Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade400,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
+
+            Text('Choose a ride', style: TextStyle(
+
+                fontSize: 22,
+
+                fontWeight: FontWeight.w500
+
+            ),),
+
+            //const SizedBox(height: 16),
+
+            Padding(
+              padding: const EdgeInsets.fromLTRB(22,0,22,0),
+              child: Divider(
+                color: Colors.grey.shade300,
+                thickness: 1,
+              ),
+            ),
+
+            SizedBox(height: 20,),
+
+            InkWell(
+              onTap: () {
+
+                setState(() {
+
+                  selectedIndex = index1 ;
+
+                });
+
+              } ,
+              child: Container(
+                height: 80,
+                width: 370,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: selectedIndex == index1? Colors.amber : Colors.grey.shade100,
+                      width: selectedIndex == index1 ? 2 : 2
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset('assets/images/tiles_icon.png'),
+                    ),
+                    Column(
+
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Tri Cycle', style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                          ),),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/clock.png'),
+                            SizedBox(width: 3,),
+                            Text('30-45 m', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                            Image.asset('assets/images/walk.png'),
+                            SizedBox(width: 3,),
+                            Text('22 km', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                          ],
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 40),
+                      child: Text('GHC 50', style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
+                      ),),
+                    )
+
+
+                  ],
+                ),
+
+              ),
+            ),
+
+            SizedBox(height: 12,),
+
+            InkWell(
+              onTap: () {
+
+                setState(() {
+
+                  selectedIndex = index2 ;
+
+                });
+
+              },
+              child: Container(
+                height: 80,
+                width: 370,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: selectedIndex == index2? Colors.amber : Colors.grey.shade100,
+                      width: selectedIndex == index2 ? 2 : 2
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset('assets/images/tiles_icon.png'),
+                    ),
+                    Column(
+
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Tri Cycle', style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                          ),),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/clock.png'),
+                            SizedBox(width: 3,),
+                            Text('40-45 m', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                            Image.asset('assets/images/walk.png'),
+                            SizedBox(width: 3,),
+                            Text('25 km', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                          ],
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 40),
+                      child: Text('GHC 55', style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
+                      ),),
+                    )
+
+
+                  ],
+                ),
+
+              ),
+            ),
+            SizedBox(height: 12,),
+            InkWell(
+              onTap: () {
+
+                setState(() {
+
+                  selectedIndex = index3 ;
+
+                });
+
+              },
+              child: Container(
+                height: 80,
+                width: 370,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: selectedIndex == index3? Colors.amber : Colors.grey.shade100,
+                      width: selectedIndex == index3 ? 2 : 2
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset('assets/images/tiles_icon.png'),
+                    ),
+                    Column(
+
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Tri Cycle', style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                          ),),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/clock.png'),
+                            SizedBox(width: 3,),
+                            Text('40-45 m', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                            Image.asset('assets/images/walk.png'),
+                            SizedBox(width: 3,),
+                            Text('25 km', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                          ],
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 40),
+                      child: Text('GHC 55', style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
+                      ),),
+                    )
+
+
+                  ],
+                ),
+
+              ),
+            ),
+            SizedBox(height: 12,),
+            InkWell(
+              onTap: () {
+
+                setState(() {
+
+                  selectedIndex = index4 ;
+
+                });
+
+              },
+              child: Container(
+                height: 80,
+                width: 370,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: selectedIndex == index4? Colors.amber : Colors.grey.shade100,
+                    width: selectedIndex == index4 ? 2 : 2
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset('assets/images/tiles_icon.png'),
+                    ),
+                    Column(
+
+                      //mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Tri Cycle', style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                          ),),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/clock.png'),
+                            SizedBox(width: 3,),
+                            Text('45-50 m', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                            Image.asset('assets/images/walk.png'),
+                            SizedBox(width: 3,),
+                            Text('27 km', style: TextStyle(
+                                fontWeight: FontWeight.w400
+                            ),),
+                            SizedBox(width: 10,),
+                          ],
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 40),
+                      child: Text('GHC 60', style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500
+                      ),),
+                    )
+
+
+                  ],
+                ),
+
+              ),
+            ),
+
+
+            SizedBox(height: 24,),
+
+
+
+
+
+
+            Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: GradientButton(
+                text: 'Submit Now',
+                onPressed: () {
+                  //Get.to(OtpScreen());
+                  //Navigator.pop(context);
+                  //ShowPaymentSheet(context);
+
+                },
+              ),
+            ),
+
+
+
+
+
+          ],
+        )
+
+
+    );
+  }
+}
