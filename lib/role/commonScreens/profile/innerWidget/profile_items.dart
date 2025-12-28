@@ -7,6 +7,7 @@ import 'package:phone_form_field/phone_form_field.dart';
 import '../../../../gen/custom_assets/assets.gen.dart';
 import '../../../../theme/app_color.dart';
 import '../../../components/commonTextField/common_text_field.dart';
+import '../../../components/commonTextField/phone_text_field.dart';
 import '../../../components/text/common_text.dart';
 
 Widget profileItems(BuildContext context, controller) {
@@ -39,38 +40,7 @@ Widget profileItems(BuildContext context, controller) {
         ),
       ),
       SizedBox(height: 8.h),
-      PhoneFormField(
-
-        initialValue: PhoneNumber.parse('+233'),
-        // initialCountryCode: 'GH',
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.transparent,
-          hintText: 'Enter phone number',
-          hintStyle: TextStyle(color: Colors.grey[500]),
-          contentPadding: EdgeInsets.symmetric(
-              vertical: 16.h, horizontal: 16.w),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
-            borderSide: BorderSide(color: Colors.grey[300]!),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
-            borderSide: BorderSide(color: Colors.grey[300]!),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.r),
-            borderSide: const BorderSide(color: Color(0xFF4CAF50),
-                width: 2),
-          ),
-        ),
-        countryButtonStyle: const CountryButtonStyle(
-          showFlag: true,
-          showDialCode: true,
-          showIsoCode: false,
-          flagSize: 20,
-        ),
-      ),
+      phoneTextFormField(),
 
       SizedBox(height: 20.h),
 
@@ -182,3 +152,4 @@ Widget profileItems(BuildContext context, controller) {
     ],
   );
 }
+

@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/features/auth/forget_pass_screen.dart';
+import 'package:project_borla/role/components/commonTextField/common_text_field.dart';
 import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/theme/auth_header.dart';
 
+import '../../gen/custom_assets/assets.gen.dart';
+import '../../role/components/commonTextField/phone_text_field.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
 import '../../widgets/social_login_button.dart';
@@ -42,6 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: AuthHeader(title: 'Welcome Back!', subtitle: 'Sign in to continue your journey with Borla Borla'),
           ),
 
+          Positioned(
+              top: 0,
+              right: -60,
+              child: Assets.images.backgroundShadow.image(height: 300, width: 400)),
           Container(
 
             //alignment: Alignment.center,
@@ -69,12 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const SizedBox(height: 8),
 
-                  CustomTextField(
-                    hint: 'Phone Number',
-                    prefix: const Icon(Icons.phone),
-                  ),
-
-
+                  phoneTextFormField(),
 
                   const SizedBox(height: 16),
 
@@ -83,14 +85,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),),
 
                   const SizedBox(height: 8),
-
-                  CustomTextField(
-                    hint: 'Password',
-                    obscureText: true,
-                    suffix: const Icon(Icons.visibility_off),
+                  CommonTextField(
+                    hintText: 'Password',
+                    isPassword: true,
                   ),
-
-
 
                   Row(
                     children: [

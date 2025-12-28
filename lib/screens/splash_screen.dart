@@ -39,11 +39,13 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
           gradient: const LinearGradient(
 
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight ,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter ,
             colors: [
-              Color.fromRGBO(255, 246, 217, 1),
-              Color.fromRGBO(255, 255, 255, 1),
+              Color(0xFFFFF8E8),
+              Colors.white,
+              // Color.fromRGBO(255, 246, 217, 1),
+              // Color.fromRGBO(255, 255, 255, 1),
             ],
           ),
         ),
