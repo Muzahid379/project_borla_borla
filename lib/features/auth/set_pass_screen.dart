@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/features/auth/login_screen.dart';
 
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../theme/auth_header.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
-import '../../widgets/social_login_button.dart';
-import 'login_screen.dart';
 
 class SetPassScreen extends StatefulWidget {
   const SetPassScreen({super.key});
@@ -39,10 +40,13 @@ class _SetPassScreenState extends State<SetPassScreen> {
                 child: AuthHeader(title: 'Set a New Password.', subtitle: 'Enter a strong and secure password to get back to your journey.'),
               ),
 
+              Positioned(
+                  top: 0,
+                  right: -60,
+                  child: Assets.images.backgroundShadow.image(height: 300, width: 400)),
+
               Container(
-
                 //alignment: Alignment.center,
-
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                       top: Radius.circular(34)
@@ -93,7 +97,9 @@ class _SetPassScreenState extends State<SetPassScreen> {
 
                       GradientButton(
                         text: 'Save',
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAll(()=> LoginScreen());
+                        },
                       ),
 
                       const SizedBox(height: 24),

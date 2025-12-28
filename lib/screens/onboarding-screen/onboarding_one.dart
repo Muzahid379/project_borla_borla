@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_two.dart';
 
-class onboardingOne extends StatefulWidget {
-  const onboardingOne({super.key});
+class OnboardingOne extends StatefulWidget {
+  const OnboardingOne({super.key});
 
   @override
-  State<onboardingOne> createState() => _onboardingOneState();
+  State<OnboardingOne> createState() => _OnboardingOneState();
 }
 
-class _onboardingOneState extends State<onboardingOne> {
+class _OnboardingOneState extends State<OnboardingOne> {
 
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentPage = 0;
 
   final List<Map<String, String>> onboardingData = [
@@ -53,8 +54,10 @@ class _onboardingOneState extends State<onboardingOne> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromRGBO(255, 246, 217, 1),
-              Color.fromRGBO(255, 255, 255, 1),
+              Color(0xFFFFF8E8),  // Much closer to the screenshot
+              Colors.white,
+              // Color.fromRGBO(255, 246, 217, 1),
+              // Color.fromRGBO(255, 255, 255, 1),
             ],
           ),
         ),
@@ -102,7 +105,7 @@ class _onboardingOneState extends State<onboardingOne> {
                         ElevatedButton(
                           onPressed: () {
 
-                            Get.to(onboardingTwo());
+                            Get.to(()=> OnboardingTwo());
 
                           },
                           style: ElevatedButton.styleFrom(
@@ -169,7 +172,7 @@ class _onboardingOneState extends State<onboardingOne> {
                           ),
                         ),
                         onPressed: () {
-                          Get.to(onboardingTwo());
+                          Get.to(()=> OnboardingTwo());
                         },
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(50, 14, 50, 14),
@@ -333,11 +336,13 @@ class _VideoOnboardingPageState extends State<VideoOnboardingPage> {
 
 
         Padding(
-              padding: const EdgeInsets.fromLTRB(0,12,0,12),
-              child: Image.asset(widget.imagePath, fit: BoxFit.scaleDown,),
-            ),
-
-
+          padding: const EdgeInsets.all(12.0),
+          child: SizedBox(
+            width: Get.width,
+              height: 489.h,
+              child: Image.asset(widget.imagePath, fit: BoxFit.cover,)
+          ),
+        ),
 
         Padding(
           padding: const EdgeInsets.fromLTRB(20,10,20,10),

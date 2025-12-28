@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/features/auth/set_pass_screen.dart';
+import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../theme/auth_header.dart';
 import '../../widgets/gradient_button.dart';
 import '../../widgets/otp_input.dart';
@@ -42,7 +44,10 @@ class _OtpScreenState extends State<OtpScreen> {
                 title: "Confirm It's Really You.",
                 subtitle: 'Enter the 4-digit code from your email.'),
           ),
-
+          Positioned(
+              top: 0,
+              right: -60,
+              child: Assets.images.backgroundShadow.image(height: 300, width: 400)),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.vertical(
@@ -119,7 +124,9 @@ class _OtpScreenState extends State<OtpScreen> {
                     text: 'Verify',
                     onPressed:  () {
                       //debugPrint('OTP entered: $otp');
-                      Get.to(SetPassScreen());
+                      // Get.to(()=> SetPassScreen());
+                      // Get.to(()=> HomeScreenOne());
+                      // Get.offAll();
                     },
                   ),
                 ],

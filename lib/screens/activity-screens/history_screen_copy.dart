@@ -15,8 +15,8 @@ class HistoryScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            ActivityCard(isDetailScreen: true,),
-            ActivityCard(isDetailScreen: true,),
+            ActivityCard(isDetailScreen: true, role: "user",),
+            ActivityCard(isDetailScreen: true, role: "user"),
           ],
         ),
       ),

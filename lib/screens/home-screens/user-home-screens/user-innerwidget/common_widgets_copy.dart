@@ -45,7 +45,7 @@ Widget actionButtons(BuildContext context,) {
 }
 
 // ---------------- USER ROW ----------------
-Widget userRow(DriverHomeController controller) {
+Widget userRow(DriverHomeController controller, {role}) {
   return Row(
     children: [
       const CircleAvatar(
@@ -83,7 +83,7 @@ Widget userRow(DriverHomeController controller) {
           circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
         ],
       )
-          : countdownRing(controller),
+          : role == "rider" ? countdownRing(controller) : SizedBox.shrink(),
     ],
   );
 }

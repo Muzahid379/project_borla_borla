@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/utils/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -8,6 +10,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offAllNamed(AppRoute.onboard1);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,11 +39,13 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
           gradient: const LinearGradient(
 
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight ,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter ,
             colors: [
-              Color.fromRGBO(255, 246, 217, 1),
-              Color.fromRGBO(255, 255, 255, 1),
+              Color(0xFFFFF8E8),
+              Colors.white,
+              // Color.fromRGBO(255, 246, 217, 1),
+              // Color.fromRGBO(255, 255, 255, 1),
             ],
           ),
         ),

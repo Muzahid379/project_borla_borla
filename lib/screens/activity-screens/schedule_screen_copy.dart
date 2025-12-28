@@ -14,7 +14,7 @@ class ScheduleScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
         children: [
-          ActivityCard()
+          ActivityCard(role: "user",)
         ],
       ),
     );

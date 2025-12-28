@@ -18,7 +18,8 @@ import '../schedule_detail_screen_copy.dart';
 
 class ActivityCard extends StatelessWidget {
   bool isDetailScreen;
-  ActivityCard({super.key, this.isDetailScreen = false});
+  String? role;
+  ActivityCard({super.key, this.isDetailScreen = false, this.role = "rider"});
 
   ActivityController activityController = Get.put(ActivityController());
   DriverHomeController controller = Get.put(DriverHomeController());
@@ -43,7 +44,7 @@ class ActivityCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          userRow(controller),
+          userRow(controller, role: role),
           const SizedBox(height: 10),
           const Divider(color: AppColors.gray200, thickness: 1),
           const SizedBox(height: 10),

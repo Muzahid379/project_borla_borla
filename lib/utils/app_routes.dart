@@ -81,7 +81,7 @@ class AppRoute {
 
     GetPage(
         name: onboard1,
-        page: () => onboardingOne(),
+        page: () => OnboardingOne(),
         transition: Transition.rightToLeftWithFade),
 
     GetPage(
