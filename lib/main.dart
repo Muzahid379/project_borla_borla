@@ -39,8 +39,8 @@ class _MyAppState extends State<MyApp> {
 
            //initialRoute: '/notify',
           //initialRoute: AppRoute.splashScreen,
-          initialRoute: AppRoute.homeTwo,
-          //initialRoute: AppRoute.riderSearch,
+          //initialRoute: AppRoute.homeTwo,
+          initialRoute: AppRoute.bookRequest,
           getPages: AppRoute.pages,
 
           translations: AppTranslations(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/booking-requested-screen/booking_requested_screen.dart';
 
 import '../../role/garbageCollector/map/common_map.dart';
 
@@ -13,19 +14,7 @@ class RiderSearchingScreen extends StatefulWidget {
 
 class _RiderSearchingScreenState extends State<RiderSearchingScreen> {
 
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Future.microtask(() {
-  //     //ShowConfirmAddressSheet(context);
-  //
-  //
-  //
-  //
-  //   },);
-  //
-  // }
+
 
   @override
   void initState() {
@@ -38,21 +27,8 @@ class _RiderSearchingScreenState extends State<RiderSearchingScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          // title: const Text('Delete item'),
-          // content: const Text('Are you sure you want to delete this item?'),
-          actions: [
-            // TextButton(
-            //   onPressed: () => Get.back(), // close dialog
-            //   child: const Text('Cancel'),
-            // ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     // your action
-            //     Get.back();
-            //   },
-            //   child: const Text('Delete'),
-            // ),
 
+          actions: [
 
 
            Stack(
@@ -85,6 +61,12 @@ class _RiderSearchingScreenState extends State<RiderSearchingScreen> {
           ],
         ),
       );
+    });
+    Future.delayed(const Duration(seconds: 5), () {
+      if (Get.isDialogOpen == true) {
+        Get.back(); // close dialog
+      }
+      Get.offAll(() => const BookingRequestedScreen());
     });
   }
 
