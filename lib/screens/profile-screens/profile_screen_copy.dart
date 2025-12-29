@@ -14,8 +14,8 @@ import '../info-screens/terms_and_conditions_screen.dart';
 import 'edit_profile_screen_copy.dart';
 
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class ProfileScreenCopy extends StatelessWidget {
+  const ProfileScreenCopy({super.key});
 
   void showLanguageBottomSheet(BuildContext context) {
     showModalBottomSheet(

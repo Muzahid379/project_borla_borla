@@ -30,15 +30,10 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
   }
 
   final WidgetOptions = [
-
-    // newTaskScreen(),
-    // progressTaskScreen(),
-    // completedTaskScreen(),
-    // canceledTaskScreen()
     HomeMapScreen(),
     ActivityScreen(),
     NotificationsScreenCopy(),
-    ProfileScreen(),
+    ProfileScreenCopy(),
 
   ];
 
@@ -52,9 +47,6 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
 
       body: WidgetOptions.elementAt(tabIndex),
       bottomNavigationBar: bttmNavBar(tabIndex, onItemTapped, context),
-
-
-
 
     );
   }

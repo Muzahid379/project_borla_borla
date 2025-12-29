@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_borla/bottom-sheets/confirm_address_sheet.dart';
-import 'package:project_borla/bottom-sheets/payment_sheet.dart';
 import 'package:project_borla/features/fragments/bottom_nav_bar.dart';
 
 import '../../bottom-sheets/current_location_sheet.dart';
@@ -79,31 +78,6 @@ class _MapScreenTwoState extends State<MapScreenTwo> {
 
   }
 
-  // void ShowPrototypeSheet (BuildContext context) {
-  //
-  //   showModalBottomSheet(
-  //     context: context,
-  //     isScrollControlled: true,
-  //     builder: (_) {
-  //       return DraggableScrollableSheet(
-  //         builder: (context, controller) {
-  //           return NotificationListener<DraggableScrollableNotification>(
-  //             onNotification: (notification) {
-  //               setState(() {
-  //                 _bottomSheetHeight =
-  //                     notification.extent * MediaQuery.of(context).size.height;
-  //               });
-  //               return true;
-  //             },
-  //             child: Container(color: Colors.white),
-  //           );
-  //         },
-  //       );
-  //     },
-  //   );
-  //
-  //
-  // }
 
   void ShowConfirmAddressSheet (BuildContext context) {
 
@@ -123,6 +97,16 @@ class _MapScreenTwoState extends State<MapScreenTwo> {
 
 
 
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    ShowCurrentLocationSheet(context);
+
+  }
 
 
 

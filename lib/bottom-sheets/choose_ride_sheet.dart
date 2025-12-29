@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/choose-payment-screens/choose_payment_screen.dart';
 
 import '../widgets/gradient_button.dart';
 
@@ -378,18 +381,22 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
 
 
 
-            Padding(
-              padding: const EdgeInsets.all(22.0),
-              child: GradientButton(
-                text: 'Submit Now',
-                onPressed: () {
-                  //Get.to(OtpScreen());
-                  //Navigator.pop(context);
-                  //ShowPaymentSheet(context);
 
-                },
-              ),
-            ),
+                Padding(
+                  padding: const EdgeInsets.all(22.0),
+                  child: GradientButton(
+                    text: 'Book Now',
+                    onPressed: () {
+                      Get.to(()=>ChoosePaymentScreen());
+                      //Navigator.pop(context);
+                      //ShowPaymentSheet(context);
+
+
+
+                    },
+                  ),
+                ),
+
 
 
 

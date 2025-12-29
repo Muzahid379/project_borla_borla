@@ -39,11 +39,11 @@ class JobsTabBar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: isSelected
-                  ? AppColors.primaryColor
+                  ? Colors.amber
                   : AppColors.white,
               borderRadius: BorderRadius.circular(30),
               border: Border.all(
-                color: AppColors.primaryColor,
+                color: Colors.amber,
                 width: isSelected ? 0 : 1,
               ),
             ),
@@ -55,7 +55,7 @@ class JobsTabBar extends StatelessWidget {
                   size: 20,
                   color: isSelected
                       ? Colors.white
-                      : AppColors.primaryColor,
+                      : Colors.amber,
                 ),
                 const SizedBox(width: 8),
                 Text(

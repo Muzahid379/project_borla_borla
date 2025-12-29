@@ -97,7 +97,7 @@ class _LanguageSelectionBottomSheetState
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF4CAF50),
+                    backgroundColor: Colors.amber,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(28.r),
                     ),
@@ -148,10 +148,10 @@ class LanguageOption extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelected
-                      ? const Color(0xFFE8F5E8)
+                      ? Color(0xFFFFFCF5)
                       : Colors.grey[100],
                   border: Border.all(
-                    color: isSelected ? const Color(0xFF4CAF50) : Colors.transparent,
+                    color: isSelected ? Colors.amber : Colors.transparent,
                     width: 4,
                   ),
                 ),
@@ -160,7 +160,7 @@ class LanguageOption extends StatelessWidget {
                     text: greeting,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
-                    color: isSelected ? const Color(0xFF4CAF50) : Colors.black87,
+                    color: isSelected ? Colors.amber : Colors.black87,
                   ),
                 ),
               ),
@@ -180,7 +180,7 @@ class LanguageOption extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(6.w),
                 decoration: const BoxDecoration(
-                  color: Color(0xFF4CAF50),
+                  color: Colors.amber,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(

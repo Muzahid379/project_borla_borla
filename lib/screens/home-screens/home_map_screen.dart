@@ -4,17 +4,26 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+
 import 'package:project_borla/screens/home-screens/user-home-screens/user-controller/user_home_controller.dart';
 import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/application_review_dialog_copy.dart';
 import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/job_request_card_copy.dart';
 import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/pulsing_cycle_copy.dart';
+import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
+import 'package:project_borla/utils/app_routes.dart';
 
 import '../../../theme/app_color.dart';
 
+import '../../bottom-sheets/current_location_sheet.dart';
+import '../../bottom-sheets/search_location_sheet.dart';
 import '../../theme/common_text_two.dart';
 import '../../theme/custom_container_copy.dart';
 import '../../utils/custom-gen-assets/assets.gen.dart';
 import '../map-screens/common_map_copy.dart';
+import '../profile-screens/profile_screen_copy.dart';
+import '../search-place-screens/location_search_screen_two.dart';
+
+
 
 
 class HomeMapScreen extends StatefulWidget {
@@ -27,6 +36,50 @@ class HomeMapScreen extends StatefulWidget {
 class _HomeMapScreenState extends State<HomeMapScreen> {
   final DriverHomeController controller =
   Get.put(DriverHomeController());
+
+  void ShowCurrentLocationSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      barrierColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => CurrentLocationSheet(),
+
+    );
+
+  }
+
+  void showSearchLocationSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      barrierColor: Colors.transparent,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => SearchLocationSheet(),
+
+    );
+
+
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.microtask(() {
+      ShowCurrentLocationSheet(context);
+    },);
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +103,7 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
                         child: InkWell(
                           onTap: () {
                             //ShowCurrentLocationSheetTwo(context);
+                            Get.to(()=>ProfileScreenCopy());
                           },
                           child: CircleAvatar(
                             radius: 32,
@@ -64,6 +118,10 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
                       InkWell(
                         onTap: () {
                           //ShowConfirmAddressSheet(context);
+
+                          Get.to(()=>LocationSearchScreenTwo());
+
+
                         },
                         child: Container(
                           padding: const EdgeInsets.all(2),
@@ -108,6 +166,7 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
                       child: InkWell(
                         onTap: () {
                           //ShowSearchLocationSheet(context);
+                          //Get.to(()=>LocationSearchScreen());
                         },
                         child: Card(
                           //color: Colors.amber,
@@ -133,8 +192,6 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
               ],
             ),
           )
-
-
 
         ],
       ),

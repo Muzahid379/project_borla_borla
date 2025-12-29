@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 import '../../widgets/custom_text_field.dart';
+import '../confirm-location-screens/confirm_location_screen.dart';
+import '../profile-screens/profile_screen_copy.dart';
 
 class LocationSearchScreenTwo extends StatefulWidget {
   const LocationSearchScreenTwo({super.key});
@@ -117,6 +121,8 @@ class _LocationSearchScreenTwoState extends State<LocationSearchScreenTwo> {
                         ),
                       ),
 
+
+
                       SizedBox(width: 12),
 
                       Container(
@@ -177,6 +183,147 @@ class _LocationSearchScreenTwoState extends State<LocationSearchScreenTwo> {
                   ),
 
                   SizedBox(height: 26),
+                  InkWell(
+                    onTap: (){
+                      Get.to(()=>ConfirmLocationScreen());
+                    },
+                    child: Container(
+                      height: 100,
+                      width: 340,
+                      decoration: BoxDecoration(
+
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+
+                            children: [
+                              Image.asset('assets/images/clock.png', scale:  0.8),
+                              SizedBox(width: 8,),
+                              Text('Office', style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              ),),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('2910 Parker Rd. AllenTown, New Mexico 31134' ,style: TextStyle(
+                            color: Colors.grey.shade500,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500
+                            )),
+                          )
+
+                        ],
+                      ),
+
+                    ),
+                  ),
+
+
+
+
+                  Container(
+                    height: 100,
+                    width: 340,
+                    decoration: BoxDecoration(
+
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+
+                          children: [
+                            Image.asset('assets/images/clock.png', scale:  0.8),
+                            SizedBox(width: 8,),
+                            Text('Shopping Mall', style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                            ),),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('2910 Parker Rd. AllenTown, New Mexico 31134' ,style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500
+                          )),
+                        )
+
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                    height: 100,
+                    width: 340,
+                    decoration: BoxDecoration(
+
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+
+                          children: [
+                            Image.asset('assets/images/clock.png', scale:  0.8),
+                            SizedBox(width: 8,),
+                            Text('Shopping Mall', style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                            ),),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('2910 Parker Rd. AllenTown, New Mexico 31134' ,style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500
+                          )),
+                        )
+
+                      ],
+                    ),
+
+                  ),
+                  Container(
+                    height: 100,
+                    width: 340,
+                    decoration: BoxDecoration(
+
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+
+                          children: [
+                            Image.asset('assets/images/clock.png', scale:  0.8),
+                            SizedBox(width: 8,),
+                            Text('Coffee Shop', style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                            ),),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('2910 Parker Rd. AllenTown, New Mexico 31134' ,style: TextStyle(
+                              color: Colors.grey.shade500,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500
+                          )),
+                        )
+
+                      ],
+                    ),
+
+                  ),
 
                   //Image.asset('assets/images/not_found.png'),
 
