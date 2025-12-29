@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/garbageCollector/activity/controller/activity_controller.dart';
+import 'package:project_borla/role/garbageCollector/call%20/ongoing_call_screen.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';
 import '../../../../theme/app_color.dart';
@@ -45,7 +46,11 @@ Widget userRow() {
               },
               child: circleAction(Assets.icons.messageIcon.image(height: 20, width: 20))),
           const SizedBox(width: 12),
-          circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
+          InkWell(
+            onTap: () {
+              Get.to(()=> OngoingCallScreen());
+            },
+              child: circleAction(Assets.icons.callIcon.image(height: 20, width: 20))),
         ],
       ) : ActivityController.instance.selectedIndex.value == 1?
       Column(
