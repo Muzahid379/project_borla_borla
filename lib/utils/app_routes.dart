@@ -1,6 +1,7 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
+import 'package:project_borla/role/garbageCollector/activity/activity_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
 import 'package:project_borla/screens/home-screens/payment_screen.dart';
@@ -15,6 +16,7 @@ import 'package:project_borla/screens/profile-screens/address_screen.dart';
 import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/edit_profile_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
+import 'package:project_borla/screens/rider-searching-screen/rider_searching_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/cancel_ride_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
 import 'package:project_borla/screens/search-place-screens/add_place_screen.dart';
@@ -25,6 +27,7 @@ import 'package:project_borla/screens/select_role_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_category_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_qty_screen.dart';
 
+import '../screens/confirm-location-screens/confirm_location_screen.dart';
 import '../screens/search-place-screens/location_search_screen_two.dart';
 import '../screens/splash_screen.dart';
 
@@ -60,6 +63,9 @@ class AppRoute {
   static const String changePass = "/changePass";
   static const String address = "/address";
   static const String userHome = "/userHome";
+  static const String userActivity = "/userActivity";
+  static const String confirmLocation = "/confirmLocation";
+  static const String riderSearch = "/riderSearch";
 
 
 
@@ -160,7 +166,7 @@ class AppRoute {
         transition: Transition.rightToLeftWithFade),
     GetPage(
         name: profile,
-        page: () => ProfileScreen(),
+        page: () => ProfileScreenCopy(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
         name: editProfile,
@@ -179,6 +185,21 @@ class AppRoute {
     GetPage(
         name: userHome,
         page: () => HomeMapScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: userActivity,
+        page: () => ActivityScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: confirmLocation,
+        page: () => ConfirmLocationScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: riderSearch,
+        page: () => RiderSearchingScreen(),
         transition: Transition.rightToLeftWithFade),
 
   ];

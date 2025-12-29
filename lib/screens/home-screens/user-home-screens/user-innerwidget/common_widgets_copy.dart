@@ -137,12 +137,12 @@ Widget locationSection() {
       Column(
         children: [
           Icon(Icons.radio_button_checked,
-              color: AppColors.primaryColor, size: 18),
+              color: Colors.amber, size: 18),
           SizedBox(height: 6),
           VerticalDottedLine(),
           SizedBox(height: 6),
           Icon(Icons.location_on,
-              color: AppColors.primaryColor, size: 20),
+              color: Colors.amber, size: 20),
         ],
       ),
       const SizedBox(width: 12),
@@ -192,7 +192,7 @@ Widget distanceChip() {
     child: const CommonText(
       text: '22.6 KM',
       fontWeight: FontWeight.w600,
-      color: AppColors.green500,
+      color: Colors.amber,
     ),
   );
 }
@@ -225,7 +225,7 @@ Widget paymentRow() {
         text: 'GH₵ 50',
         fontSize: 20,
         fontWeight: FontWeight.bold,
-        color: AppColors.primaryColor,
+        color: Colors.amber,
       ),
     ],
   );

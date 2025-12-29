@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 
 import '../theme/ripple.dart';
 
@@ -89,7 +92,7 @@ class _FindingRiderSheetState extends State<FindingRiderSheet> {
                   ),
                 ),
                 onPressed: () {
-                  //Get.to(onboardingTwo());
+                  Get.to(()=>ChooseRideScreen());
                 },
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(120, 14, 120, 14),

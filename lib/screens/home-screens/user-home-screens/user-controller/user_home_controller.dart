@@ -5,41 +5,16 @@ import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_borla/theme/app_color.dart';
 
-class DriverHomeController extends GetxController with GetTickerProviderStateMixin{
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-  static DriverHomeController get instance => Get.put(DriverHomeController());
-
-  late GoogleMapController mapController;
+class DriverHomeController extends GetxController
+    with GetTickerProviderStateMixin {
+  static DriverHomeController get instance =>
+      Get.put(DriverHomeController());
 
   final RxBool isOnline = false.obs;
   final RxBool isScheduleRequest = true.obs;
-
-  final Rx<LatLng> driverPosition =
-      const LatLng(5.6037, -0.1870).obs; // Accra
-
-  final Rx<ScreenCoordinate?> screenPosition =
-  Rx<ScreenCoordinate?>(null);
-
-  void onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-    updateMarkerPosition();
-  }
-
-  void onCameraMove() {
-    updateMarkerPosition();
-  }
-
-  Future<void> updateMarkerPosition() async {
-    final pos = await mapController.getScreenCoordinate(driverPosition.value);
-    screenPosition.value = pos;
-  }
-
-  void toggleOnline(bool value) {
-    isOnline.value = value;
-    if(value){
-      _setupTimer();
-    }
-  }
 
   ////////////////////////////////////
   final isExpanded = false.obs;
@@ -52,9 +27,8 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   late AnimationController _animationController;
   late Animation<double> animation;
 
-  RxInt durationInSeconds = 30.obs; // Dynamic duration (can be changed)
+  RxInt durationInSeconds = 30.obs;
   RxInt remainingSeconds = 30.obs;
-  // RxBool isJobRequested = false.obs;
 
   var jobRequests = <JobRequestModel>[].obs;
   RxBool isBottomSheet = false.obs;
@@ -62,17 +36,26 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   @override
   void onInit() {
     super.onInit();
-    jobRequests.addAll(List.generate(3, (index) => JobRequestModel(id: index)));
+    jobRequests.addAll(
+      List.generate(3, (index) => JobRequestModel(id: index)),
+    );
+  }
+
+  void toggleOnline(bool value) {
+    isOnline.value = value;
+    if (value) {
+      _setupTimer();
+    } else {
+      _animationController.stop();
+    }
   }
 
   void acceptJob(JobRequestModel job) {
     jobRequests.remove(job);
-    // Call backend accept API here
   }
 
   void declineJob(JobRequestModel job) {
     jobRequests.remove(job);
-    // Call backend decline API here
   }
 
   ////////////////////////////////////////////////
@@ -84,24 +67,29 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
     );
 
     animation = Tween<double>(begin: 1.0, end: 0.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.linear),
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.linear,
+      ),
     )..addListener(() {
-      final progress = animation.value;
-      remainingSeconds.value = (progress * durationInSeconds.value).ceil();
+      remainingSeconds.value =
+          (animation.value * durationInSeconds.value).ceil();
     });
 
     _animationController.forward();
 
-    // Optional: Listen for completion
     _animationController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Get.snackbar('Time Up!', 'Countdown finished',
-            backgroundColor: AppColors.green500, colorText: AppColors.white);
+        Get.snackbar(
+          'Time Up!',
+          'Countdown finished',
+          backgroundColor: AppColors.green500,
+          colorText: AppColors.white,
+        );
       }
     });
   }
 
-  // Restart with new duration
   void restart({int? newDuration}) {
     _animationController.stop();
     _animationController.reset();
@@ -111,7 +99,8 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
       remainingSeconds.value = newDuration;
     }
 
-    _animationController.duration = Duration(seconds: durationInSeconds.value);
+    _animationController.duration =
+        Duration(seconds: durationInSeconds.value);
     _animationController.forward();
   }
 
@@ -121,6 +110,7 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
     super.onClose();
   }
 }
+
 
 class JobRequestModel {
   final int id;

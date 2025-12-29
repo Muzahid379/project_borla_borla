@@ -32,7 +32,7 @@ class ActivityCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.green100),
+        border: Border.all(color: Colors.amber),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withAlpha(13),
@@ -71,7 +71,8 @@ class ActivityCard extends StatelessWidget {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryColor,
+          //backgroundColor: AppColors.primaryColor,
+          backgroundColor: Colors.amber,
           elevation: 0,
           padding: const EdgeInsets.symmetric(vertical: 16),
           shape: RoundedRectangleBorder(

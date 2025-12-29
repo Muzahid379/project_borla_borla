@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 import '../../widgets/custom_text_field.dart';
 
@@ -56,7 +58,9 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                           padding: EdgeInsets.zero,
                           iconSize: 22,
                           icon: const Icon(Icons.arrow_back),
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.back();
+                          },
                         ),
                       ),
 

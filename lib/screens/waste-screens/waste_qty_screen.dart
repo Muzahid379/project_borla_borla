@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/finding-driver-screens/finding_driver_screen.dart';
 
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
@@ -128,7 +131,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
                         const SizedBox(height: 10),
 
                         CustomTextField(
-                          hint: 'Hotel',
+                          hint: 'Bin Size',
                           prefix: Image.asset('assets/images/second_pin.png'),
                         ),
 
@@ -142,7 +145,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
                         const SizedBox(height: 10),
 
                         CustomTextField(
-                          hint: 'Hotel',
+                          hint: 'Bin Quantity',
                           prefix: Image.asset('assets/images/second_pin.png'),
                         ),
 
@@ -156,7 +159,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
                         const SizedBox(height: 10),
 
                         CustomTextField(
-                          hint: 'Hotel',
+                          hint: 'Waste Size',
                           prefix: Image.asset('assets/images/second_pin.png'),
                         ),
 
@@ -167,7 +170,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
                         GradientButton(
                           text: 'Continue',
                           onPressed: () {
-                            //Get.to(RegisterScreen());
+                            Get.to(()=>FindingDriverScreen());
                           },
                         ),
 

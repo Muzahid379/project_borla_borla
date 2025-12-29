@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_borla/theme/gradient_scaffold_copy.dart';
 
+import '../../widgets/gradient_button.dart';
+
 class AddressScreen extends StatefulWidget {
   const AddressScreen({super.key});
 
@@ -55,16 +57,244 @@ class _AddressScreenState extends State<AddressScreen> {
 
             Container(
 
-              height: 200,
-              width: 370,
+              height: 140,
+              width: 350,
               decoration: BoxDecoration(
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey.shade400)
+                border: Border.all(color: Colors.grey.shade200)
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Row(
+
+                      children: [
+
+                        Image.asset('assets/images/location_pin_two.png', scale: 0.8,),
+                        SizedBox(width: 9,),
+                        Text('Home', style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.amber,
+                          fontWeight: FontWeight.w800
+                        ),),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){},
+                          child: Image.asset('assets/images/dots.png'),
+                        )
+
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(22,0,22,0),
+                    child: Divider(
+                      color: Colors.grey.shade300,
+                      thickness: 1,
+                    ),
+                  ),
+                  //SizedBox(height: 6,),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                    child: Text('85 4th Ave, Street Side Road, NY 10003, Accra, Ghana', style: TextStyle(
+                      color: Colors.grey.shade400,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500
+                    ),),
+                  )
+                ],
               ),
 
 
 
-            )
+            ),
+            SizedBox(height: 16,),
+            Container(
+
+              height: 140,
+              width: 350,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey.shade200)
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Row(
+
+                      children: [
+
+                        Image.asset('assets/images/location_pin_two.png', scale: 0.8,),
+                        SizedBox(width: 9,),
+                        Text('Home', style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w800
+                        ),),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){},
+                          child: Image.asset('assets/images/dots.png'),
+                        )
+
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(22,0,22,0),
+                    child: Divider(
+                      color: Colors.grey.shade300,
+                      thickness: 1,
+                    ),
+                  ),
+                  //SizedBox(height: 6,),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                    child: Text('85 4th Ave, Street Side Road, NY 10003, Accra, Ghana', style: TextStyle(
+                        color: Colors.grey.shade400,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500
+                    ),),
+                  )
+                ],
+              ),
+
+
+
+            ),
+            SizedBox(height: 16,),
+            Container(
+
+              height: 140,
+              width: 350,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey.shade200)
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Row(
+
+                      children: [
+
+                        Image.asset('assets/images/location_pin_two.png', scale: 0.8,),
+                        SizedBox(width: 9,),
+                        Text('Home', style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w800
+                        ),),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){},
+                          child: Image.asset('assets/images/dots.png'),
+                        )
+
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(22,0,22,0),
+                    child: Divider(
+                      color: Colors.grey.shade300,
+                      thickness: 1,
+                    ),
+                  ),
+                  //SizedBox(height: 6,),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                    child: Text('85 4th Ave, Street Side Road, NY 10003, Accra, Ghana', style: TextStyle(
+                        color: Colors.grey.shade400,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500
+                    ),),
+                  )
+                ],
+              ),
+
+
+
+            ),
+            SizedBox(height: 16,),
+            Container(
+
+              height: 140,
+              width: 350,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey.shade200)
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(14.0),
+                    child: Row(
+
+                      children: [
+
+                        Image.asset('assets/images/location_pin_two.png', scale: 0.8,),
+                        SizedBox(width: 9,),
+                        Text('Home', style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.amber,
+                            fontWeight: FontWeight.w800
+                        ),),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){},
+                          child: Image.asset('assets/images/dots.png'),
+                        )
+
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(22,0,22,0),
+                    child: Divider(
+                      color: Colors.grey.shade300,
+                      thickness: 1,
+                    ),
+                  ),
+                  //SizedBox(height: 6,),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                    child: Text('85 4th Ave, Street Side Road, NY 10003, Accra, Ghana', style: TextStyle(
+                        color: Colors.grey.shade400,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500
+                    ),),
+                  )
+                ],
+              ),
+
+
+
+            ),
+
+            SizedBox(height: 16,),
+
+            Padding(
+              padding: const EdgeInsets.all(22.0),
+              child: GradientButton(
+                text: 'Add Address',
+                onPressed: () {
+                  //Get.to(OtpScreen());
+                  //Navigator.pop(context);
+                  //ShowPaymentSheet(context);
+
+                },
+              ),
+            ),
+
+
 
 
 

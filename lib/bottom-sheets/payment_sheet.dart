@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/rider-searching-screen/rider_searching_screen.dart';
 
 import '../screens/waste-screens/waste_category_screen.dart';
 import '../widgets/gradient_button.dart';
@@ -212,7 +215,7 @@ class _PaymentSheetState extends State<PaymentSheet> {
               child: GradientButton(
                 text: 'Continue',
                 onPressed: () {
-                  //Get.to(OtpScreen());
+                  Get.to(()=> RiderSearchingScreen());
                 },
               ),
             ),

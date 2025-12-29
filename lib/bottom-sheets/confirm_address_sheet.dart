@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
+import '../screens/waste-screens/waste_category_screen.dart';
 import '../widgets/gradient_button.dart';
 
 class ConfirmAddressSheet extends StatefulWidget {
@@ -108,6 +111,7 @@ class _ConfirmAddressSheetState extends State<ConfirmAddressSheet> {
                 text: 'Confirm Location',
                 onPressed: () {
                   //Get.to(OtpScreen());
+                  Get.to(()=>WasteCategoryScreen());
                 },
               ),
             ),

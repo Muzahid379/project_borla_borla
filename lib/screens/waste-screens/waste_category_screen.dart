@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/waste-screens/waste_qty_screen.dart';
 
 import '../../bottom-sheets/user_lang_sheet.dart';
 import '../../widgets/gradient_button.dart';
@@ -148,22 +151,6 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                         children: [
 
-                          // Card(
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(12),
-                          //     side: const BorderSide(
-                          //       color: Colors.amberAccent,
-                          //       width: 1,
-                          //     ),
-                          //   ),
-                          //   elevation: 0,
-                          //   color: Colors.white,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-                          //     child: Image.asset('assets/images/organic.png', scale: 0.9,),
-                          //   ),
-                          // ),
-
                           buildCategoryCard(
                             index: 0,
                             image: 'assets/images/organic.png',
@@ -171,21 +158,6 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                           SizedBox(width: 12),
 
-                          // Card(
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(12),
-                          //     side: const BorderSide(
-                          //       color: Colors.amberAccent,
-                          //       width: 1,
-                          //     ),
-                          //   ),
-                          //   elevation: 0,
-                          //   color: Colors.white,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-                          //     child: Image.asset('assets/images/metal.png',scale: 0.9,),
-                          //   ),
-                          // ),
 
                           buildCategoryCard(
                             index: 1,
@@ -201,21 +173,6 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                         children: [
 
-                          // Card(
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(12),
-                          //     side: const BorderSide(
-                          //       color: Colors.amberAccent,
-                          //       width: 1,
-                          //     ),
-                          //   ),
-                          //   elevation: 0,
-                          //   color: Colors.white,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-                          //     child: Image.asset('assets/images/plastic.png', scale: 0.9,),
-                          //   ),
-                          // ),
 
                           buildCategoryCard(
                             index: 2,
@@ -229,23 +186,7 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
                             image: 'assets/images/general.png',
                           ),
 
-                          //SizedBox(width: 12),
 
-                          // Card(
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(12),
-                          //     side: const BorderSide(
-                          //       color: Colors.amberAccent,
-                          //       width: 1,
-                          //     ),
-                          //   ),
-                          //   elevation: 0,
-                          //   color: Colors.white,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-                          //     child: Image.asset('assets/images/general.png',scale: 0.9,),
-                          //   ),
-                          // ),
 
                         ],
 
@@ -256,21 +197,7 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                         children: [
 
-                          // Card(
-                          //   shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(12),
-                          //     side: const BorderSide(
-                          //       color: Colors.amberAccent,
-                          //       width: 1,
-                          //     ),
-                          //   ),
-                          //   elevation: 0,
-                          //   color: Colors.white,
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.fromLTRB(30, 16, 30, 16),
-                          //     child: Image.asset('assets/images/paper.png', scale: 0.9,),
-                          //   ),
-                          // ),
+
 
                           buildCategoryCard(
                             index: 4,
@@ -291,8 +218,8 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
                       GradientButton(
                         text: 'Continue',
                         onPressed: () {
-                          //Get.to(RegisterScreen());
-                          showLanguageBottomSheet(context);
+                          Get.to(WasteQtyScreen());
+                          //showLanguageBottomSheet(context);
                         },
                       ),
 

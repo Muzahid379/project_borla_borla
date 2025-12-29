@@ -13,7 +13,7 @@ class SettingsListItem extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
-    this.iconColor = AppColors.iconColor, // Green accent
+    this.iconColor = Colors.amber, // Green accent
     this.titleColor = AppColors.textColor,
     this.onTap,
   });

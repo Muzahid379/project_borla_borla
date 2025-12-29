@@ -79,31 +79,6 @@ class _MapScreenTwoState extends State<MapScreenTwo> {
 
   }
 
-  // void ShowPrototypeSheet (BuildContext context) {
-  //
-  //   showModalBottomSheet(
-  //     context: context,
-  //     isScrollControlled: true,
-  //     builder: (_) {
-  //       return DraggableScrollableSheet(
-  //         builder: (context, controller) {
-  //           return NotificationListener<DraggableScrollableNotification>(
-  //             onNotification: (notification) {
-  //               setState(() {
-  //                 _bottomSheetHeight =
-  //                     notification.extent * MediaQuery.of(context).size.height;
-  //               });
-  //               return true;
-  //             },
-  //             child: Container(color: Colors.white),
-  //           );
-  //         },
-  //       );
-  //     },
-  //   );
-  //
-  //
-  // }
 
   void ShowConfirmAddressSheet (BuildContext context) {
 
@@ -123,6 +98,16 @@ class _MapScreenTwoState extends State<MapScreenTwo> {
 
 
 
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    ShowCurrentLocationSheet(context);
+
+  }
 
 
 
