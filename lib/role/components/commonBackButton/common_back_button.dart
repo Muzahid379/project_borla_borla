@@ -21,7 +21,7 @@ class CommonBackButton extends StatelessWidget {
         ),
         alignment: Alignment.center,
         child: Icon(
-          Icons.arrow_back_ios_new_rounded,
+          Icons.arrow_back,
           color: color ?? Colors.black,
           size: 20,
         ),

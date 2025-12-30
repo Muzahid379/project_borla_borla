@@ -4,7 +4,6 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/choose-payment-screens/choose_payment_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
 
-import '../screens/rider-searching-screen/rider_searching_screen.dart';
 import '../widgets/gradient_button.dart';
 
 class ChooseRideSheet extends StatefulWidget {
@@ -386,12 +385,9 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
 
               children: [
 
-
-
-
                 ElevatedButton(
                   onPressed: () {
-                    Get.to(()=>RiderSearchingScreen());
+                    Get.to(()=> ChoosePaymentScreen());
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero, // important

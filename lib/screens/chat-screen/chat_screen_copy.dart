@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:project_borla/role/garbageCollector/call/outgoing_call_screen.dart';
 
 import 'package:project_borla/theme/app_color.dart';
 
@@ -13,14 +14,15 @@ import '../../theme/gradient_scaffold_copy.dart';
 import 'chat_screen_controller.dart';
 
 
-class ChattingScreen extends StatelessWidget {
-  ChattingScreen({super.key});
+class UserChattingScreen extends StatelessWidget {
+  UserChattingScreen({super.key, });
 
   final ChatController controller = Get.put(ChatController());
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
+    return UserGradientScaffold(
+      gradientOne: AppColors.orange100,
       child: SafeArea(
         child: Column(
           children: [
@@ -39,7 +41,7 @@ class ChattingScreen extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        controller.makePhoneCall("01785214412");
+                         Get.to(()=> OutgoingCallScreen());
                       },
                       child: _circleAction(Icons.phone)),
                 ],
@@ -80,9 +82,9 @@ class ChattingScreen extends StatelessWidget {
       height: 40,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: AppColors.primaryColor),
+        border: Border.all(color: AppColors.orange300),
       ),
-      child: Icon(icon, color: AppColors.primaryColor, size: 20),
+      child: Icon(icon, color: AppColors.orange300, size: 20),
     );
   }
 }
@@ -127,7 +129,7 @@ class _MessageBubble extends StatelessWidget {
             BoxConstraints(maxWidth: Get.width * 0.75),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: isMe ? AppColors.primaryColor : Colors.white,
+              color: isMe ? AppColors.orange300 : Colors.white,
               borderRadius: BorderRadius.only(
                 topRight: isMe ? Radius.circular(0) : Radius.circular(20), topLeft: isMe ? Radius.circular(20) : Radius.circular(0),
                 bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20),
@@ -193,7 +195,7 @@ class _ChatInputBar extends StatelessWidget {
             onPressed: () => controller.pickImage(ImageSource.camera),
           ),
           IconButton(
-            icon: const Icon(Icons.send, color: AppColors.primaryColor),
+            icon: const Icon(Icons.send, color: AppColors.orange300),
             onPressed: controller.sendMessage,
           ),
         ],

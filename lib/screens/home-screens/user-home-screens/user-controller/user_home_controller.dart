@@ -8,10 +8,10 @@ import 'package:project_borla/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DriverHomeController extends GetxController
+class UserHomeController extends GetxController
     with GetTickerProviderStateMixin {
-  static DriverHomeController get instance =>
-      Get.put(DriverHomeController());
+  static UserHomeController get instance =>
+      Get.put(UserHomeController());
 
   final RxBool isOnline = false.obs;
   final RxBool isScheduleRequest = true.obs;
@@ -36,9 +36,17 @@ class DriverHomeController extends GetxController
   @override
   void onInit() {
     super.onInit();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    animation = AlwaysStoppedAnimation(1.0);
     jobRequests.addAll(
       List.generate(3, (index) => JobRequestModel(id: index)),
     );
+
+    _startTransition();
   }
 
   void toggleOnline(bool value) {
@@ -56,6 +64,16 @@ class DriverHomeController extends GetxController
 
   void declineJob(JobRequestModel job) {
     jobRequests.remove(job);
+  }
+
+  ///////////////////////////////////////////////
+  final RxBool showSearchSheet = true.obs;
+
+
+  void _startTransition() {
+    Future.delayed(const Duration(seconds: 3), () {
+      showSearchSheet.value = false;
+    });
   }
 
   ////////////////////////////////////////////////

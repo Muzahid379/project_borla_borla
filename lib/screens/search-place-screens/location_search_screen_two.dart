@@ -60,7 +60,9 @@ class _LocationSearchScreenTwoState extends State<LocationSearchScreenTwo> {
                             padding: EdgeInsets.zero,
                             iconSize: 22,
                             icon: const Icon(Icons.arrow_back),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.back();
+                            },
                           ),
                         ),
 
@@ -88,36 +90,33 @@ class _LocationSearchScreenTwoState extends State<LocationSearchScreenTwo> {
                   Row(
                     children: [
 
-                      Container(
-                        width: 160,
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.grey.shade500,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 14,
-                              vertical: 8,
-                            ),
-                            side: const BorderSide(
-                              color: Colors.black12,
-                              width: 1,
-                            ),
-
+                      ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.grey.shade500,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 8,
+                          ),
+                          side: const BorderSide(
+                            color: Colors.black12,
+                            width: 1,
                           ),
 
-                          child: Row(
-                            children: [
-                              Image.asset('assets/images/tab_icon_one.png', scale: 0.9,),
-                              SizedBox(width: 6,),
-                              Text('Select from map', style: TextStyle(
+                        ),
 
-                                  fontSize: 15
+                        child: Row(
+                          children: [
+                            Image.asset('assets/images/tab_icon_one.png', scale: 0.9,),
+                            SizedBox(width: 6,),
+                            Text('Select from map', style: TextStyle(
 
-                              ),)
-                            ],
-                          ),
+                                fontSize: 15
+
+                            ),)
+                          ],
                         ),
                       ),
 
@@ -125,35 +124,32 @@ class _LocationSearchScreenTwoState extends State<LocationSearchScreenTwo> {
 
                       SizedBox(width: 12),
 
-                      Container(
-                        width: 140,
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.grey.shade500,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 14,
-                              vertical: 8,
-                            ),
-                            side: const BorderSide(
-                              color: Colors.black12,
-                              width: 1,
-                            ),
-
+                      ElevatedButton(
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.grey.shade500,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 8,
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset('assets/images/saved_icon.png', scale: 0.9,),
-                              SizedBox(width: 6,),
-                              Text('Saved Places', style: TextStyle(
-
-                                  fontSize: 15
-
-                              ),)
-                            ],
+                          side: const BorderSide(
+                            color: Colors.black12,
+                            width: 1,
                           ),
+
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset('assets/images/saved_icon.png', scale: 0.9,),
+                            SizedBox(width: 6,),
+                            Text('Saved Places', style: TextStyle(
+
+                                fontSize: 15
+
+                            ),)
+                          ],
                         ),
                       ),
                     ],

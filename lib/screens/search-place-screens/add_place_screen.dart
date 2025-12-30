@@ -1,5 +1,10 @@
-import 'package:flutter/material.dart';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/theme/app_color.dart';
+
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../widgets/action_button_widget.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
@@ -13,11 +18,11 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
 
-  bool isHome = false;
-  bool isOffice = false;
-  bool isShop = false;
-  bool isHotel = false;
+  RxString selectedPlace = "".obs;
 
+  TextEditingController titleController = TextEditingController();
+  TextEditingController placeNameController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
 
 
   @override
@@ -62,7 +67,9 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       padding: EdgeInsets.zero,
                       iconSize: 22,
                       icon: const Icon(Icons.arrow_back),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.back();
+                      },
                     ),
                   ),
 
@@ -82,62 +89,54 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
 
             SizedBox(height: 40),
 
-            Row(
+            Obx(() => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconLabelAction(
+                      icon: Assets.icons.homeIcon.image(height: 26, width: 26, color: selectedPlace.value == 'Home' ? AppColors.orange300 : AppColors.gray300,),
+                      label: 'Home',
+                      selected: selectedPlace.value == 'Home' ? true : false,
+                      onTap: (){
+                        titleController.text = 'Home';
+                        selectedPlace.value = 'Home';
+                      }
+                  ),
+                  IconLabelAction(
+                      icon: Assets.icons.officeIcon.image(height: 26, width: 26, color: selectedPlace.value == 'Office' ? AppColors.orange300 : AppColors.gray300,),
+                      label: 'Office',
+                      selected: selectedPlace.value == 'Office' ? true : false,
+                      onTap: (){
+                        titleController.text = 'Office';
+                        selectedPlace.value = 'Office';
+                      }
+                  ),
+                  IconLabelAction(
+                      icon: Assets.icons.shopIcon.image(height: 26, width: 26, color: selectedPlace.value == 'Shop' ? AppColors.orange300 : AppColors.gray300,),
+                      label: 'Shop',
+                      selected: selectedPlace.value == 'Shop' ? true : false,
+                      onTap: (){
+                        titleController.text = 'Shop';
+                        selectedPlace.value = 'Shop';
+                      }
+                  ),
+                  IconLabelAction(
+                      icon: Assets.icons.hotelIcon.image(height: 26, width: 26, color: selectedPlace.value == 'Hotel' ? AppColors.orange300 : AppColors.gray300),
+                      label: 'Hotel',
+                      selected: selectedPlace.value == 'Hotel' ? true : false,
+                      onTap: (){
+                        titleController.text = 'Hotel';
+                       selectedPlace.value = 'Hotel';
+                      }
+                  ),
 
-              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-              children: [
-
-                SizedBox(width: 50,),
-
-                IconLabelAction(
-                    icon: Icons.home_filled,
-                    label: 'Home',
-                    selected: isHome,
-                    onTap: (){
-                      setState(() => isHome = !isHome);
-                    }
-                ),
-
-                SizedBox(width: 26,),
-
-
-                IconLabelAction(
-                    icon: Icons.maps_home_work,
-                    label: 'office',
-                    selected: isOffice,
-                    onTap: (){
-                      setState(() => isOffice = !isOffice);
-                    }
-                ),
-
-                SizedBox(width: 26,),
-
-                IconLabelAction(
-                    icon: Icons.shopping_bag_outlined,
-                    label: 'Shop',
-                    selected: isShop,
-                    onTap: (){
-                      setState(() => isShop = !isShop);
-                    }
-                ),
-
-                SizedBox(width: 26,),
-
-                IconLabelAction(
-                    icon: Icons.add_home_work_rounded,
-                    label: 'Hotel',
-                    selected: isHotel,
-                    onTap: (){
-                      setState(() => isHotel = !isHotel);
-                    }
-                ),
-
-              ],
+                ],
 
 
 
-            ),
+              ),
+            ),),
 
             Padding(
               padding: const EdgeInsets.fromLTRB(22,20,22,20),
@@ -157,6 +156,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   const SizedBox(height: 6),
 
                   CustomTextField(
+                    controller: titleController,
                     hint: 'Hotel',
                     prefix: Image.asset('assets/images/second_pin.png'),
                   ),
@@ -207,6 +207,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   GradientButton(
                     text: 'Save Place',
                     onPressed: () {
+                      Navigator.pop(context);
                       //Get.to(OtpScreen());
                     },
                   ),

@@ -13,7 +13,7 @@ import '../user-controller/user_home_controller.dart';
 class WasteDetailsWidget extends StatelessWidget {
   WasteDetailsWidget({super.key});
 
-  final controller = Get.find<DriverHomeController>();
+  final controller = Get.find<UserHomeController>();
 
   @override
   Widget build(BuildContext context) {

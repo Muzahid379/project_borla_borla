@@ -3,7 +3,6 @@ import 'package:project_borla/screens/activity-screens/user_activity_screen.dart
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
-import 'package:project_borla/screens/search-place-screens/location_search_screen_two.dart';
 
 import '../../features/fragments/bottom_nav_bar.dart';
 
@@ -31,7 +30,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
 
   final WidgetOptions = [
     HomeMapScreen(),
-    ActivityScreen(),
+    UserActivityScreen(),
     NotificationsScreenCopy(),
     ProfileScreenCopy(),
 

@@ -11,6 +11,17 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconCopyGen {
+  const $AssetsIconCopyGen();
+
+  /// File path: assets/icon-copy/dobCalenderIcon.png
+  AssetGenImage get dobCalenderIcon =>
+      const AssetGenImage('assets/icon-copy/dobCalenderIcon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [dobCalenderIcon];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -86,6 +97,10 @@ class $AssetsIconsGen {
   AssetGenImage get homeSolidIcon =>
       const AssetGenImage('assets/icons/homeSolidIcon.png');
 
+  /// File path: assets/icons/hotelIcon.png
+  AssetGenImage get hotelIcon =>
+      const AssetGenImage('assets/icons/hotelIcon.png');
+
   /// File path: assets/icons/locationCirclePointer.png
   AssetGenImage get locationCirclePointer =>
       const AssetGenImage('assets/icons/locationCirclePointer.png');
@@ -114,6 +129,10 @@ class $AssetsIconsGen {
   AssetGenImage get notification =>
       const AssetGenImage('assets/icons/notification.png');
 
+  /// File path: assets/icons/officeIcon.png
+  AssetGenImage get officeIcon =>
+      const AssetGenImage('assets/icons/officeIcon.png');
+
   /// File path: assets/icons/paymentSuccess.png
   AssetGenImage get paymentSuccess =>
       const AssetGenImage('assets/icons/paymentSuccess.png');
@@ -130,9 +149,17 @@ class $AssetsIconsGen {
   AssetGenImage get profileSolidIcon =>
       const AssetGenImage('assets/icons/profileSolidIcon.png');
 
+  /// File path: assets/icons/searchIcon.png
+  AssetGenImage get searchIcon =>
+      const AssetGenImage('assets/icons/searchIcon.png');
+
   /// File path: assets/icons/shadowStarIcon.png
   AssetGenImage get shadowStarIcon =>
       const AssetGenImage('assets/icons/shadowStarIcon.png');
+
+  /// File path: assets/icons/shopIcon.png
+  AssetGenImage get shopIcon =>
+      const AssetGenImage('assets/icons/shopIcon.png');
 
   /// File path: assets/icons/terms&Conditions.png
   AssetGenImage get termsConditions =>
@@ -173,6 +200,7 @@ class $AssetsIconsGen {
     globalIcon,
     homeIcon,
     homeSolidIcon,
+    hotelIcon,
     locationCirclePointer,
     locationPointer,
     lockIcon,
@@ -180,11 +208,14 @@ class $AssetsIconsGen {
     messageIcon,
     nightMoonIcon,
     notification,
+    officeIcon,
     paymentSuccess,
     privacyPolicy,
     profileIcon,
     profileSolidIcon,
+    searchIcon,
     shadowStarIcon,
+    shopIcon,
     termsConditions,
     trasparentStarIcon,
     vanIcon,
@@ -195,6 +226,18 @@ class $AssetsIconsGen {
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/add_button.png
+  AssetGenImage get addButton =>
+      const AssetGenImage('assets/images/add_button.png');
+
+  /// File path: assets/images/amber_pattern_left.png
+  AssetGenImage get amberPatternLeft =>
+      const AssetGenImage('assets/images/amber_pattern_left.png');
+
+  /// File path: assets/images/amber_pattern_right.png
+  AssetGenImage get amberPatternRight =>
+      const AssetGenImage('assets/images/amber_pattern_right.png');
 
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
@@ -211,16 +254,29 @@ class $AssetsImagesGen {
   AssetGenImage get cameraBtn =>
       const AssetGenImage('assets/images/camera_btn.png');
 
+  /// File path: assets/images/cash.png
+  AssetGenImage get cash => const AssetGenImage('assets/images/cash.png');
+
   /// File path: assets/images/circle_image.png
   AssetGenImage get circleImage =>
       const AssetGenImage('assets/images/circle_image.png');
 
+  /// File path: assets/images/clock.png
+  AssetGenImage get clock => const AssetGenImage('assets/images/clock.png');
+
   /// File path: assets/images/cross.png
   AssetGenImage get cross => const AssetGenImage('assets/images/cross.png');
+
+  /// File path: assets/images/dots.png
+  AssetGenImage get dots => const AssetGenImage('assets/images/dots.png');
 
   /// File path: assets/images/emptyProfile.png
   AssetGenImage get emptyProfile =>
       const AssetGenImage('assets/images/emptyProfile.png');
+
+  /// File path: assets/images/emptyProfilePic.png
+  AssetGenImage get emptyProfilePic =>
+      const AssetGenImage('assets/images/emptyProfilePic.png');
 
   /// File path: assets/images/fourth_pin.png
   AssetGenImage get fourthPin =>
@@ -245,14 +301,37 @@ class $AssetsImagesGen {
   AssetGenImage get locationPin =>
       const AssetGenImage('assets/images/location_pin.png');
 
+  /// File path: assets/images/location_pin_two.png
+  AssetGenImage get locationPinTwo =>
+      const AssetGenImage('assets/images/location_pin_two.png');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// File path: assets/images/map.png
   AssetGenImage get map => const AssetGenImage('assets/images/map.png');
 
+  /// File path: assets/images/map_home.png
+  AssetGenImage get mapHome =>
+      const AssetGenImage('assets/images/map_home.png');
+
+  /// File path: assets/images/map_hotel.png
+  AssetGenImage get mapHotel =>
+      const AssetGenImage('assets/images/map_hotel.png');
+
+  /// File path: assets/images/map_office.png
+  AssetGenImage get mapOffice =>
+      const AssetGenImage('assets/images/map_office.png');
+
+  /// File path: assets/images/map_shop.png
+  AssetGenImage get mapShop =>
+      const AssetGenImage('assets/images/map_shop.png');
+
   /// File path: assets/images/metal.png
   AssetGenImage get metal => const AssetGenImage('assets/images/metal.png');
+
+  /// File path: assets/images/momo.png
+  AssetGenImage get momo => const AssetGenImage('assets/images/momo.png');
 
   /// File path: assets/images/noImage.jpg
   AssetGenImage get noImage => const AssetGenImage('assets/images/noImage.jpg');
@@ -287,6 +366,10 @@ class $AssetsImagesGen {
   AssetGenImage get onboard4 =>
       const AssetGenImage('assets/images/onboard4.png');
 
+  /// File path: assets/images/orange_tick.png
+  AssetGenImage get orangeTick =>
+      const AssetGenImage('assets/images/orange_tick.png');
+
   /// File path: assets/images/organic.png
   AssetGenImage get organic => const AssetGenImage('assets/images/organic.png');
 
@@ -300,6 +383,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/patternRight.png
   AssetGenImage get patternRight =>
       const AssetGenImage('assets/images/patternRight.png');
+
+  /// File path: assets/images/payment.png
+  AssetGenImage get payment => const AssetGenImage('assets/images/payment.png');
 
   /// File path: assets/images/plastic.png
   AssetGenImage get plastic => const AssetGenImage('assets/images/plastic.png');
@@ -323,6 +409,9 @@ class $AssetsImagesGen {
   AssetGenImage get tabIconOne =>
       const AssetGenImage('assets/images/tab_icon_one.png');
 
+  /// File path: assets/images/target.png
+  AssetGenImage get target => const AssetGenImage('assets/images/target.png');
+
   /// File path: assets/images/target_icon.png
   AssetGenImage get targetIcon =>
       const AssetGenImage('assets/images/target_icon.png');
@@ -334,6 +423,10 @@ class $AssetsImagesGen {
   AssetGenImage get thirdPin =>
       const AssetGenImage('assets/images/third_pin.png');
 
+  /// File path: assets/images/tiles_icon.png
+  AssetGenImage get tilesIcon =>
+      const AssetGenImage('assets/images/tiles_icon.png');
+
   /// File path: assets/images/user.png
   AssetGenImage get user => const AssetGenImage('assets/images/user.png');
 
@@ -343,6 +436,25 @@ class $AssetsImagesGen {
   /// File path: assets/images/user2.png
   AssetGenImage get user2 => const AssetGenImage('assets/images/user2.png');
 
+  /// File path: assets/images/user_call.png
+  AssetGenImage get userCall =>
+      const AssetGenImage('assets/images/user_call.png');
+
+  /// File path: assets/images/user_cross.png
+  AssetGenImage get userCross =>
+      const AssetGenImage('assets/images/user_cross.png');
+
+  /// File path: assets/images/user_large_pin.png
+  AssetGenImage get userLargePin =>
+      const AssetGenImage('assets/images/user_large_pin.png');
+
+  /// File path: assets/images/user_msg.png
+  AssetGenImage get userMsg =>
+      const AssetGenImage('assets/images/user_msg.png');
+
+  /// File path: assets/images/walk.png
+  AssetGenImage get walk => const AssetGenImage('assets/images/walk.png');
+
   /// File path: assets/images/wallet.png
   AssetGenImage get wallet => const AssetGenImage('assets/images/wallet.png');
 
@@ -351,13 +463,20 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    addButton,
+    amberPatternLeft,
+    amberPatternRight,
     apple,
     background,
     backgroundShadow,
     cameraBtn,
+    cash,
     circleImage,
+    clock,
     cross,
+    dots,
     emptyProfile,
+    emptyProfilePic,
     fourthPin,
     general,
     google,
@@ -365,9 +484,15 @@ class $AssetsImagesGen {
     home2,
     icon,
     locationPin,
+    locationPinTwo,
     logo,
     map,
+    mapHome,
+    mapHotel,
+    mapOffice,
+    mapShop,
     metal,
+    momo,
     noImage,
     noProfile,
     notFound,
@@ -377,22 +502,31 @@ class $AssetsImagesGen {
     onboard2,
     onboard3,
     onboard4,
+    orangeTick,
     organic,
     paper,
     patternLeft,
     patternRight,
+    payment,
     plastic,
     rider,
     savedIcon,
     scheduleImg,
     secondPin,
     tabIconOne,
+    target,
     targetIcon,
     thanks,
     thirdPin,
+    tilesIcon,
     user,
     user1,
     user2,
+    userCall,
+    userCross,
+    userLargePin,
+    userMsg,
+    walk,
     wallet,
     wallet2,
   ];
@@ -401,6 +535,7 @@ class $AssetsImagesGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsIconCopyGen iconCopy = $AssetsIconCopyGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const String mapStyle = 'assets/map_style.json';

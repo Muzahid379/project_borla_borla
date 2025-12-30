@@ -46,7 +46,7 @@ Widget userRow() {
         children: [
           InkWell(
               onTap: () {
-                Get.to(()=> ChattingScreen());
+                Get.to(()=> UserChattingScreen());
               },
               child: circleAction(Assets.icons.messageIcon.image(height: 20, width: 20))),
           const SizedBox(width: 12),

@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/role/components/custom_container.dart';
+import 'package:project_borla/screens/search-place-screens/add_place_screen.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../widgets/custom_text_field.dart';
 
@@ -14,7 +18,7 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 240,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -25,7 +29,6 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
         children: [
 
           const SizedBox(height: 12),
-
           Container(
             width: 40,
             height: 4,
@@ -35,7 +38,7 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
             ),
           ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
 
 
           Text('Current location...', style: TextStyle(
@@ -46,12 +49,12 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
 
           ),),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
 
           Padding(
             padding: const EdgeInsets.fromLTRB(22,0,22,0),
             child: Divider(
-              color: Colors.grey.shade400,
+              color: AppColors.gray200,
               thickness: 1,
             ),
           ),
@@ -87,9 +90,15 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
                 ),),
                 Spacer(),
 
-                Image.asset('assets/images/add_button.png'),
-
-
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> AddPlaceScreen());
+                  },
+                  child: CustomContainer(
+                    borderRadius: 4,
+                    color: AppColors.orange300,
+                      child: Icon(Icons.add, color: AppColors.white,)),
+                )
 
               ],
 

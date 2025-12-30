@@ -182,7 +182,7 @@ class AppRoute {
         transition: Transition.rightToLeftWithFade),
     GetPage(
         name: changePass,
-        page: () => ChangePasswordScreen(),
+        page: () => UserChangePasswordScreen(),
         transition: Transition.rightToLeftWithFade),
 
     GetPage(

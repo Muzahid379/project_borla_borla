@@ -21,7 +21,7 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
+    return UserGradientScaffold(
       child: SafeArea(
         child: Column(
           children: [

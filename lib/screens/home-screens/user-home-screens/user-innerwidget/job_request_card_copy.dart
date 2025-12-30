@@ -16,8 +16,8 @@ import 'common_widgets_copy.dart';
 class JobRequestCard extends StatelessWidget {
   JobRequestCard({super.key});
 
-  final DriverHomeController controller =
-  Get.find<DriverHomeController>();
+  final UserHomeController controller =
+  Get.find<UserHomeController>();
 
   @override
   Widget build(BuildContext context) {

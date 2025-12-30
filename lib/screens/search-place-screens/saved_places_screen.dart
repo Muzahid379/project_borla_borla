@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../widgets/action_button_widget.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/gradient_button.dart';
@@ -90,7 +91,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
                     SizedBox(width: 50,),
 
                     IconLabelAction(
-                      icon: Icons.home_filled,
+                        icon: Assets.icons.homeIcon.image(height: 20, width: 20),
                       label: 'Home',
                         selected: isHome,
                       onTap: (){
@@ -102,7 +103,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
 
 
                     IconLabelAction(
-                        icon: Icons.maps_home_work,
+                        icon: Assets.icons.officeIcon.image(height: 20, width: 20),
                         label: 'office',
                         selected: isOffice,
                         onTap: (){
@@ -113,7 +114,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
                     SizedBox(width: 26,),
 
                     IconLabelAction(
-                        icon: Icons.shopping_bag_outlined,
+                        icon: Assets.icons.shopIcon.image(height: 20, width: 20),
                         label: 'Shop',
                         selected: isShop,
                         onTap: (){
@@ -124,7 +125,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
                     SizedBox(width: 26,),
 
                     IconLabelAction(
-                        icon: Icons.add_home_work_rounded,
+                        icon: Assets.icons.hotelIcon.image(height: 20, width: 20),
                         label: 'Hotel',
                         selected: isHotel,
                         onTap: (){

@@ -21,17 +21,16 @@ class ActivityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
-      appBar: AppBar(
-        title: const CommonText(
-          text: "Activity",
-          fontSize: 18,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textDark,
-        ),
-      ),
       child: SafeArea(
         child: Column(
           children: [
+            CommonText(
+              text: "Activity",
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textDark,
+            ),
+            SizedBox(height: 20,),
             JobsTabBar(),
 
             /// Animated content

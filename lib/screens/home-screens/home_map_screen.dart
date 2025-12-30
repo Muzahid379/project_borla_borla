@@ -2,23 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-
 import 'package:project_borla/screens/home-screens/user-home-screens/user-controller/user_home_controller.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/application_review_dialog_copy.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/job_request_card_copy.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/pulsing_cycle_copy.dart';
-import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
-import 'package:project_borla/utils/app_routes.dart';
+import 'package:project_borla/utils/app_texts.dart';
 
 import '../../../theme/app_color.dart';
 
 import '../../bottom-sheets/current_location_sheet.dart';
 import '../../bottom-sheets/search_location_sheet.dart';
-import '../../theme/common_text_two.dart';
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../theme/custom_container_copy.dart';
-import '../../utils/custom-gen-assets/assets.gen.dart';
 import '../map-screens/common_map_copy.dart';
 import '../profile-screens/profile_screen_copy.dart';
 import '../search-place-screens/location_search_screen_two.dart';
@@ -34,13 +26,12 @@ class HomeMapScreen extends StatefulWidget {
 }
 
 class _HomeMapScreenState extends State<HomeMapScreen> {
-  final DriverHomeController controller =
-  Get.put(DriverHomeController());
+  final UserHomeController controller =
+  Get.put(UserHomeController());
 
   void ShowCurrentLocationSheet (BuildContext context) {
 
     showModalBottomSheet(
-
       context: context,
       barrierColor: Colors.transparent,
       backgroundColor: Colors.transparent,
@@ -48,7 +39,6 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
       //showDragHandle: true,
       useSafeArea: true,
       builder: (context) => CurrentLocationSheet(),
-
     );
 
   }
@@ -56,7 +46,6 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
   void showSearchLocationSheet (BuildContext context) {
 
     showModalBottomSheet(
-
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
@@ -70,15 +59,15 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowCurrentLocationSheet(context);
-    },);
-
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Future.microtask(() {
+  //     ShowCurrentLocationSheet(context);
+  //   },);
+  //
+  // }
 
 
   @override
@@ -86,113 +75,81 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          /// Google Map
-          Positioned.fill(child: CommonMap()),
+          /// MAP
+          Positioned.fill(
+            child: CommonMap(),
+          ),
 
+          /// TOP CONTENT
           SafeArea(
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(22.0),
                   child: Row(
-
                     children: [
-
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            //ShowCurrentLocationSheetTwo(context);
-                            Get.to(()=>ProfileScreenCopy());
-                          },
-                          child: CircleAvatar(
-                            radius: 32,
-                            backgroundImage: const AssetImage('assets/images/emptyProfilePic.png'),
-                            backgroundColor: Colors.grey.shade200,
-                          ),
+                      InkWell(
+                        onTap: () => Get.to(() => ProfileScreenCopy()),
+                        child: CircleAvatar(
+                          radius: 32,
+                          backgroundImage:
+                          NetworkImage(AppTexts.userProfilePic),
                         ),
                       ),
-
-                      Spacer(),
-
+                      const Spacer(),
                       InkWell(
-                        onTap: () {
-                          //ShowConfirmAddressSheet(context);
-
-                          Get.to(()=>LocationSearchScreenTwo());
-
-
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(2),
-
-                          //color: Colors.white54,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white54,
-                            border: Border.all(color: Colors.white, width: 2),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                                offset: const Offset(0, 4), // x, y
-                              ),
-                            ],
-
-
-                          ),
-                          child: ClipOval(
-
-                            child: Icon(Icons.search, size: 52,color: Colors.grey.shade800,),
-
-                          ),
+                        onTap: () => Get.to(() => LocationSearchScreenTwo()),
+                        child: CustomContainer(
+                          color: AppColors.white,
+                          borderRadius: 100,
+                          padding: const EdgeInsets.all(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.black50,
+                              blurRadius: 10,
+                              spreadRadius: 5,
+                              offset: const Offset(10, 7),
+                            )
+                          ],
+                          child: Assets.icons.searchIcon
+                              .image(height: 20, width: 20),
                         ),
-                      )
-
-
+                      ),
                     ],
-
                   ),
                 ),
-                SizedBox(height: 300,),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: InkWell(
-                        onTap: () {
-                          //ShowSearchLocationSheet(context);
-                          //Get.to(()=>LocationSearchScreen());
-                        },
-                        child: Card(
-                          //color: Colors.amber,
-                          child: Container(
-                              height: 50,
-                              width: 50,
-
-                              //color: Colors.amber,
-                              decoration: BoxDecoration(
-                                //border: Border.all(color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.amber
-                              ),
-                              child: Image.asset('assets/images/target.png')
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                )
-
-
               ],
             ),
-          )
+          ),
 
+          /// 🔥 PERSISTENT BOTTOM SHEET WITH ANIMATION
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Obx(
+                  () => AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                transitionBuilder: (child, animation) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0, 1),
+                      end: Offset.zero,
+                    ).animate(animation),
+                    child: FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    ),
+                  );
+                },
+                child: controller.showSearchSheet.value
+                    ? const SearchLocationSheet(
+                  key: ValueKey('search'),
+                )
+                    : const CurrentLocationSheet(
+                  key: ValueKey('current'),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
