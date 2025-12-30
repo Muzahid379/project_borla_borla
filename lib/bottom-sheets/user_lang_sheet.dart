@@ -1,27 +1,40 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/theme/app_color.dart';
+import 'package:project_borla/theme/common_button_copy.dart';
 
+import '../language/language_service.dart';
+import '../role/components/custom_container.dart';
 import '../theme/common_text_two.dart';
+import '../utils/app_texts.dart';
 
 
-class LanguageSelectionBottomSheet extends StatefulWidget {
-  const LanguageSelectionBottomSheet({super.key});
+class UserLanguageSelectionBottomSheet extends StatefulWidget {
+  const UserLanguageSelectionBottomSheet({super.key});
 
   @override
-  State<LanguageSelectionBottomSheet> createState() =>
-      _LanguageSelectionBottomSheetState();
+  State<UserLanguageSelectionBottomSheet> createState() =>
+      _UserLanguageSelectionBottomSheetState();
 }
 
-class _LanguageSelectionBottomSheetState
-    extends State<LanguageSelectionBottomSheet> {
+class _UserLanguageSelectionBottomSheetState
+    extends State<UserLanguageSelectionBottomSheet> {
   String selectedLanguage = 'English';
 
   final List<Map<String, String>> languages = [
     {'name': 'English', 'greeting': 'Hello'},
     {'name': 'Ghana', 'greeting': 'Akwaaba'},
   ];
+
+  void changeToEnglish() {
+    Get.updateLocale(const Locale('en', 'US'));
+  }
+
+  void changeToGhana() {
+    Get.updateLocale(const Locale('ak', 'GH'));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,27 +45,33 @@ class _LanguageSelectionBottomSheetState
       ),
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              CustomContainer(
+                  height: 3,
+                  width: 40,
+                  color: AppColors.gray200,
+                  child: SizedBox()),
               // Title
-              const CommonText(
-                text: 'Choose your language',
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
+              SizedBox(height: 12.h),
+              CommonText(
+                text: AppTexts.chooseLanguage,
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 8.h),
 
               // Subtitle
               CommonText(
-                text: 'Changing the language will initiate a restart',
+                text: AppTexts.languageRestartNote,
                 fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: Colors.grey[600]!,
+                fontWeight: FontWeight.w400,
+                color: AppColors.gray300,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 32.h),
@@ -71,6 +90,11 @@ class _LanguageSelectionBottomSheetState
                       setState(() {
                         selectedLanguage = lang['name']!;
                       });
+                      if(selectedLanguage == 'English'){
+                        changeToEnglish();
+                      }else{
+                        changeToGhana();
+                      }
                     },
                   );
                 }).toList(),
@@ -78,39 +102,35 @@ class _LanguageSelectionBottomSheetState
               SizedBox(height: 40.h),
 
               // Save Button
-              SizedBox(
-                width: double.infinity,
-                height: 56.h,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: CommonText(
-                          text:
-                          'Language changed to $selectedLanguage',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.white,
-                        ),
-                      ),
+              CommonButton(
+                onTap: () async {
+                  // 🔹 1. Change app language + save to storage
+                  if (selectedLanguage == 'English') {
+                    await LanguageService.changeLocale(
+                      const Locale('en', 'US'),
                     );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(28.r),
-                    ),
-                    elevation: 0,
-                  ),
-                  child: const CommonText(
-                    text: 'Save',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+                  } else {
+                    await LanguageService.changeLocale(
+                      const Locale('ak', 'GH'),
+                    );
+                  }
+
+                  // 🔹 2. Close bottom sheet
+                  Navigator.pop(context);
+
+                  // 🔹 3. Feedback to user
+                  Get.snackbar(
+                    'Success',
+                    'Language changed to $selectedLanguage',
+                    snackPosition: SnackPosition.BOTTOM,
+                  );
+                },
+                firstGradient: AppColors.orange300,
+                secondGradient: AppColors.orange500,
+                buttonRadius: 12,
+                borderWidth: Get.width,
+                titleText: "Save",
+              )
             ],
           ),
         ),
@@ -148,11 +168,11 @@ class LanguageOption extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelected
-                      ? Color(0xFFFFFCF5)
-                      : Colors.grey[100],
+                      ? AppColors.orange100
+                      :  Colors.transparent,
                   border: Border.all(
-                    color: isSelected ? Colors.amber : Colors.transparent,
-                    width: 4,
+                    color: !isSelected ? AppColors.green100 : Colors.transparent,
+                    width: 2,
                   ),
                 ),
                 child: Center(
@@ -160,7 +180,7 @@ class LanguageOption extends StatelessWidget {
                     text: greeting,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
-                    color: isSelected ? Colors.amber : Colors.black87,
+                    color: isSelected ? AppColors.orange300 : Colors.black87,
                   ),
                 ),
               ),
@@ -180,7 +200,7 @@ class LanguageOption extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(6.w),
                 decoration: const BoxDecoration(
-                  color: Colors.amber,
+                  color: AppColors.orange300,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(

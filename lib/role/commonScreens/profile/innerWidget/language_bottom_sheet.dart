@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:project_borla/role/components/custom_container.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 import '../../../../language/language_service.dart';
@@ -43,17 +44,23 @@ class _LanguageSelectionBottomSheetState
       ),
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              CustomContainer(
+                height: 3,
+                  width: 40,
+                  color: AppColors.gray200,
+                  child: SizedBox()),
               // Title
+              SizedBox(height: 12.h),
               CommonText(
                 text: AppTexts.chooseLanguage,
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 8.h),
@@ -62,8 +69,8 @@ class _LanguageSelectionBottomSheetState
               CommonText(
                 text: AppTexts.languageRestartNote,
                 fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: Colors.grey[600]!,
+                fontWeight: FontWeight.w400,
+                color: AppColors.gray300,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 32.h),
@@ -121,9 +128,9 @@ class _LanguageSelectionBottomSheetState
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF4CAF50),
+                    backgroundColor: AppColors.green500,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(28.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     elevation: 0,
                   ),
@@ -172,11 +179,11 @@ class LanguageOption extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelected
-                      ? const Color(0xFFE8F5E8)
-                      : Colors.grey[100],
+                      ? AppColors.green50
+                      :  Colors.transparent,
                   border: Border.all(
-                    color: isSelected ? const Color(0xFF4CAF50) : Colors.transparent,
-                    width: 4,
+                    color: !isSelected ? AppColors.green50 : Colors.transparent,
+                    width: 2,
                   ),
                 ),
                 child: Center(

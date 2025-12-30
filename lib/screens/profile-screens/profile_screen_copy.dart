@@ -24,7 +24,7 @@ class ProfileScreenCopy extends StatelessWidget {
       context: context,
       isScrollControlled: true, // Allows full height if needed
       backgroundColor: Colors.transparent,
-      builder: (context) => const LanguageSelectionBottomSheet(),
+      builder: (context) => const UserLanguageSelectionBottomSheet(),
     );
   }
 
