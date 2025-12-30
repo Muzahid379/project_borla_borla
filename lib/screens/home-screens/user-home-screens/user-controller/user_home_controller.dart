@@ -45,6 +45,8 @@ class UserHomeController extends GetxController
     jobRequests.addAll(
       List.generate(3, (index) => JobRequestModel(id: index)),
     );
+
+    _startTransition();
   }
 
   void toggleOnline(bool value) {
@@ -62,6 +64,16 @@ class UserHomeController extends GetxController
 
   void declineJob(JobRequestModel job) {
     jobRequests.remove(job);
+  }
+
+  ///////////////////////////////////////////////
+  final RxBool showSearchSheet = true.obs;
+
+
+  void _startTransition() {
+    Future.delayed(const Duration(seconds: 3), () {
+      showSearchSheet.value = false;
+    });
   }
 
   ////////////////////////////////////////////////

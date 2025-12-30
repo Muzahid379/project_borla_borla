@@ -18,7 +18,7 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 240,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -29,7 +29,6 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
         children: [
 
           const SizedBox(height: 12),
-
           Container(
             width: 40,
             height: 4,
@@ -39,7 +38,7 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
             ),
           ),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
 
 
           Text('Current location...', style: TextStyle(
@@ -50,12 +49,12 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
 
           ),),
 
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
 
           Padding(
             padding: const EdgeInsets.fromLTRB(22,0,22,0),
             child: Divider(
-              color: Colors.grey.shade400,
+              color: AppColors.gray200,
               thickness: 1,
             ),
           ),

@@ -20,9 +20,9 @@ class _SearchLocationSheetState extends State<SearchLocationSheet> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
 
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 300,
+        height: 200,
         child: Column(
           children: [
 

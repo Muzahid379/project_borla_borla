@@ -59,15 +59,15 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowCurrentLocationSheet(context);
-    },);
-
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Future.microtask(() {
+  //     ShowCurrentLocationSheet(context);
+  //   },);
+  //
+  // }
 
 
   @override
@@ -75,100 +75,81 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          /// Google Map
-          Positioned.fill(child: CommonMap()),
+          /// MAP
+          Positioned.fill(
+            child: CommonMap(),
+          ),
 
+          /// TOP CONTENT
           SafeArea(
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(22.0),
                   child: Row(
-
                     children: [
-
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            //ShowCurrentLocationSheetTwo(context);
-                            Get.to(()=>ProfileScreenCopy());
-                          },
-                          child: CircleAvatar(
-                            radius: 32,
-                            backgroundImage: NetworkImage(AppTexts.userProfilePic),
-                            backgroundColor: Colors.grey.shade200,
-                          ),
+                      InkWell(
+                        onTap: () => Get.to(() => ProfileScreenCopy()),
+                        child: CircleAvatar(
+                          radius: 32,
+                          backgroundImage:
+                          NetworkImage(AppTexts.userProfilePic),
                         ),
                       ),
-
-                      Spacer(),
-
+                      const Spacer(),
                       InkWell(
-                        onTap: () {
-                          //ShowConfirmAddressSheet(context);
-
-                          Get.to(()=>LocationSearchScreenTwo());
-
-                        },
+                        onTap: () => Get.to(() => LocationSearchScreenTwo()),
                         child: CustomContainer(
                           color: AppColors.white,
-                            borderRadius: 100,
-                            padding: EdgeInsets.all(16),
-                            boxShadow: [
-                              BoxShadow(
-                                color: AppColors.black50,
-                                blurRadius: 10,
-                                spreadRadius: 5,
-                                offset: Offset(10, 7)
-                              )
-                            ],
-                            child: Assets.icons.searchIcon.image(height: 20, width: 20)),
-                      )
-
-
-                    ],
-
-                  ),
-                ),
-                SizedBox(height: 300,),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: InkWell(
-                        onTap: () {
-                          //ShowSearchLocationSheet(context);
-                          //Get.to(()=>LocationSearchScreen());
-                        },
-                        child: Card(
-                          //color: Colors.amber,
-                          child: Container(
-                              height: 50,
-                              width: 50,
-
-                              //color: Colors.amber,
-                              decoration: BoxDecoration(
-                                //border: Border.all(color: Colors.amber),
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.amber
-                              ),
-                              child: Image.asset('assets/images/target.png')
-                          ),
+                          borderRadius: 100,
+                          padding: const EdgeInsets.all(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.black50,
+                              blurRadius: 10,
+                              spreadRadius: 5,
+                              offset: const Offset(10, 7),
+                            )
+                          ],
+                          child: Assets.icons.searchIcon
+                              .image(height: 20, width: 20),
                         ),
                       ),
-                    )
-                  ],
-                )
-
-
+                    ],
+                  ),
+                ),
               ],
             ),
-          )
+          ),
 
+          /// 🔥 PERSISTENT BOTTOM SHEET WITH ANIMATION
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Obx(
+                  () => AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                transitionBuilder: (child, animation) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0, 1),
+                      end: Offset.zero,
+                    ).animate(animation),
+                    child: FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    ),
+                  );
+                },
+                child: controller.showSearchSheet.value
+                    ? const SearchLocationSheet(
+                  key: ValueKey('search'),
+                )
+                    : const CurrentLocationSheet(
+                  key: ValueKey('current'),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
