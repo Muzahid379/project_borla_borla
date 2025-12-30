@@ -2,6 +2,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'package:project_borla/features/auth/register_screen.dart';
 import 'package:project_borla/role/garbageCollector/activity/activity_screen.dart';
+import 'package:project_borla/screens/booking-accepted-screen/booking_accepted_screen.dart';
 import 'package:project_borla/screens/booking-requested-screen/booking_requested_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
@@ -68,6 +69,7 @@ class AppRoute {
   static const String confirmLocation = "/confirmLocation";
   static const String riderSearch = "/riderSearch";
   static const String bookRequest = "/bookRequest";
+  static const String bookAccepted = "/bookAccepted";
 
 
 
@@ -207,6 +209,11 @@ class AppRoute {
     GetPage(
         name: bookRequest,
         page: () => BookingRequestedScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: bookAccepted,
+        page: () => BookingAcceptedScreen(),
         transition: Transition.rightToLeftWithFade),
 
   ];

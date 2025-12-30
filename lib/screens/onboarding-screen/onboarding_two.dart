@@ -156,7 +156,6 @@ class OnboardingTwo extends StatelessWidget {
 
                 ),
 
-
               ],
 
             ) ,
