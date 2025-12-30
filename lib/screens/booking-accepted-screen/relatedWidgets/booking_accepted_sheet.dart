@@ -174,6 +174,7 @@ import '../../../role/commonScreens/chat/chatting_screen.dart';
 import '../../../role/components/text/common_text.dart';
 import '../../../role/garbageCollector/activity/controller/activity_controller.dart';
 import '../../../theme/app_color.dart';
+import '../../driver-information-screens/driver_information_screen.dart';
 import '../../scheduled-screens/cancel_ride_screen.dart';
 
 
@@ -338,7 +339,7 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
       children: [
         InkWell(
           onTap: (){
-            Get.to(()=>ProfileScreen());
+            Get.to(()=>DriverInformationScreen());
           },
           child: const CircleAvatar(
             radius: 28,
