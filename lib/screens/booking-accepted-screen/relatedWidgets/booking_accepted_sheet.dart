@@ -163,6 +163,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/role/commonScreens/profile/profile_screen.dart';
 import 'package:project_borla/role/garbageCollector/activity/innerWidget/common_widgets.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 import 'package:project_borla/screens/reject-rider-screens/reject_rider_screen.dart';
@@ -173,6 +174,7 @@ import '../../../role/commonScreens/chat/chatting_screen.dart';
 import '../../../role/components/text/common_text.dart';
 import '../../../role/garbageCollector/activity/controller/activity_controller.dart';
 import '../../../theme/app_color.dart';
+import '../../scheduled-screens/cancel_ride_screen.dart';
 
 
 
@@ -239,7 +241,7 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(22,8,22,10),
-                  child: userRowMod(),
+                  child: userRowModClick(),
                 ),
 
 
@@ -296,7 +298,7 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
                       ),
                     ),
                     onPressed: () {
-                      Get.to(()=>RejectRiderScreen());
+                      Get.to(()=>CancelRideScreen());
                     },
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(120, 14, 120, 14),
@@ -331,12 +333,17 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
   }
 
 
-  Widget userRowMod() {
+  Widget userRowModClick() {
     return Row(
       children: [
-        const CircleAvatar(
-          radius: 28,
-          backgroundImage: NetworkImage('https://shorturl.at/WSMrn'),
+        InkWell(
+          onTap: (){
+            Get.to(()=>ProfileScreen());
+          },
+          child: const CircleAvatar(
+            radius: 28,
+            backgroundImage: NetworkImage('https://shorturl.at/WSMrn'),
+          ),
         ),
         const SizedBox(width: 16),
         const Expanded(

@@ -457,13 +457,7 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
                             Color.fromRGBO(255,149,0, 1),
                           ],
                         ).createShader(bounds),
-                        // child: Text(
-                        //   'Skip',
-                        //   style: TextStyle(
-                        //     color: Colors.white,
-                        //     fontWeight: FontWeight.w600,
-                        //   ),
-                        // ),
+
                         child: Icon(Icons.calendar_month, color: Colors.amber, size: 30,),
                       ),
                     ),
@@ -480,20 +474,7 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
 
 
 
-            // Padding(
-            //       padding: const EdgeInsets.all(22.0),
-            //       child: GradientButton(
-            //         text: 'Book Now',
-            //         onPressed: () {
-            //           Get.to(()=>ChoosePaymentScreen());
-            //           //Navigator.pop(context);
-            //           //ShowPaymentSheet(context);
-            //
-            //
-            //
-            //         },
-            //       ),
-            //     ),
+
 
 
 

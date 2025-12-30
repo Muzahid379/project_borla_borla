@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 
 
 import '../../models/radio_enums.dart';
 import '../../widgets/gradient_button.dart';
+import '../reject-rider-screens/reject_rider_screen.dart';
 
 class CancelRideScreen extends StatefulWidget {
   const CancelRideScreen({super.key});
@@ -400,7 +402,7 @@ class _CancelRideScreenState extends State<CancelRideScreen> {
               child: GradientButton(
                 text: 'Confirm',
                 onPressed: () {
-                  //Get.to(RegisterScreen());
+                  Get.to(()=>RejectRiderScreen());
                 },
               ),
             ),

@@ -28,6 +28,7 @@ import 'package:project_borla/screens/search-place-screens/edit_place.dart';
 import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
 import 'package:project_borla/screens/search-place-screens/saved_places_screen.dart';
 import 'package:project_borla/screens/select_role_screen.dart';
+import 'package:project_borla/screens/track-screen/track_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_category_screen.dart';
 import 'package:project_borla/screens/waste-screens/waste_qty_screen.dart';
 
@@ -74,6 +75,7 @@ class AppRoute {
   static const String bookAccepted = "/bookAccepted";
   static const String paymentSuccess = "/paymentSuccess";
   static const String chooseRide = "/chooseRide";
+  static const String userTrack = "/userTrack";
 
 
 
@@ -102,10 +104,10 @@ class AppRoute {
         name: role,
         page: () => SelectRoleScreen(),
         transition: Transition.rightToLeftWithFade),
-    GetPage(
-        name: home,
-        page: () => HomeScreenOne(),
-        transition: Transition.rightToLeftWithFade),
+    // GetPage(
+    //     name: home,
+    //     page: () => HomeScreenOne(),
+    //     transition: Transition.rightToLeftWithFade),
     GetPage(
         name: savedPlaces,
         page: () => SavedPlacesScreen(),
@@ -228,6 +230,11 @@ class AppRoute {
     GetPage(
         name: chooseRide,
         page: () => ChooseRideScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: userTrack,
+        page: () => UserTrackScreen(),
         transition: Transition.rightToLeftWithFade),
 
   ];

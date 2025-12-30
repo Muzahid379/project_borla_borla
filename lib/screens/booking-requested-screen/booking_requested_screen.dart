@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/booking-accepted-screen/booking_accepted_screen.dart';
+import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 
 import '../../features/auth/login_screen.dart';
 import '../../role/garbageCollector/map/common_map.dart';
+import '../home-screens/home_screen_one.dart';
 import '../select_role_screen.dart';
 
 class BookingRequestedScreen extends StatefulWidget {
@@ -75,7 +77,7 @@ class _BookingRequestedScreenState extends State<BookingRequestedScreen> {
                           child: ElevatedButton(
                             onPressed: () {
 
-                              //Get.to(LoginScreen());
+                              Get.to(()=>ChooseRideScreen());
 
                             },
                             style: ElevatedButton.styleFrom(
@@ -143,6 +145,7 @@ class _BookingRequestedScreenState extends State<BookingRequestedScreen> {
                               ),
                               onPressed: () {
                                 Get.to(()=>BookingAcceptedScreen());
+                                //Get.to(()=>HomeScreenOne());
                               },
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(58, 14, 58, 14),
