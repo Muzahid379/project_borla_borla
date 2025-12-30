@@ -19,56 +19,6 @@ class _PaymentSheetState extends State<PaymentSheet> {
   int index1 = 1 ;
   int index2 = 2 ;
 
-  // Widget buildCategoryCard({
-  //   required int index,
-  //   required String image,
-  // }) {
-  //   final bool isSelected = selectedIndex == index;
-  //
-  //   return GestureDetector(
-  //     onTap: () {
-  //       setState(() {
-  //         selectedIndex = index;
-  //       });
-  //     },
-  //     child: CustomPaint(
-  //       painter: isSelected
-  //           ? GradientBorderPainter(
-  //         strokeWidth: 2, // 👈 ultra-thin
-  //         radius: 12,
-  //         gradient: LinearGradient(
-  //           begin: Alignment.centerLeft,
-  //           end: Alignment.centerRight ,
-  //           colors: [
-  //             Color(0xFFFFC107),
-  //             Color(0xFFFF9800),
-  //           ],
-  //         ),
-  //       )
-  //           : GradientBorderPainter(
-  //         strokeWidth: 1, // 👈 ultra-thin
-  //         radius: 12,
-  //         gradient: LinearGradient(
-  //           colors: [
-  //             Colors.yellow,
-  //             Colors.yellow,
-  //           ],
-  //         ),
-  //       ),
-  //       child: Card(
-  //         elevation: 0,
-  //         color: Colors.white,
-  //         shape: RoundedRectangleBorder(
-  //           borderRadius: BorderRadius.circular(12),
-  //         ),
-  //         child: Padding(
-  //           padding: const EdgeInsets.fromLTRB(30, 10, 30, 16),
-  //           child: Image.asset(image, scale: 0.9),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 
 
   @override
