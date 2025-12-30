@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/ride-schedule-screens/ride_schedule_screen.dart';
 
 class DriverInformationSheet extends StatefulWidget {
   const DriverInformationSheet({super.key});
@@ -111,7 +114,7 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                       Text('4.8',  style: TextStyle(
                           color: Colors.grey.shade700,
                           fontSize: 24,
-                          fontWeight: FontWeight.w800
+                          fontWeight: FontWeight.w500
                       ),),
                     ],
                   ),
@@ -133,7 +136,7 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                       Text('9,200',  style: TextStyle(
                           color: Colors.grey.shade700,
                           fontSize: 24,
-                          fontWeight: FontWeight.w800
+                          fontWeight: FontWeight.w500
                       ),),
                     ],
                   ),
@@ -155,7 +158,7 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                       Text('3 years',  style: TextStyle(
                           color: Colors.grey.shade700,
                           fontSize: 24,
-                          fontWeight: FontWeight.w800
+                          fontWeight: FontWeight.w500
                       ),),
                     ],
                   ),
@@ -169,6 +172,8 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
 
 
               ),
+
+                SizedBox(height: 20,),
 
                 Row(
 
@@ -201,7 +206,7 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                           //.to(()=> OnboardingTwo());
                         },
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(50, 14, 50, 14),
+                          padding: EdgeInsets.fromLTRB(34, 18, 34, 18),
 
                           child: ShaderMask(
                             shaderCallback: (bounds) => LinearGradient(
@@ -210,13 +215,32 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                                 Color.fromRGBO(255,149,0, 1),
                               ],
                             ).createShader(bounds),
-                            child: Text(
-                              'Call',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
+                              child: Row(
+
+                                children: [
+
+                                  Image.asset('assets/images/user_call.png', color: Colors.white, scale: 4,),
+
+                                  SizedBox(width: 8,),
+
+                                  Text(
+                                    'Call',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      //fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+
+
+
+
+
+                                ],
+
+
+
+
+                              )
                           ),
                         ),
                       ),
@@ -225,15 +249,7 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
 
                     ElevatedButton(
                       onPressed: () {
-                        // if (_currentPage == onboardingData.length - 1) {
-                        //   // _completeOnboarding();
-                        //
-                        // } else {
-                        //   _pageController.nextPage(
-                        //     duration: const Duration(milliseconds: 500),
-                        //     curve: Curves.easeInOut,
-                        //   );
-                        // }
+                       Get.to(()=>RideScheduleScreen());
                       },
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero, // important
@@ -256,14 +272,48 @@ class _DriverInformationSheetState extends State<DriverInformationSheet> {
                         ),
                         child: Container(
                           alignment: Alignment.center,
-                          padding: const EdgeInsets.fromLTRB(60, 16, 60, 16),
-                          child: const Text(
-                            'Chat',
-                            style: TextStyle(
-                              color: Colors.white,
-                              //fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                          padding: const EdgeInsets.fromLTRB(60, 20, 60, 20),
+                          child: Row(
+
+                            children: [
+
+                              Image.asset('assets/images/user_msg.png', color: Colors.white, scale: 4,),
+
+                              SizedBox(width: 8,),
+
+                              Text(
+                                'Chat',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  //fontWeight: FontWeight.w600,
+                                ),
+                              ),
+
+
+
+
+
+                            ],
+
+
+
+
+                          )
+
+
+
+                          // child: const Text(
+                          //   'Chat',
+                          //   style: TextStyle(
+                          //     color: Colors.white,
+                          //     //fontWeight: FontWeight.w600,
+                          //   ),
+                          // ),
+                          //
+
+
+
+
                         ),
                       ),
                     )

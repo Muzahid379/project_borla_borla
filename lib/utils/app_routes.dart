@@ -4,6 +4,7 @@ import 'package:project_borla/features/auth/register_screen.dart';
 import 'package:project_borla/role/garbageCollector/activity/activity_screen.dart';
 import 'package:project_borla/screens/booking-accepted-screen/booking_accepted_screen.dart';
 import 'package:project_borla/screens/booking-requested-screen/booking_requested_screen.dart';
+import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
 import 'package:project_borla/screens/home-screens/payment_screen.dart';
@@ -14,6 +15,7 @@ import 'package:project_borla/screens/info-screens/policy_screen.dart';
 import 'package:project_borla/screens/info-screens/terms_and_conditions_screen.dart';
 import 'package:project_borla/screens/map-screens/map_screen_two.dart';
 import 'package:project_borla/screens/onboarding-screen/onboarding_one.dart';
+import 'package:project_borla/screens/payment-success-screens/payment_success_screeen.dart';
 import 'package:project_borla/screens/profile-screens/address_screen.dart';
 import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/edit_profile_screen_copy.dart';
@@ -70,6 +72,8 @@ class AppRoute {
   static const String riderSearch = "/riderSearch";
   static const String bookRequest = "/bookRequest";
   static const String bookAccepted = "/bookAccepted";
+  static const String paymentSuccess = "/paymentSuccess";
+  static const String chooseRide = "/chooseRide";
 
 
 
@@ -214,6 +218,16 @@ class AppRoute {
     GetPage(
         name: bookAccepted,
         page: () => BookingAcceptedScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: paymentSuccess,
+        page: () => PaymentSuccessScreeen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: chooseRide,
+        page: () => ChooseRideScreen(),
         transition: Transition.rightToLeftWithFade),
 
   ];

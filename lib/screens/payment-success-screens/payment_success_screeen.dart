@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+
+import '../../role/garbageCollector/map/common_map.dart';
+import '../../widgets/gradient_button.dart';
+
+class PaymentSuccessScreeen extends StatefulWidget {
+  const PaymentSuccessScreeen({super.key});
+
+  @override
+  State<PaymentSuccessScreeen> createState() => _PaymentSuccessScreeenState();
+}
+
+class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.dialog(
+        AlertDialog(
+
+          insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+
+          content: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              SizedBox(
+                  height: 310,
+                  width: 360,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 24,),
+
+                      Image.asset('assets/images/wave_tick.png', scale: 0.2, height: 80, width: 80,),
+
+                      SizedBox(height: 24,),
+
+                      Text('Payment Success', style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w600
+                      ), ),
+
+                      SizedBox(height: 20,),
+
+                      Text("Your money has been successfully", style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.w500
+                      ), ),
+
+                      //SizedBox(height: 30,),
+
+                      Text("sent to Sergio Ramasis", style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.w500
+                      ), ),
+
+
+
+                      SizedBox(height: 24,),
+
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
+                        child: GradientButton(
+                          text: 'Please Feedback',
+                          onPressed: () {
+                            Get.to(()=> PaymentSuccessScreeen());
+                          },
+                        ),
+                      ),
+
+
+
+                    ],
+                  )
+              ),
+
+              Positioned(
+                top: -14,
+                  left: -20,
+                  child:
+                      Image.asset('assets/images/amber_left.png',scale: 3,),
+                      // SizedBox(width: 140,),
+                      // Image.asset('assets/images/amber_right.png',scale: 5,),
+              ),
+
+              Positioned(
+                top: -10,
+                left: 210,
+                child:
+                //Image.asset('assets/images/amber_left.png',scale: 3,),
+                // SizedBox(width: 140,),
+                Image.asset('assets/images/amber_right.png',scale: 3,),
+              ),
+
+            ],
+          ),
+
+
+        ),
+      );
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Stack(
+          children: [
+            Positioned.fill(child: CommonMap()),
+
+          ],
+        )
+    );
+  }
+}

@@ -378,24 +378,124 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
 
 
 
+            Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: [
 
 
 
 
-                Padding(
-                  padding: const EdgeInsets.all(22.0),
-                  child: GradientButton(
-                    text: 'Book Now',
-                    onPressed: () {
-                      Get.to(()=>ChoosePaymentScreen());
-                      //Navigator.pop(context);
-                      //ShowPaymentSheet(context);
+                ElevatedButton(
+                  onPressed: () {
 
-
-
-                    },
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.zero, // important
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    minimumSize: const Size(100, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromRGBO(255, 214, 0, 1),
+                          Color.fromRGBO(255,149,0, 1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.fromLTRB(90, 16, 90, 16),
+                      child: const Text(
+                        'Book Now',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16
+                          //fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
+
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color.fromRGBO(255, 214, 0, 1),
+                        Color.fromRGBO(255,149,0, 1),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  padding: const EdgeInsets.all(2), // border thickness
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(40, 20),
+                      backgroundColor: Colors.white, // white button
+                      shadowColor: Colors.transparent,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14), // inner radius
+                      ),
+                    ),
+                    onPressed: () {
+                      //Get.to(()=> OnboardingTwo());
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+
+                      child: ShaderMask(
+                        shaderCallback: (bounds) => LinearGradient(
+                          colors: [
+                            Color.fromRGBO(255, 214, 0, 1),
+                            Color.fromRGBO(255,149,0, 1),
+                          ],
+                        ).createShader(bounds),
+                        // child: Text(
+                        //   'Skip',
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontWeight: FontWeight.w600,
+                        //   ),
+                        // ),
+                        child: Icon(Icons.calendar_month, color: Colors.amber, size: 30,),
+                      ),
+                    ),
+                  ),
+                ),
+
+
+              ],
+
+            ),
+
+
+
+
+
+
+            // Padding(
+            //       padding: const EdgeInsets.all(22.0),
+            //       child: GradientButton(
+            //         text: 'Book Now',
+            //         onPressed: () {
+            //           Get.to(()=>ChoosePaymentScreen());
+            //           //Navigator.pop(context);
+            //           //ShowPaymentSheet(context);
+            //
+            //
+            //
+            //         },
+            //       ),
+            //     ),
 
 
 
