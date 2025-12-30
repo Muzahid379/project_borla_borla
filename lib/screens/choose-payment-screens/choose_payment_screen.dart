@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_borla/bottom-sheets/payment_sheet.dart';
+import 'package:project_borla/role/components/commonBackButton/common_back_button.dart';
 
 import '../../role/garbageCollector/map/common_map.dart';
 
@@ -48,6 +49,10 @@ class _ChoosePaymentScreenState extends State<ChoosePaymentScreen> {
           children: [
             Positioned.fill(child: CommonMap()),
 
+            Positioned(
+              left: 20,
+                top: 60,
+                child: CommonBackButton())
           ],
         )
     );

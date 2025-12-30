@@ -30,7 +30,7 @@ class _HomeScreenOneState extends State<HomeScreenOne> {
 
   final WidgetOptions = [
     HomeMapScreen(),
-    ActivityScreen(),
+    UserActivityScreen(),
     NotificationsScreenCopy(),
     ProfileScreenCopy(),
 

@@ -6,6 +6,7 @@ import 'package:project_borla/screens/info-screens/about_us_screen.dart';
 import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
 import 'package:project_borla/screens/info-screens/policy_screen.dart';
 import 'package:project_borla/screens/profile-screens/address_screen.dart';
+import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/ps-inner-widgets/logout_bottom_sheet_copy.dart';
 import 'package:project_borla/screens/profile-screens/ps-inner-widgets/settingsListItemsCopy.dart';
 import '../../bottom-sheets/user_lang_sheet.dart';
@@ -29,16 +30,18 @@ class ProfileScreenCopy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
-      appBar: AppBar(
-        title: const CommonText(text: 'Profile', fontSize: 18, fontWeight: FontWeight.w500,),
-      ),
+    return UserGradientScaffold(
       child: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: CommonText(
+                  text: 'Profile', fontSize: 18, fontWeight: FontWeight.w600,),
+              ),
+              SizedBox(height: 20,),
               // Profile Header
               Container(
                 padding: const EdgeInsets.all(16),
@@ -93,7 +96,7 @@ class ProfileScreenCopy extends StatelessWidget {
                 icon: Icons.lock_outline,
                 title: 'Change Password',
                 onTap: () {
-                  Get.to(()=> EditProfileScreen());
+                  Get.to(()=> UserChangePasswordScreen());
                 },
               ),
 
@@ -116,7 +119,7 @@ class ProfileScreenCopy extends StatelessWidget {
                 icon: Icons.notifications_outlined,
                 title: 'Notifications',
                 onTap: () {
-                  Get.to(()=> NotificationsScreenCopy());
+                  Get.to(()=> NotificationsScreenCopy(isFromProfile: true,));
                 },
               ),
               SettingsListItem(

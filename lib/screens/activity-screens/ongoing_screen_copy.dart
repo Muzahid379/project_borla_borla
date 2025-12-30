@@ -13,7 +13,7 @@ class OngoingScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
         children: [
-          ActivityCard(key: ValueKey(0), role: "user",)
+          UserActivityCard(key: ValueKey(0), role: "user",)
         ],
       ),
     );

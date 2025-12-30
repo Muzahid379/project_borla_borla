@@ -1,102 +1,105 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:project_borla/theme/gradient_scaffold_copy.dart';
 
 import '../../theme/common_back_button_copy.dart';
 import '../../theme/common_text_two.dart';
 
 class NotificationsScreenCopy extends StatelessWidget {
-  const NotificationsScreenCopy({super.key});
+  bool isFromProfile;
+  NotificationsScreenCopy({super.key, this.isFromProfile = false});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFFCF5),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 16),
-          child: CommonBackButton(),
-        ),
-        title: const CommonText(
-          text: 'Notifications',
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            // Mark all as read link
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    // TODO: Mark all as read
-                  },
-                  child: const CommonText(
-                    text: 'Mark all as read',
-                    fontSize: 14,
+    return UserGradientScaffold(
+        child: SafeArea(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                isFromProfile? CommonBackButton() : SizedBox.shrink(),
+                Center(
+                  child: CommonText(
+                    text: 'Notifications',
+                    fontSize: 20,
                     fontWeight: FontWeight.w700,
-                    color: Colors.amber,
+                    color: Colors.black,
                   ),
+                ),
+                SizedBox(width: isFromProfile? 50 : 0,)
+              ],
+            ),
+          ),
+          // Mark all as read link
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {
+                  // TODO: Mark all as read
+                },
+                child: const CommonText(
+                  text: 'Mark all as read',
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.amber,
                 ),
               ),
             ),
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                children: [
-                  const SectionHeader(title: 'TODAY'),
-                  NotificationItem(
-                    title:
-                    'Your account has been verified. You can now go online and accept Borla pick ups.',
-                    time: '11:00 AM',
-                  ),
-                  NotificationItem(
-                    title:
-                    'You have a new pickup request 1.2 km away. Review and accept to start.',
-                    time: '11:00 AM',
-                  ),
-                  NotificationItem(
-                    title:
-                    'You\'ve successfully accepted the pickup. Navigate to the customer location.',
-                    time: '11:00 AM',
-                  ),
-                  NotificationItem(
-                    title:
-                    'Job completed successfully. Earnings have been added to your wallet.',
-                    time: '11:00 AM',
-                  ),
-                  SizedBox(height: 24.h),
-                  const SectionHeader(title: 'Yesterday'),
-                  NotificationItem(
-                    title:
-                    'Your account has been verified. You can now go online and accept jobs.',
-                    time: '11:00 AM',
-                  ),
-                  NotificationItem(
-                    title:
-                    'You have a new pickup request 1.2 km away. Review and accept to start.',
-                    time: '11:00 AM',
-                  ),
-                  NotificationItem(
-                    title:
-                    'You\'ve successfully accepted the pickup. Navigate to the customer location.',
-                    time: '11:00 AM',
-                  ),
-                  SizedBox(height: 40.h),
-                ],
-              ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              children: [
+                const SectionHeader(title: 'TODAY'),
+                NotificationItem(
+                  title:
+                  'Your account has been verified. You can now go online and accept Borla pick ups.',
+                  time: '11:00 AM',
+                ),
+                NotificationItem(
+                  title:
+                  'You have a new pickup request 1.2 km away. Review and accept to start.',
+                  time: '11:00 AM',
+                ),
+                NotificationItem(
+                  title:
+                  'You\'ve successfully accepted the pickup. Navigate to the customer location.',
+                  time: '11:00 AM',
+                ),
+                NotificationItem(
+                  title:
+                  'Job completed successfully. Earnings have been added to your wallet.',
+                  time: '11:00 AM',
+                ),
+                SizedBox(height: 24.h),
+                const SectionHeader(title: 'Yesterday'),
+                NotificationItem(
+                  title:
+                  'Your account has been verified. You can now go online and accept jobs.',
+                  time: '11:00 AM',
+                ),
+                NotificationItem(
+                  title:
+                  'You have a new pickup request 1.2 km away. Review and accept to start.',
+                  time: '11:00 AM',
+                ),
+                NotificationItem(
+                  title:
+                  'You\'ve successfully accepted the pickup. Navigate to the customer location.',
+                  time: '11:00 AM',
+                ),
+                SizedBox(height: 40.h),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
 
@@ -153,6 +156,7 @@ class NotificationItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CommonText(
+                  textAlign: TextAlign.left,
                   text: title,
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

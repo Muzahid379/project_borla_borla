@@ -16,16 +16,17 @@ import '../activity-controller/activity_controller_copy.dart';
 import '../schedule_detail_screen_copy.dart';
 //import 'common_widgets.dart';
 
-class ActivityCard extends StatelessWidget {
+class UserActivityCard extends StatelessWidget {
   bool isDetailScreen;
   String? role;
-  ActivityCard({super.key, this.isDetailScreen = false, this.role = "rider"});
+  UserActivityCard({super.key, this.isDetailScreen = false, this.role = "rider"});
 
   ActivityController activityController = Get.put(ActivityController());
   UserHomeController controller = Get.put(UserHomeController());
 
   @override
   Widget build(BuildContext context) {
+    controller.isBottomSheet.value = true;
     return Container(
       margin: EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),

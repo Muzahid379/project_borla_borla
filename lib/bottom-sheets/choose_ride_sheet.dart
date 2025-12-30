@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/choose-payment-screens/choose_payment_screen.dart';
+import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
 
 import '../widgets/gradient_button.dart';
 
@@ -384,12 +385,9 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
 
               children: [
 
-
-
-
                 ElevatedButton(
                   onPressed: () {
-
+                    Get.to(()=> ChoosePaymentScreen());
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero, // important
@@ -447,7 +445,7 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
                       ),
                     ),
                     onPressed: () {
-                      //Get.to(()=> OnboardingTwo());
+                      Get.to(()=> ScheduleRideTwo());
                     },
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(0, 8, 0, 8),

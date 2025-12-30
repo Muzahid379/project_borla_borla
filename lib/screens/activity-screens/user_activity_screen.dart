@@ -14,26 +14,25 @@ import 'history_screen_copy.dart';
 import 'ongoing_screen_copy.dart';
 
 
-class ActivityScreen extends StatelessWidget {
-  ActivityScreen({super.key});
+class UserActivityScreen extends StatelessWidget {
+  UserActivityScreen({super.key});
 
   final ActivityController activityController =
   Get.put(ActivityController());
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
-      appBar: AppBar(
-        title: const CommonText(
-          text: "Activity",
-          fontSize: 18,
-          fontWeight: FontWeight.w500,
-          color: AppColors.textDark,
-        ),
-      ),
+    return UserGradientScaffold(
       child: SafeArea(
         child: Column(
           children: [
+            CommonText(
+              text: "Activity",
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textDark,
+            ),
+            SizedBox(height: 20,),
             JobsTabBar(),
 
             /// Animated content

@@ -12,7 +12,7 @@ class PolicyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
+    return UserGradientScaffold(
       child: SafeArea(child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(

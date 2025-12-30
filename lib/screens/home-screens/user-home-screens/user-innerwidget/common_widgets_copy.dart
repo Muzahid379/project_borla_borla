@@ -2,6 +2,7 @@
 // ---------------- ACTION BUTTONS ----------------
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_borla/role/garbageCollector/call%20/outgoing_call_screen.dart';
 
 
 import '../../../../features/fragments/dotted_line_copy.dart';
@@ -76,11 +77,15 @@ Widget userRow(UserHomeController controller, {role}) {
         children: [
           InkWell(
               onTap: () {
-                Get.to(()=> ChattingScreen());
+                Get.to(()=> UserChattingScreen());
               },
-              child: circleAction(Assets.icons.messageIcon.image(height: 20, width: 20))),
+              child: circleAction(Assets.icons.messageIcon.image(height: 20, width: 20, color: AppColors.orange300))),
           const SizedBox(width: 12),
-          circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
+          InkWell(
+              onTap: () {
+                Get.to(()=> OutgoingCallScreen());
+              },
+              child: circleAction(Assets.icons.callIcon.image(height: 20, width: 20,  color: AppColors.orange300))),
         ],
       )
           : role == "rider" ? countdownRing(controller) : SizedBox.shrink(),
@@ -94,7 +99,7 @@ Widget circleAction(Image icon) {
     height: 40,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      border: Border.all(color: AppColors.primaryColor),
+      border: Border.all(color: AppColors.orange300),
     ),
     child: Center(child: icon),
   );

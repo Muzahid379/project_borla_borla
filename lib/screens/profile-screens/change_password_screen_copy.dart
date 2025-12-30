@@ -7,32 +7,32 @@ import '../../theme/common_text_field_copy.dart';
 import '../../theme/common_text_two.dart';
 import '../../theme/gradient_scaffold_copy.dart';
 
-class ChangePasswordScreen extends StatelessWidget {
-  const ChangePasswordScreen({super.key});
+class UserChangePasswordScreen extends StatelessWidget {
+  const UserChangePasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GradientScaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 16),
-          child: CommonBackButton(),
-        ),
-        title: const CommonText(
-          text: 'Change Password',
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
+    return UserGradientScaffold(
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CommonBackButton(),
+                  CommonText(
+                    text: 'Change Password',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 50,)
+                ],
+              ),
+              SizedBox(height: 40,),
               // Current Password
               PasswordField(label: 'Current Password'),
               SizedBox(height: 20.h),
