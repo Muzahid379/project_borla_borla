@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/role/components/navBar/nav_bar.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';
 import '../../../../theme/app_color.dart';
@@ -64,7 +66,8 @@ class PaymentReceiveDialog extends StatelessWidget {
                       const SizedBox(height: 16),
                       CommonButton(
                         onTap: () {
-                          Navigator.pop(context);
+                          Get.offAll(()=> DriverNavbar());
+                          // Navigator.pop(context);
                         },
                         buttonRadius: 12,
                         titleText: "Finish Ride",

@@ -61,7 +61,16 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   @override
   void onInit() {
     super.onInit();
-    jobRequests.addAll(List.generate(3, (index) => JobRequestModel(id: index)));
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    animation = AlwaysStoppedAnimation(1.0);
+
+    jobRequests.addAll(
+      List.generate(3, (index) => JobRequestModel(id: index)),
+    );
   }
 
   void acceptJob(JobRequestModel job) {

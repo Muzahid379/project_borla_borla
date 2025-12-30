@@ -6,6 +6,7 @@ import 'package:project_borla/role/commonScreens/privacyPolicy/privacy_policy_sc
 import 'package:project_borla/role/commonScreens/profile/edit_profile_screen.dart';
 import 'package:project_borla/role/commonScreens/termsOfConditions/terms_of_conditions.dart';
 import 'package:project_borla/role/components/text/common_text.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../../components/gradient_scafold.dart';
 import '../aboutUs/about_us.dart';
@@ -34,7 +35,8 @@ class ProfileScreen extends StatelessWidget {
             CommonText(
               text: 'Profile',
               fontSize: 18,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textDark,
             ),
             SizedBox(height: 20,),
             SingleChildScrollView(

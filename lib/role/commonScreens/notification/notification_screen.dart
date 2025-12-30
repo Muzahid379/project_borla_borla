@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../components/commonAppBar/common_app_bar.dart';
 import '../../components/commonBackButton/common_back_button.dart';
 import '../../components/text/common_text.dart';
 
@@ -10,24 +11,10 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5FFFB),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 16),
-          child: CommonBackButton(),
-        ),
-        title: const CommonText(
-          text: 'Notifications',
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
       body: SafeArea(
         child: Column(
           children: [
+            commonAppBar(appbarTitle: 'Notifications'),
             // Mark all as read link
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
@@ -151,6 +138,7 @@ class NotificationItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CommonText(
+                  textAlign: TextAlign.left,
                   text: title,
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

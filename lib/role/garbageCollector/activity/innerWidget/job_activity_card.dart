@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/garbageCollector/activity/controller/activity_controller.dart';
 import 'package:project_borla/role/garbageCollector/activity/schedule_detail_screen.dart';
+import 'package:project_borla/role/garbageCollector/home/customer_info_screen.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';
@@ -59,7 +60,9 @@ class ActivityCard extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          if(activityController.selectedIndex.value == 1){
+          if(activityController.selectedIndex.value == 0){
+            Get.to(() => CustomerInfoScreen());
+          }else if(activityController.selectedIndex.value == 1){
             Get.to(() => ScheduleDetailScreen());
           }
         },
