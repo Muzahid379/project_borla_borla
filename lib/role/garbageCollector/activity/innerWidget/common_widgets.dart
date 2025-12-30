@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/garbageCollector/activity/controller/activity_controller.dart';
-import 'package:project_borla/role/garbageCollector/call%20/ongoing_call_screen.dart';
+import 'package:project_borla/role/garbageCollector/call/ongoing_call_screen.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';
 import '../../../../theme/app_color.dart';

@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/components/custom_container.dart';
-import 'package:project_borla/role/garbageCollector/call%20/incoming_call_screen.dart';
-import 'package:project_borla/role/garbageCollector/call%20/outgoing_call_screen.dart';
+import 'package:project_borla/role/garbageCollector/call/incoming_call_screen.dart';
+import 'package:project_borla/role/garbageCollector/call/outgoing_call_screen.dart';
 import 'package:project_borla/role/garbageCollector/home/customer_info_screen.dart';
 
 import '../../../../gen/custom_assets/assets.gen.dart';

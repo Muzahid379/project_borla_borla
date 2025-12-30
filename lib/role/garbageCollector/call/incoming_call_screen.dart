@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/role/components/gradient_scafold.dart';
-import 'package:project_borla/role/garbageCollector/call%20/controller/call_controller.dart';
+import 'package:project_borla/role/garbageCollector/call/controller/call_controller.dart';
 
 import '../../components/text/common_text.dart';
 import 'ongoing_call_screen.dart';
