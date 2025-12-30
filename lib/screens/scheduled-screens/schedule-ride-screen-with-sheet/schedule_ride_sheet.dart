@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
+import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
 
 import '../../../theme/ripple.dart';
 
@@ -90,7 +94,8 @@ class _ScheduleRideSheetState extends State<ScheduleRideSheet> {
                   ),
                 ),
                 onPressed: () {
-                  //Get.to(()=>ChooseRideScreen());
+                  //Get.to(()=>ScheduleRideTwo());
+                  Get.to(()=>ChooseRideScreen());
                 },
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(120, 14, 120, 14),

@@ -128,7 +128,7 @@ class _RejectRiderSheetState extends State<RejectRiderSheet> {
                             ),
                           ),
                           onPressed: () {
-                            Get.to(()=> RiderArrivedScreen());
+                            Get.to(()=> HomeScreenOne());
                           },
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(40, 14,40, 14),

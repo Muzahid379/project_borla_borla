@@ -6,6 +6,7 @@ import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dar
 
 import '../../features/auth/login_screen.dart';
 import '../../role/garbageCollector/map/common_map.dart';
+import '../home-screens/home_screen_one.dart';
 import '../select_role_screen.dart';
 
 class BookingRequestedScreen extends StatefulWidget {
@@ -144,6 +145,7 @@ class _BookingRequestedScreenState extends State<BookingRequestedScreen> {
                               ),
                               onPressed: () {
                                 Get.to(()=>BookingAcceptedScreen());
+                                //Get.to(()=>HomeScreenOne());
                               },
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(58, 14, 58, 14),

@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/bottom-sheets/finding_rider_sheet.dart';
+import 'package:project_borla/screens/scheduled-screens/schedule-ride-screen-with-sheet/schedule_ride_with_bottom_screen.dart';
 
 
 class ScheduleRideTwo extends StatelessWidget {
@@ -436,8 +439,9 @@ class _ScheduleRideDialogState extends State<ScheduleRideDialog> {
                       onPressed: () {
                         // Handle the scheduled time here
                         print('Scheduled ride for: $selectedDateTime');
-                        Navigator.pop(context);
-                        ShowFindingRiderSheet(context);
+                        // Navigator.pop(context);
+                        // ShowFindingRiderSheet(context);
+                        Get.to(()=>ScheduleRideWithBottomScreen());
 
                       },
                       child: const Text(

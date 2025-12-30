@@ -38,12 +38,12 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
 
            //initialRoute: '/notify',
-          initialRoute: AppRoute.splashScreen,
+          //initialRoute: AppRoute.splashScreen,
           // initialRoute: AppRoute.homeTwo,
           //initialRoute: AppRoute.riderSearch,
           //initialRoute: AppRoute.splashScreen,
           //initialRoute: AppRoute.homeTwo,
-          // initialRoute: AppRoute.chooseRide,
+          initialRoute: AppRoute.chooseRide,
           getPages: AppRoute.pages,
 
           translations: AppTranslations(),
