@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_borla/bottom-sheets/delete_address_sheet.dart';
 import 'package:project_borla/theme/gradient_scaffold_copy.dart';
 
 import '../../widgets/gradient_button.dart';
@@ -12,6 +13,24 @@ class AddressScreen extends StatefulWidget {
 }
 
 class _AddressScreenState extends State<AddressScreen> {
+
+  void ShowDeleteAddressSheet (BuildContext context) {
+
+    showModalBottomSheet(
+
+      context: context,
+      barrierColor: Colors.black.withOpacity(0.5),
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      //showDragHandle: true,
+      useSafeArea: true,
+      builder: (context) => DeleteAddressSheet(),
+
+    );
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
@@ -249,7 +268,13 @@ class _AddressScreenState extends State<AddressScreen> {
                         ),),
                         Spacer(),
                         InkWell(
-                          onTap: (){},
+                          onTap: (){
+
+
+                            ShowDeleteAddressSheet(context);
+
+
+                          },
                           child: Image.asset('assets/images/dots.png'),
                         )
 

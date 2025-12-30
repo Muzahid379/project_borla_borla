@@ -41,6 +41,9 @@ class _MyAppState extends State<MyApp> {
           initialRoute: AppRoute.splashScreen,
           // initialRoute: AppRoute.homeTwo,
           //initialRoute: AppRoute.riderSearch,
+          //initialRoute: AppRoute.splashScreen,
+          //initialRoute: AppRoute.homeTwo,
+          // initialRoute: AppRoute.chooseRide,
           getPages: AppRoute.pages,
 
           translations: AppTranslations(),

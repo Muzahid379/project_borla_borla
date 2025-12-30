@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:project_borla/screens/info-screens/about_us_screen.dart';
 import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
 import 'package:project_borla/screens/info-screens/policy_screen.dart';
+import 'package:project_borla/screens/profile-screens/address_screen.dart';
 import 'package:project_borla/screens/profile-screens/ps-inner-widgets/logout_bottom_sheet_copy.dart';
 import 'package:project_borla/screens/profile-screens/ps-inner-widgets/settingsListItemsCopy.dart';
 import '../../bottom-sheets/user_lang_sheet.dart';
@@ -95,6 +96,15 @@ class ProfileScreenCopy extends StatelessWidget {
                   Get.to(()=> EditProfileScreen());
                 },
               ),
+
+              SettingsListItem(
+                icon: Icons.add_location_alt_rounded,
+                title: 'Address',
+                onTap: () {
+                  Get.to(()=> AddressScreen());
+                },
+              ),
+
               SettingsListItem(
                 icon: Icons.language,
                 title: 'Change Language',
