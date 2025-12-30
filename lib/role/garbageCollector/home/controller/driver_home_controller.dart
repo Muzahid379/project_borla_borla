@@ -11,6 +11,8 @@ class DriverHomeController extends GetxController with GetTickerProviderStateMix
   late GoogleMapController mapController;
 
   final RxBool isOnline = false.obs;
+
+  /// Checking Schedule Request or General Request
   final RxBool isScheduleRequest = true.obs;
 
   final Rx<LatLng> driverPosition =

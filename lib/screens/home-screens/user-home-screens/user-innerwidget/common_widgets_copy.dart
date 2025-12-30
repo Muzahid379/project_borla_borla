@@ -32,7 +32,7 @@ Widget actionButtons(BuildContext context,) {
       Expanded(
         child: CommonButton(
           onTap: (){
-            DriverHomeController.instance.isBottomSheet.value = true;
+            UserHomeController.instance.isBottomSheet.value = true;
             Get.to(()=> CustomerInfoScreen());
           },
           // onTap: controller.acceptJob,
@@ -45,7 +45,7 @@ Widget actionButtons(BuildContext context,) {
 }
 
 // ---------------- USER ROW ----------------
-Widget userRow(DriverHomeController controller, {role}) {
+Widget userRow(UserHomeController controller, {role}) {
   return Row(
     children: [
       const CircleAvatar(
@@ -101,7 +101,7 @@ Widget circleAction(Image icon) {
 }
 
 // ---------------- SAFE ANIMATION (NO Obx) ----------------
-Widget countdownRing(DriverHomeController controller) {
+Widget countdownRing(UserHomeController controller) {
   return SizedBox(
     width: 80,
     height: 80,

@@ -2,23 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-
 import 'package:project_borla/screens/home-screens/user-home-screens/user-controller/user_home_controller.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/application_review_dialog_copy.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/job_request_card_copy.dart';
-import 'package:project_borla/screens/home-screens/user-home-screens/user-innerwidget/pulsing_cycle_copy.dart';
-import 'package:project_borla/screens/search-place-screens/location_search_screen.dart';
-import 'package:project_borla/utils/app_routes.dart';
+import 'package:project_borla/utils/app_texts.dart';
 
 import '../../../theme/app_color.dart';
 
 import '../../bottom-sheets/current_location_sheet.dart';
 import '../../bottom-sheets/search_location_sheet.dart';
-import '../../theme/common_text_two.dart';
+import '../../gen/custom_assets/assets.gen.dart';
 import '../../theme/custom_container_copy.dart';
-import '../../utils/custom-gen-assets/assets.gen.dart';
 import '../map-screens/common_map_copy.dart';
 import '../profile-screens/profile_screen_copy.dart';
 import '../search-place-screens/location_search_screen_two.dart';
@@ -34,13 +26,12 @@ class HomeMapScreen extends StatefulWidget {
 }
 
 class _HomeMapScreenState extends State<HomeMapScreen> {
-  final DriverHomeController controller =
-  Get.put(DriverHomeController());
+  final UserHomeController controller =
+  Get.put(UserHomeController());
 
   void ShowCurrentLocationSheet (BuildContext context) {
 
     showModalBottomSheet(
-
       context: context,
       barrierColor: Colors.transparent,
       backgroundColor: Colors.transparent,
@@ -48,7 +39,6 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
       //showDragHandle: true,
       useSafeArea: true,
       builder: (context) => CurrentLocationSheet(),
-
     );
 
   }
@@ -56,7 +46,6 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
   void showSearchLocationSheet (BuildContext context) {
 
     showModalBottomSheet(
-
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
@@ -107,7 +96,7 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
                           },
                           child: CircleAvatar(
                             radius: 32,
-                            backgroundImage: const AssetImage('assets/images/emptyProfilePic.png'),
+                            backgroundImage: NetworkImage(AppTexts.userProfilePic),
                             backgroundColor: Colors.grey.shade200,
                           ),
                         ),
@@ -121,33 +110,20 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
 
                           Get.to(()=>LocationSearchScreenTwo());
 
-
                         },
-                        child: Container(
-                          padding: const EdgeInsets.all(2),
-
-                          //color: Colors.white54,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white54,
-                            border: Border.all(color: Colors.white, width: 2),
+                        child: CustomContainer(
+                          color: AppColors.white,
+                            borderRadius: 100,
+                            padding: EdgeInsets.all(16),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
+                                color: AppColors.black50,
                                 blurRadius: 10,
-                                spreadRadius: 2,
-                                offset: const Offset(0, 4), // x, y
-                              ),
+                                spreadRadius: 5,
+                                offset: Offset(10, 7)
+                              )
                             ],
-
-
-                          ),
-                          child: ClipOval(
-
-                            child: Icon(Icons.search, size: 52,color: Colors.grey.shade800,),
-
-                          ),
-                        ),
+                            child: Assets.icons.searchIcon.image(height: 20, width: 20)),
                       )
 
 

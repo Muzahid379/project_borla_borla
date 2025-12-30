@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_borla/features/auth/login_screen.dart';
 import 'package:project_borla/role/commonScreens/notification/notification_screen.dart';
 import 'package:project_borla/role/commonScreens/privacyPolicy/privacy_policy_screen.dart';
 import 'package:project_borla/role/commonScreens/profile/edit_profile_screen.dart';
@@ -143,6 +144,7 @@ class ProfileScreen extends StatelessWidget {
                     iconColor: Colors.red,
                     onTap: () {
                       showLogoutBottomSheet(context);
+                      Get.offAll(()=> LoginScreen());
                     },
                   ),
                 ],

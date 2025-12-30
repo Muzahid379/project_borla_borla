@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/role/components/custom_container.dart';
+import 'package:project_borla/screens/search-place-screens/add_place_screen.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../widgets/custom_text_field.dart';
 
@@ -87,9 +91,15 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
                 ),),
                 Spacer(),
 
-                Image.asset('assets/images/add_button.png'),
-
-
+                InkWell(
+                  onTap: () {
+                    Get.to(()=> AddPlaceScreen());
+                  },
+                  child: CustomContainer(
+                    borderRadius: 4,
+                    color: AppColors.orange300,
+                      child: Icon(Icons.add, color: AppColors.white,)),
+                )
 
               ],
 

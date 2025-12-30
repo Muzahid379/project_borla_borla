@@ -22,7 +22,7 @@ class ActivityCard extends StatelessWidget {
   ActivityCard({super.key, this.isDetailScreen = false, this.role = "rider"});
 
   ActivityController activityController = Get.put(ActivityController());
-  DriverHomeController controller = Get.put(DriverHomeController());
+  UserHomeController controller = Get.put(UserHomeController());
 
   @override
   Widget build(BuildContext context) {

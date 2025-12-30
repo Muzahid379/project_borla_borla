@@ -38,6 +38,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    controller.isScheduleRequest.value = false;
     return Scaffold(
       body: Stack(
         children: [

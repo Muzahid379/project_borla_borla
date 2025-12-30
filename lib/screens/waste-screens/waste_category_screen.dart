@@ -129,7 +129,9 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                             iconSize: 22,
                             icon: const Icon(Icons.arrow_back),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.back();
+                            },
                           ),
                         ),
 

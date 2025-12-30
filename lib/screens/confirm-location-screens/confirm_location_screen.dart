@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_borla/role/components/commonBackButton/common_back_button.dart';
 
 
 import 'package:project_borla/role/garbageCollector/map/common_map.dart';
@@ -51,7 +52,34 @@ class _ConfirmLocationScreenState extends State<ConfirmLocationScreen> {
       body: Stack(
         children: [
           Positioned.fill(child: CommonMap()),
+          Positioned(
+            top: 60,
+              left: 20,
+              child: Container(
+                width: 38,
+                height: 38,
+                decoration:  BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                      color: Colors.black.withAlpha(40),
+                    ),
+                  ],
+                ),
 
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  iconSize: 22,
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Get.back();
+                  },
+                ),
+              ),
+          )
         ],
       )
     );

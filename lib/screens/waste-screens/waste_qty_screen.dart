@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/helpers/other_helper.dart';
 import 'package:project_borla/screens/finding-driver-screens/finding_driver_screen.dart';
 
 import '../../widgets/custom_text_field.dart';
@@ -63,7 +64,9 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
 
                             iconSize: 22,
                             icon: const Icon(Icons.arrow_back),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.back();
+                            },
                           ),
                         ),
 
@@ -109,14 +112,12 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
                       children: [
 
                         InkWell(
-
-                          onTap: (){},
-
+                          onTap: (){
+                            OtherHelper.openGallery();
+                          },
                           child: Image.asset(
-
                             'assets/images/camera_btn.png',
                             scale: 0.8,
-
                           ),
                         ),
 

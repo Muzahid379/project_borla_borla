@@ -17,7 +17,7 @@ class CustomerInfoBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DriverHomeController controller = Get.find();
+    final UserHomeController controller = Get.find();
 
     return DraggableScrollableSheet(
       initialChildSize: 0.55,

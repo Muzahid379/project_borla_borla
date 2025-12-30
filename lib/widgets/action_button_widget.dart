@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_borla/theme/app_color.dart';
+
+import '../gen/custom_assets/assets.gen.dart';
 
 class IconLabelAction extends StatelessWidget {
-  final IconData icon;
+  final Image icon;
   final String label;
   final VoidCallback onTap;
   final bool selected;
@@ -19,7 +22,7 @@ class IconLabelAction extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final activeColor = Colors.blue;
-    final inactiveColor = Colors.grey.shade400;
+    final inactiveColor = AppColors.green300;
 
     return InkWell(
       borderRadius: BorderRadius.circular(12),
@@ -29,11 +32,7 @@ class IconLabelAction extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              size: 28,
-              color: selected ? Colors.amber : inactiveColor,
-            ),
+            icon,
             const SizedBox(height: 4),
             Container(
               padding: const EdgeInsets.only(bottom: 0.3),
