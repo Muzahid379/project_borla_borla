@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/screens/activity-screens/user_activity_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/info-screens/notification_screen_copy.dart';
@@ -6,47 +7,38 @@ import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
 
 import '../../features/fragments/bottom_nav_bar.dart';
 
-class UserNavBar extends StatefulWidget {
-  const UserNavBar({super.key});
+class NavBarController extends GetxController {
+  var tabIndex = 0.obs;
 
-  @override
-  State<UserNavBar> createState() => _UserNavBarState();
+  void changeTab(int index) {
+    tabIndex.value = index;
+  }
 }
 
-class _UserNavBarState extends State<UserNavBar> {
+class UserNavBar extends StatelessWidget {
+  UserNavBar({super.key});
 
+  final NavBarController controller = Get.put(NavBarController());
 
-  int tabIndex = 0;
-
-  onItemTapped(int index) {
-
-    setState(() {
-
-      tabIndex = index;
-
-    });
-
-  }
-
-  final WidgetOptions = [
+  final List<Widget> widgetOptions = [
     HomeMapScreen(),
     UserActivityScreen(),
     NotificationsScreenCopy(),
     ProfileScreenCopy(),
-
   ];
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-      body: WidgetOptions.elementAt(tabIndex),
-      bottomNavigationBar: bttmNavBar(tabIndex, onItemTapped, context),
-
+    return Obx(
+          () => Scaffold(
+        body: widgetOptions[controller.tabIndex.value],
+        bottomNavigationBar: bttmNavBar(
+          controller.tabIndex.value,
+          controller.changeTab,
+          context,
+        ),
+      ),
     );
   }
 }
+

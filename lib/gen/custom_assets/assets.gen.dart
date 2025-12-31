@@ -306,6 +306,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/icon.png
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
 
+  /// File path: assets/images/leftPatterHighDense.png
+  AssetGenImage get leftPatterHighDense =>
+      const AssetGenImage('assets/images/leftPatterHighDense.png');
+
   /// File path: assets/images/location_pin.png
   AssetGenImage get locationPin =>
       const AssetGenImage('assets/images/location_pin.png');
@@ -402,6 +406,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/rider.png
   AssetGenImage get rider => const AssetGenImage('assets/images/rider.png');
 
+  /// File path: assets/images/rightPatternHighDense.png
+  AssetGenImage get rightPatternHighDense =>
+      const AssetGenImage('assets/images/rightPatternHighDense.png');
+
   /// File path: assets/images/saved_icon.png
   AssetGenImage get savedIcon =>
       const AssetGenImage('assets/images/saved_icon.png');
@@ -497,6 +505,7 @@ class $AssetsImagesGen {
     home,
     home2,
     icon,
+    leftPatterHighDense,
     locationPin,
     locationPinTwo,
     logo,
@@ -524,6 +533,7 @@ class $AssetsImagesGen {
     payment,
     plastic,
     rider,
+    rightPatternHighDense,
     savedIcon,
     scheduleImg,
     secondPin,

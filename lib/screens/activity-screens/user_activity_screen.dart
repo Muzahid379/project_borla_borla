@@ -17,8 +17,7 @@ import 'ongoing_screen_copy.dart';
 class UserActivityScreen extends StatelessWidget {
   UserActivityScreen({super.key});
 
-  final ActivityController activityController =
-  Get.put(ActivityController());
+  final ActivityController activityController = Get.put(ActivityController());
 
   @override
   Widget build(BuildContext context) {
