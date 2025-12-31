@@ -57,6 +57,10 @@ class $AssetsIconsGen {
   AssetGenImage get callIcon =>
       const AssetGenImage('assets/icons/callIcon.png');
 
+  /// File path: assets/icons/clockIcon.png
+  AssetGenImage get clockIcon =>
+      const AssetGenImage('assets/icons/clockIcon.png');
+
   /// File path: assets/icons/creditCardIcon.png
   AssetGenImage get creditCardIcon =>
       const AssetGenImage('assets/icons/creditCardIcon.png');
@@ -153,6 +157,10 @@ class $AssetsIconsGen {
   AssetGenImage get scheduleCalenderIcon =>
       const AssetGenImage('assets/icons/scheduleCalenderIcon.png');
 
+  /// File path: assets/icons/scotterIcon.png
+  AssetGenImage get scotterIcon =>
+      const AssetGenImage('assets/icons/scotterIcon.png');
+
   /// File path: assets/icons/searchIcon.png
   AssetGenImage get searchIcon =>
       const AssetGenImage('assets/icons/searchIcon.png');
@@ -164,6 +172,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/shopIcon.png
   AssetGenImage get shopIcon =>
       const AssetGenImage('assets/icons/shopIcon.png');
+
+  /// File path: assets/icons/starIcon.png
+  AssetGenImage get starIcon =>
+      const AssetGenImage('assets/icons/starIcon.png');
 
   /// File path: assets/icons/terms&Conditions.png
   AssetGenImage get termsConditions =>
@@ -194,6 +206,7 @@ class $AssetsIconsGen {
     arriveLocationIcon,
     calenderIcon,
     callIcon,
+    clockIcon,
     creditCardIcon,
     daySunIcon,
     dobCalenderIcon,
@@ -218,9 +231,11 @@ class $AssetsIconsGen {
     profileIcon,
     profileSolidIcon,
     scheduleCalenderIcon,
+    scotterIcon,
     searchIcon,
     shadowStarIcon,
     shopIcon,
+    starIcon,
     termsConditions,
     trasparentStarIcon,
     vanIcon,
