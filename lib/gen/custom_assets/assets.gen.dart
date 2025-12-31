@@ -149,6 +149,10 @@ class $AssetsIconsGen {
   AssetGenImage get profileSolidIcon =>
       const AssetGenImage('assets/icons/profileSolidIcon.png');
 
+  /// File path: assets/icons/scheduleCalenderIcon.png
+  AssetGenImage get scheduleCalenderIcon =>
+      const AssetGenImage('assets/icons/scheduleCalenderIcon.png');
+
   /// File path: assets/icons/searchIcon.png
   AssetGenImage get searchIcon =>
       const AssetGenImage('assets/icons/searchIcon.png');
@@ -213,6 +217,7 @@ class $AssetsIconsGen {
     privacyPolicy,
     profileIcon,
     profileSolidIcon,
+    scheduleCalenderIcon,
     searchIcon,
     shadowStarIcon,
     shopIcon,
@@ -231,13 +236,13 @@ class $AssetsImagesGen {
   AssetGenImage get addButton =>
       const AssetGenImage('assets/images/add_button.png');
 
-  /// File path: assets/images/amber_pattern_left.png
-  AssetGenImage get amberPatternLeft =>
-      const AssetGenImage('assets/images/amber_pattern_left.png');
+  /// File path: assets/images/amber_left.png
+  AssetGenImage get amberLeft =>
+      const AssetGenImage('assets/images/amber_left.png');
 
-  /// File path: assets/images/amber_pattern_right.png
-  AssetGenImage get amberPatternRight =>
-      const AssetGenImage('assets/images/amber_pattern_right.png');
+  /// File path: assets/images/amber_right.png
+  AssetGenImage get amberRight =>
+      const AssetGenImage('assets/images/amber_right.png');
 
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
@@ -249,6 +254,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/backgroundShadow.png
   AssetGenImage get backgroundShadow =>
       const AssetGenImage('assets/images/backgroundShadow.png');
+
+  /// File path: assets/images/calender_icon.png
+  AssetGenImage get calenderIcon =>
+      const AssetGenImage('assets/images/calender_icon.png');
 
   /// File path: assets/images/camera_btn.png
   AssetGenImage get cameraBtn =>
@@ -461,14 +470,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/wallet2.png
   AssetGenImage get wallet2 => const AssetGenImage('assets/images/wallet2.png');
 
+  /// File path: assets/images/wave_tick.png
+  AssetGenImage get waveTick =>
+      const AssetGenImage('assets/images/wave_tick.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     addButton,
-    amberPatternLeft,
-    amberPatternRight,
+    amberLeft,
+    amberRight,
     apple,
     background,
     backgroundShadow,
+    calenderIcon,
     cameraBtn,
     cash,
     circleImage,
@@ -529,6 +543,7 @@ class $AssetsImagesGen {
     walk,
     wallet,
     wallet2,
+    waveTick,
   ];
 }
 

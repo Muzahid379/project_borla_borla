@@ -6,14 +6,14 @@ import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
 
 import '../../features/fragments/bottom_nav_bar.dart';
 
-class HomeScreenOne extends StatefulWidget {
-  const HomeScreenOne({super.key});
+class UserNavBar extends StatefulWidget {
+  const UserNavBar({super.key});
 
   @override
-  State<HomeScreenOne> createState() => _HomeScreenOneState();
+  State<UserNavBar> createState() => _UserNavBarState();
 }
 
-class _HomeScreenOneState extends State<HomeScreenOne> {
+class _UserNavBarState extends State<UserNavBar> {
 
 
   int tabIndex = 0;

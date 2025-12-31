@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/controllers/date_time_picker_controller.dart';
+import 'package:project_borla/screens/ride-schedule-screens/ride_schedule_screen.dart';
 import 'package:project_borla/screens/rider-searching-screen/rider_searching_screen.dart';
 
 import '../screens/waste-screens/waste_category_screen.dart';
@@ -19,6 +22,7 @@ class _PaymentSheetState extends State<PaymentSheet> {
   int index1 = 1 ;
   int index2 = 2 ;
 
+  final controller = Get.put(DateTimePickerController());
 
 
   @override
@@ -128,23 +132,6 @@ class _PaymentSheetState extends State<PaymentSheet> {
                       ),
                     ),
 
-                    // buildCategoryCard(
-                    //   index: 0, image: 'assets/images/cash.png',
-                    // ),
-
-
-                    // Text('Home', style: TextStyle(
-                    //
-                    //   fontSize: 18,
-                    //   fontWeight: FontWeight.w500,
-                    //
-                    //
-                    // ),),
-                    // Spacer(),
-
-                    //Image.asset('assets/images/add_button.png'),
-
-
 
                   ],
 
@@ -152,20 +139,16 @@ class _PaymentSheetState extends State<PaymentSheet> {
                 ),
               ),
 
-
-            // Text('1901 Thornridge Cir. Shiloh, Hawaii 81063 ', style: TextStyle(
-            //     fontSize: 15,
-            //     fontWeight: FontWeight.w600,
-            //     color: Colors.grey
-            // ),),
-
-
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: GradientButton(
                 text: 'Continue',
                 onPressed: () {
-                  Get.to(()=> RiderSearchingScreen());
+                  if(controller.isSetScheduled.value){
+                    Get.to(()=> RideScheduleScreen());
+                  }else{
+                    Get.to(()=> RiderSearchingScreen());
+                  }
                 },
               ),
             ),

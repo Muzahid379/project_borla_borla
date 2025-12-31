@@ -6,7 +6,7 @@ import 'package:project_borla/screens/booking-accepted-screen/booking_accepted_s
 import 'package:project_borla/screens/booking-requested-screen/booking_requested_screen.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
-import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import 'package:project_borla/screens/home-screens/payment_screen.dart';
 import 'package:project_borla/screens/home-screens/thank_you_screen.dart';
 import 'package:project_borla/screens/info-screens/about_us_screen.dart';
@@ -152,7 +152,7 @@ class AppRoute {
         transition: Transition.rightToLeftWithFade),
     GetPage(
         name: homeTwo,
-        page: () => HomeScreenOne(),
+        page: () => UserNavBar(),
         transition: Transition.rightToLeftWithFade),
     GetPage(
         name: mapTwo,

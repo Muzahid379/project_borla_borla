@@ -6,7 +6,7 @@ import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dar
 
 import '../../features/auth/login_screen.dart';
 import '../../role/garbageCollector/map/common_map.dart';
-import '../home-screens/home_screen_one.dart';
+import '../home-screens/user_nav_bar.dart';
 import '../select_role_screen.dart';
 
 class BookingRequestedScreen extends StatefulWidget {

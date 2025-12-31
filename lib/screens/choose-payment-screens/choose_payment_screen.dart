@@ -29,16 +29,6 @@ class _ChoosePaymentScreenState extends State<ChoosePaymentScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowPaymentSheet(context);
-    },);
-
-  }
-
 
 
 
@@ -52,7 +42,12 @@ class _ChoosePaymentScreenState extends State<ChoosePaymentScreen> {
             Positioned(
               left: 20,
                 top: 60,
-                child: CommonBackButton())
+                child: CommonBackButton()),
+
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: PaymentSheet(),
+            )
           ],
         )
     );

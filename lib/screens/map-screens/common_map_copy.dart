@@ -5,8 +5,8 @@ import 'package:project_borla/role/garbageCollector/map/controller/gmap_controll
 
 
 
-class CommonMap extends StatelessWidget {
-  CommonMap({super.key,});
+class UserCommonMap extends StatelessWidget {
+  UserCommonMap({super.key,});
 
   final GMapController controller = Get.put(GMapController());
 

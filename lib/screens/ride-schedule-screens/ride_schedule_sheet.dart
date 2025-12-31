@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import 'package:project_borla/screens/payment-success-screens/payment_success_screeen.dart';
 
 import '../../widgets/gradient_button.dart';
@@ -95,7 +96,8 @@ class _RideScheduleSheetState extends State<RideScheduleSheet> {
                   child: GradientButton(
                     text: 'Got It',
                     onPressed: () {
-                      Get.to(()=> PaymentSuccessScreeen());
+                      // Get.to(()=> PaymentSuccessScreeen());
+                      Get.offAll(()=> UserNavBar());
                     },
                   ),
                 ),

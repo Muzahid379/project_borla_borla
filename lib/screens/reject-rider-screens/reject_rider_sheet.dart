@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
-import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import 'package:project_borla/screens/rider-arrived-screens/rider_arrived_screen.dart';
 
 import '../../widgets/gradient_button.dart';
@@ -128,7 +128,7 @@ class _RejectRiderSheetState extends State<RejectRiderSheet> {
                             ),
                           ),
                           onPressed: () {
-                            Get.to(()=> HomeScreenOne());
+                            Get.to(()=> UserNavBar());
                           },
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(40, 14,40, 14),

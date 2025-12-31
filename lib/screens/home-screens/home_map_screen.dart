@@ -77,7 +77,7 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
         children: [
           /// MAP
           Positioned.fill(
-            child: CommonMap(),
+            child: UserCommonMap(),
           ),
 
           /// TOP CONTENT
