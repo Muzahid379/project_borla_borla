@@ -5,6 +5,7 @@ import 'package:project_borla/role/garbageCollector/activity/activity_screen.dar
 import 'package:project_borla/screens/booking-accepted-screen/booking_accepted_screen.dart';
 import 'package:project_borla/screens/booking-requested-screen/booking_requested_screen.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
+import 'package:project_borla/screens/driver-information-screens/driver_information_screen.dart';
 import 'package:project_borla/screens/home-screens/home_map_screen.dart';
 import 'package:project_borla/screens/home-screens/home_screen_one.dart';
 import 'package:project_borla/screens/home-screens/payment_screen.dart';
@@ -20,6 +21,7 @@ import 'package:project_borla/screens/profile-screens/address_screen.dart';
 import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/edit_profile_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
+import 'package:project_borla/screens/rider-review-screen/rider_review_screen.dart';
 import 'package:project_borla/screens/rider-searching-screen/rider_searching_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/cancel_ride_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
@@ -76,6 +78,8 @@ class AppRoute {
   static const String paymentSuccess = "/paymentSuccess";
   static const String chooseRide = "/chooseRide";
   static const String userTrack = "/userTrack";
+  static const String driverInfo = "/driverInfo";
+  static const String riderReview = "/riderReview";
 
 
 
@@ -235,6 +239,16 @@ class AppRoute {
     GetPage(
         name: userTrack,
         page: () => UserTrackScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: driverInfo,
+        page: () => DriverInformationScreen(),
+        transition: Transition.rightToLeftWithFade),
+
+    GetPage(
+        name: riderReview,
+        page: () => RiderReviewScreen(),
         transition: Transition.rightToLeftWithFade),
 
   ];
