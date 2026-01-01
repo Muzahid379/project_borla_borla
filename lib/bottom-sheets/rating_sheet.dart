@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/screens/home-screens/thank_you_screen.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../widgets/gradient_button.dart';
 
@@ -27,7 +30,7 @@ class _RatingSheetState extends State<RatingSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 600,
+        height: 520,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -42,10 +45,10 @@ class _RatingSheetState extends State<RatingSheet> {
             const SizedBox(height: 12),
 
             Container(
-              width: 40,
+              width: 50,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey.shade400,
+                color: AppColors.gray200,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -66,7 +69,7 @@ class _RatingSheetState extends State<RatingSheet> {
             Padding(
               padding: const EdgeInsets.fromLTRB(22,0,22,0),
               child: Divider(
-                color: Colors.grey.shade300,
+                color: AppColors.gray200,
                 thickness: 1,
               ),
             ),
@@ -81,8 +84,8 @@ class _RatingSheetState extends State<RatingSheet> {
 
 
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.amber,),
-                  color: Color.fromRGBO(255, 237, 176, 0.1),
+                  border: Border.all(color: AppColors.orange150,),
+                  color: AppColors.orange20,
 
 
                 ),
@@ -171,12 +174,12 @@ class _RatingSheetState extends State<RatingSheet> {
               child: Text("Great 5 star! Can't get any better than that!", style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey.shade400
+                  color: AppColors.gray300
               ),),
             ),
 
 
-            SizedBox(height: 40,),
+            SizedBox(height: 20,),
 
             Container(
               height: 160,
@@ -184,7 +187,7 @@ class _RatingSheetState extends State<RatingSheet> {
               decoration: BoxDecoration(
 
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey)
+                border: Border.all(color: AppColors.black50)
               ),
               child: Column(
                 children: [
@@ -194,15 +197,15 @@ class _RatingSheetState extends State<RatingSheet> {
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('Payment', style: TextStyle(
-                          color: Colors.grey.shade600,
-                          fontWeight: FontWeight.w500
+                          color: AppColors.gray300,
+                          fontWeight: FontWeight.w400
                         ),),
                       ),
                       Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('MTN MoMo Pay', style: TextStyle(
-                        color: Colors.grey.shade600,
+                        color: AppColors.gray400,
                             fontWeight: FontWeight.w500
                         ),),
                       ),
@@ -213,15 +216,15 @@ class _RatingSheetState extends State<RatingSheet> {
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('Price', style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.w500
+                            color: AppColors.gray300,
+                            fontWeight: FontWeight.w400
                         ),),
                       ),
                       Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('GHC 50', style: TextStyle(
-                            color: Colors.grey.shade600,
+                            color: AppColors.gray400,
                             fontWeight: FontWeight.w500
                         ),),
                       ),
@@ -229,10 +232,10 @@ class _RatingSheetState extends State<RatingSheet> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(22,0,22,0),
+                    padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Divider(
-                      color: Colors.black54,
-                      thickness: 3,
+                      color: AppColors.black50,
+                      thickness: 1
                     ),
                   ),
 
@@ -241,15 +244,15 @@ class _RatingSheetState extends State<RatingSheet> {
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('Total Price', style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.w500
+                            color: AppColors.gray300,
+                            fontWeight: FontWeight.w400
                         ),),
                       ),
                       Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text('GHC 50', style: TextStyle(
-                            color: Colors.grey.shade600,
+                            color: AppColors.gray400,
                             fontWeight: FontWeight.w500
                         ),),
                       ),
@@ -259,18 +262,13 @@ class _RatingSheetState extends State<RatingSheet> {
               ),
             ),
 
-            SizedBox(height: 40,),
-
 
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: GradientButton(
                 text: 'Submit Now',
                 onPressed: () {
-                  //Get.to(OtpScreen());
-                  //Navigator.pop(context);
-                  //ShowPaymentSheet(context);
-
+                  Get.to(()=> ThankYouScreen());
                 },
               ),
             ),

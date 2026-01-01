@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/rider-riview-screen/rider_review_screen.dart';
 import 'package:project_borla/theme/app_color.dart';
 
 import '../../role/components/commonBackButton/common_back_button.dart';
@@ -77,7 +78,7 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
                         child: GradientButton(
                           text: 'Please Feedback',
                           onPressed: () {
-                            Get.to(()=> PaymentSuccessScreeen());
+                            Get.to(()=> RiderReviewScreen());
                           },
                         ),
                       ),

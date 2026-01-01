@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/screens/home-screens/user-home-screens/user-controller/user_home_controller.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import 'package:project_borla/utils/app_texts.dart';
 
 import '../../../theme/app_color.dart';
@@ -28,6 +29,7 @@ class HomeMapScreen extends StatefulWidget {
 class _HomeMapScreenState extends State<HomeMapScreen> {
   final UserHomeController controller =
   Get.put(UserHomeController());
+  UserNavBarController userNavBarController = Get.put(UserNavBarController());
 
   void ShowCurrentLocationSheet (BuildContext context) {
 
@@ -89,7 +91,10 @@ class _HomeMapScreenState extends State<HomeMapScreen> {
                   child: Row(
                     children: [
                       InkWell(
-                        onTap: () => Get.to(() => ProfileScreenCopy()),
+                        onTap: () {
+                          userNavBarController.tabIndex.value = 3;
+                          Get.to(() => UserNavBar());
+                        },
                         child: CircleAvatar(
                           radius: 32,
                           backgroundImage:

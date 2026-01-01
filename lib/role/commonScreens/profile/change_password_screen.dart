@@ -12,71 +12,78 @@ class ChangePasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 16),
-          child: CommonBackButton(),
-        ),
-        title: const CommonText(
-          text: 'Change Password',
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: Colors.black,
-        ),
-        centerTitle: true,
-      ),
       child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-          child: Column(
-            children: [
-              // Current Password
-              PasswordField(label: 'Current Password'),
-              SizedBox(height: 20.h),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CommonBackButton(),
+                  CommonText(
+                    text: 'Change Password',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 50,)
+                ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+                child: Column(
+                  children: [
+                    // Current Password
+                    PasswordField(label: 'Current Password'),
+                    SizedBox(height: 20.h),
 
-              // New Password
-              PasswordField(label: 'New Password'),
-              SizedBox(height: 20.h),
+                    // New Password
+                    PasswordField(label: 'New Password'),
+                    SizedBox(height: 20.h),
 
-              // Confirm Password
-              PasswordField(label: 'Confirm Password'),
-              const Spacer(),
+                    // Confirm Password
+                    PasswordField(label: 'Confirm Password'),
+                    SizedBox(height: 40,),
 
-              // Save Button
-              SizedBox(
-                width: double.infinity,
-                height: 56.h,
-                child: ElevatedButton(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: CommonText(
-                          text: 'Password changed successfully',
-                          fontSize: 14,
+                    // Save Button
+                    SizedBox(
+                      width: double.infinity,
+                      height: 56.h,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: CommonText(
+                                text: 'Password changed successfully',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF4CAF50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: const CommonText(
+                          text: 'Save',
+                          fontSize: 18,
                           fontWeight: FontWeight.w700,
+                          color: Colors.white,
                         ),
                       ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF4CAF50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(28.r),
                     ),
-                    elevation: 0,
-                  ),
-                  child: const CommonText(
-                    text: 'Save',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

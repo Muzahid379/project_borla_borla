@@ -7,7 +7,7 @@ import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
 
 import '../../features/fragments/bottom_nav_bar.dart';
 
-class NavBarController extends GetxController {
+class UserNavBarController extends GetxController {
   var tabIndex = 0.obs;
 
   void changeTab(int index) {
@@ -18,7 +18,7 @@ class NavBarController extends GetxController {
 class UserNavBar extends StatelessWidget {
   UserNavBar({super.key});
 
-  final NavBarController controller = Get.put(NavBarController());
+  final UserNavBarController controller = Get.put(UserNavBarController());
 
   final List<Widget> widgetOptions = [
     HomeMapScreen(),

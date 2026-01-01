@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/role/garbageCollector/call/outgoing_call_screen.dart';
+import 'package:project_borla/screens/chat-screen/chat_screen_copy.dart';
 
 import '../../features/fragments/dotted_line_copy.dart';
 import '../../role/components/text/common_text.dart';
@@ -82,75 +85,6 @@ class _TrackScreenSheetState extends State<TrackScreenSheet> {
                   child: userRowMod(),
                 ),
 
-
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(22,0,22,0),
-                //   child: Divider(
-                //     color: Colors.grey.shade300,
-                //     thickness: 1,
-                //   ),
-                // ),
-                //
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(22,8,22,10),
-                //   child: bottomSheetLocationSectionMod(),
-                // ),
-                //
-                //
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(22,0,22,0),
-                //   child: Divider(
-                //     color: Colors.grey.shade300,
-                //     thickness: 1,
-                //   ),
-                // ),
-                //
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(22,8,22,10),
-                //   child: summarySection(),
-                // ),
-                //
-                // //RippleAnimation(),
-                //
-                // SizedBox(height: 20,),
-
-
-
-                // Container(
-                //   decoration: BoxDecoration(
-                //     color: Colors.deepOrange,
-                //     borderRadius: BorderRadius.circular(16),
-                //   ),
-                //   padding: const EdgeInsets.all(2), // border thickness
-                //   child: ElevatedButton(
-                //     style: ElevatedButton.styleFrom(
-                //       minimumSize: const Size(100, 50),
-                //       backgroundColor: Colors.white, // white button
-                //       shadowColor: Colors.transparent,
-                //       elevation: 0,
-                //       shape: RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(14), // inner radius
-                //       ),
-                //     ),
-                //     onPressed: () {
-                //       //Get.to(()=>RejectRiderScreen());
-                //     },
-                //     child: Padding(
-                //       padding: EdgeInsets.fromLTRB(120, 14, 120, 14),
-                //
-                //       child: Text(
-                //         'Cancel Ride',
-                //         style: TextStyle(
-                //             color: Colors.deepOrange,
-                //             fontWeight: FontWeight.w600,
-                //             fontSize: 18
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-
-
               ],
             ),
           ),
@@ -218,17 +152,22 @@ class _TrackScreenSheetState extends State<TrackScreenSheet> {
           children: [
             InkWell(
                 onTap: () {
-                  //Get.to(()=> ChattingScreen());
+                  Get.to(()=> UserChattingScreen());
                 },
                 child: circleActionMod(
                     Image.asset('assets/images/user_msg.png',height: 20, width: 20,)
                 )),
             const SizedBox(width: 12),
             //circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
-            circleActionMod(
-              //Assets.icons.callIcon.image(height: 20, width: 20)
-                Image.asset('assets/images/user_call.png',height: 20, width: 20,)
+            InkWell(
+              onTap: () {
+                Get.to(()=> OutgoingCallScreen());
+              },
+              child: circleActionMod(
+                //Assets.icons.callIcon.image(height: 20, width: 20)
+                  Image.asset('assets/images/user_call.png',height: 20, width: 20,)
 
+              ),
             ),
 
           ],

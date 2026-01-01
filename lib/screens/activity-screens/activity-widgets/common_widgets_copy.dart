@@ -41,7 +41,7 @@ Widget userRow() {
           ],
         ),
       ),
-      ActivityController.instance.selectedIndex.value == 0?
+      UserActivityController.instance.selectedIndex.value == 0?
       Row(
         children: [
           InkWell(
@@ -52,7 +52,7 @@ Widget userRow() {
           const SizedBox(width: 12),
           circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
         ],
-      ) : ActivityController.instance.selectedIndex.value == 1?
+      ) : UserActivityController.instance.selectedIndex.value == 1?
       Column(
         children: [
           CommonText(text: "Dec 23" , color: AppColors.green500,),

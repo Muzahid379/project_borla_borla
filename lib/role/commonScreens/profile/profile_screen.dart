@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:project_borla/features/auth/login_screen.dart';
 import 'package:project_borla/role/commonScreens/notification/notification_screen.dart';
 import 'package:project_borla/role/commonScreens/privacyPolicy/privacy_policy_screen.dart';
+import 'package:project_borla/role/commonScreens/profile/change_password_screen.dart';
 import 'package:project_borla/role/commonScreens/profile/edit_profile_screen.dart';
 import 'package:project_borla/role/commonScreens/termsOfConditions/terms_of_conditions.dart';
 import 'package:project_borla/role/components/text/common_text.dart';
@@ -99,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
                     icon: Icons.lock_outline,
                     title: 'Change Password',
                     onTap: () {
-                      Get.to(()=> EditProfileScreen());
+                      Get.to(()=> ChangePasswordScreen());
                     },
                   ),
                   SettingsListItem(
@@ -144,7 +145,6 @@ class ProfileScreen extends StatelessWidget {
                     iconColor: Colors.red,
                     onTap: () {
                       showLogoutBottomSheet(context);
-                      Get.offAll(()=> LoginScreen());
                     },
                   ),
                 ],

@@ -6,6 +6,7 @@ import 'package:project_borla/role/garbageCollector/map/common_map.dart';
 import 'package:get/get.dart';
 
 import '../../bottom-sheets/confirm_address_sheet.dart';
+import '../../role/components/commonBackButton/common_back_button.dart';
 import '../../role/garbageCollector/home/controller/driver_home_controller.dart';
 
 class FindingDriverScreen extends StatefulWidget {
@@ -36,15 +37,6 @@ class _FindingDriverScreenState extends State<FindingDriverScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowFindingRiderSheet(context);
-    },);
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +44,16 @@ class _FindingDriverScreenState extends State<FindingDriverScreen> {
         body: Stack(
           children: [
             Positioned.fill(child: CommonMap()),
+
+            Positioned(
+                left: 20,
+                top: 60,
+                child: CommonBackButton()),
+
+            Align(
+                alignment: Alignment.bottomCenter,
+                child:FindingRiderSheet()
+            )
 
           ],
         )

@@ -22,7 +22,7 @@ class BookingRequestedScreen extends StatefulWidget {
 
 class _BookingRequestedScreenState extends State<BookingRequestedScreen> {
 
-  final navbarController = Get.put(NavBarController());
+  final navbarController = Get.put(UserNavBarController());
 
   @override
   void initState() {

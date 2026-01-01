@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_borla/screens/home-screens/user-home-screens/user-controller/user_home_controller.dart';
+import 'package:project_borla/screens/track-screen/track_screen.dart';
 // import 'package:project_borla/role/garbageCollector/activity/controller/activity_controller.dart';
 // import 'package:project_borla/role/garbageCollector/activity/schedule_detail_screen.dart';
 import 'package:project_borla/theme/app_color.dart';
@@ -21,7 +22,7 @@ class UserActivityCard extends StatelessWidget {
   String? role;
   UserActivityCard({super.key, this.isDetailScreen = false, this.role = "rider"});
 
-  ActivityController activityController = Get.put(ActivityController());
+  UserActivityController activityController = Get.put(UserActivityController());
   UserHomeController controller = Get.put(UserHomeController());
 
   @override
@@ -33,7 +34,7 @@ class UserActivityCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.amber),
+        border: Border.all(color: AppColors.orange100),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withAlpha(13),
@@ -69,6 +70,8 @@ class UserActivityCard extends StatelessWidget {
         onPressed: () {
           if(activityController.selectedIndex.value == 1){
             Get.to(() => ScheduleDetailScreen());
+          }else if(activityController.selectedIndex.value == 0){
+            Get.to(() => UserTrackScreen());
           }
         },
         style: ElevatedButton.styleFrom(

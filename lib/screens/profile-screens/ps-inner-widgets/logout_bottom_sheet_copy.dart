@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:project_borla/features/auth/login_screen.dart';
+import 'package:project_borla/theme/common_button_copy.dart';
 import '../../../../theme/app_color.dart';
 import '../../../theme/common_text_two.dart';
 
-void showLogoutBottomSheet(BuildContext context) {
+void showUserLogoutBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     shape: RoundedRectangleBorder(
@@ -14,26 +17,40 @@ void showLogoutBottomSheet(BuildContext context) {
     builder: (_) {
       return SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
+          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Container(
+                height: 4,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: AppColors.gray200,
+                  borderRadius: BorderRadius.circular(12)
+                ),
+              ),
+
+              SizedBox(height: 16.h),
+
               // Title
               const CommonText(
                 text: 'Logout',
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Colors.red,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: AppColors.red500,
               ),
               SizedBox(height: 16.h),
 
+              Divider(
+                color: AppColors.gray200,
+              ),
               // Description
               CommonText(
                 text:
-                'Are you sure you want to logout your account? This action cannot be undone.\n\nPlease confirm your decision.',
-                fontSize: 16,
+                'Are you sure you want to logout your \naccount? This action cannot be undone.\nPlease confirm your decision.',
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: Colors.grey.shade700,
+                color: AppColors.gray300,
                 textAlign: TextAlign.center,
                 lineHeight: 1.5,
               ),
@@ -41,55 +58,36 @@ void showLogoutBottomSheet(BuildContext context) {
 
               // Buttons
               Row(
+                spacing: 16,
                 children: [
                   // Cancel Button
                   Expanded(
-                    child: OutlinedButton(
-                      onPressed: () => Navigator.pop(context),
-                      style: OutlinedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        side: const BorderSide(color: AppColors.primaryColor, width: 2),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.r),
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                      child: const CommonText(
-                        text: 'Cancel',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 16.w),
-
-                  // Logout Button
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: CommonText(text: 'Logged out successfully', color: AppColors.white,)),
-                        );
-                        // TODO: Perform actual logout logic
+                    child: CommonButton(
+                      onTap: () {
+                        Get.back();
                       },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        backgroundColor: AppColors.primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.r),
-                        ),
-                        elevation: 0,
-                      ),
-                      child: const CommonText(
-                        text: 'Yes, Logout',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),
+                      titleText:  'Cancel',
+                      buttonRadius: 12,
+                      titleColor: AppColors.orange300,
+                      borderColor: AppColors.orange300,
+                      firstGradient: AppColors.transparent,
+                      secondGradient: AppColors.transparent,
                     ),
                   ),
+                  Expanded(
+                    child: CommonButton(
+                      onTap: () {
+                        Get.snackbar("Log out successfully", "", snackPosition: SnackPosition.BOTTOM);
+                        Get.offAll(()=> LoginScreen());
+                      },
+                      titleText:  'Yes, Logout',
+                      buttonRadius: 12,
+                      titleColor: AppColors.white,
+                      firstGradient: AppColors.orange300,
+                      secondGradient: AppColors.orange500,
+                    ),
+                  ),
+                  // Logout Button
                 ],
               ),
             ],
