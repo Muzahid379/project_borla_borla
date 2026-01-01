@@ -165,6 +165,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/role/commonScreens/profile/profile_screen.dart';
 import 'package:project_borla/role/garbageCollector/activity/innerWidget/common_widgets.dart';
+import 'package:project_borla/role/garbageCollector/call/outgoing_call_screen.dart';
+import 'package:project_borla/screens/chat-screen/chat_screen_copy.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
 import 'package:project_borla/screens/reject-rider-screens/reject_rider_screen.dart';
 
@@ -174,6 +176,7 @@ import '../../../role/commonScreens/chat/chatting_screen.dart';
 import '../../../role/components/text/common_text.dart';
 import '../../../role/garbageCollector/activity/controller/activity_controller.dart';
 import '../../../theme/app_color.dart';
+import '../../driver-information-screens/driver_information_screen.dart';
 import '../../scheduled-screens/cancel_ride_screen.dart';
 
 
@@ -338,7 +341,7 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
       children: [
         InkWell(
           onTap: (){
-            Get.to(()=>ProfileScreen());
+            Get.to(()=>DriverInformationScreen());
           },
           child: const CircleAvatar(
             radius: 28,
@@ -389,17 +392,22 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
           children: [
             InkWell(
                 onTap: () {
-                  Get.to(()=> ChattingScreen());
+                  Get.to(()=> UserChattingScreen());
                 },
                 child: circleActionMod(
                     Image.asset('assets/images/user_msg.png',height: 20, width: 20,)
                 )),
             const SizedBox(width: 12),
             //circleAction(Assets.icons.callIcon.image(height: 20, width: 20)),
-            circleActionMod(
-                //Assets.icons.callIcon.image(height: 20, width: 20)
-              Image.asset('assets/images/user_call.png',height: 20, width: 20,)
+            InkWell(
+              onTap: () {
+                Get.to(()=> OutgoingCallScreen());
+              },
+              child: circleActionMod(
+                  //Assets.icons.callIcon.image(height: 20, width: 20)
+                Image.asset('assets/images/user_call.png',height: 20, width: 20,)
 
+              ),
             ),
 
           ],

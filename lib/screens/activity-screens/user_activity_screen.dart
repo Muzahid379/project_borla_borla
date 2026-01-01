@@ -7,6 +7,7 @@ import 'package:project_borla/theme/app_color.dart';
 
 import '../../theme/common_text_two.dart';
 import '../../theme/gradient_scaffold_copy.dart';
+
 import 'activity-controller/activity_controller_copy.dart';
 import 'activity-widgets/job_tabbar_copy.dart';
 import 'history_screen_copy.dart';
@@ -17,8 +18,7 @@ import 'ongoing_screen_copy.dart';
 class UserActivityScreen extends StatelessWidget {
   UserActivityScreen({super.key});
 
-  final ActivityController activityController =
-  Get.put(ActivityController());
+  final UserActivityController activityController = Get.put(UserActivityController());
 
   @override
   Widget build(BuildContext context) {

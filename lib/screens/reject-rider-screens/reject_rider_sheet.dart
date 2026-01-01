@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/choose-ride-screens/choose_ride_screen.dart';
-import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import 'package:project_borla/screens/rider-arrived-screens/rider_arrived_screen.dart';
+import 'package:project_borla/theme/app_color.dart';
 
 import '../../widgets/gradient_button.dart';
 
@@ -71,19 +72,19 @@ class _RejectRiderSheetState extends State<RejectRiderSheet> {
                 Text("We're sorry, your booking request was", style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey
+                    color: AppColors.gray300
                 ),),
 
                 Text("rejected by the driver. This may be due to a",style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey
+                    color: AppColors.gray300
                 ),),
 
                 Text("change in plans.", style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey
+                    color: AppColors.gray300
                 ),),
 
 
@@ -128,7 +129,7 @@ class _RejectRiderSheetState extends State<RejectRiderSheet> {
                             ),
                           ),
                           onPressed: () {
-                            Get.to(()=> HomeScreenOne());
+                            Get.to(()=> RiderArrivedScreen());
                           },
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(40, 14,40, 14),

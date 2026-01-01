@@ -24,7 +24,7 @@ class NavigateDestinationScreen extends StatelessWidget {
       body: Stack(
         children: [
           /// Google Map
-          Positioned.fill(child: CommonMap()),
+          Positioned.fill(child: UserCommonMap()),
 
           Positioned(
             top: 60,

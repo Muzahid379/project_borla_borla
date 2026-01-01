@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:project_borla/screens/rider-riview-screen/rider_review_screen.dart';
+import 'package:project_borla/theme/app_color.dart';
 
+import '../../role/components/commonBackButton/common_back_button.dart';
 import '../../role/garbageCollector/map/common_map.dart';
 import '../../widgets/gradient_button.dart';
 
@@ -27,14 +30,17 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-
-          content: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              SizedBox(
-                  height: 310,
-                  width: 360,
+          backgroundColor: AppColors.white,
+          contentPadding: EdgeInsets.zero,
+          content: SizedBox(
+            width: Get.width,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       SizedBox(height: 24,),
 
@@ -43,24 +49,24 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
                       SizedBox(height: 24,),
 
                       Text('Payment Success', style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w600
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500
                       ), ),
 
                       SizedBox(height: 20,),
 
                       Text("Your money has been successfully", style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 14,
                           color: Colors.grey.shade600,
-                          fontWeight: FontWeight.w500
+                          fontWeight: FontWeight.w400
                       ), ),
 
                       //SizedBox(height: 30,),
 
                       Text("sent to Sergio Ramasis", style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 14,
                           color: Colors.grey.shade600,
-                          fontWeight: FontWeight.w500
+                          fontWeight: FontWeight.w400
                       ), ),
 
 
@@ -72,7 +78,7 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
                         child: GradientButton(
                           text: 'Please Feedback',
                           onPressed: () {
-                            Get.to(()=> PaymentSuccessScreeen());
+                            Get.to(()=> RiderReviewScreen());
                           },
                         ),
                       ),
@@ -80,28 +86,29 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
 
 
                     ],
-                  )
-              ),
+                  ),
+                ),
 
-              Positioned(
-                top: -14,
-                  left: -20,
+                Positioned(
+                  top: 0,
+                    left: 0,
+                    child:
+                        Image.asset('assets/images/amber_left.png',scale: 4,),
+                        // SizedBox(width: 140,),
+                        // Image.asset('assets/images/amber_right.png',scale: 5,),
+                ),
+
+                Positioned(
+                  top: 0,
+                  right: 0,
                   child:
-                      Image.asset('assets/images/amber_left.png',scale: 3,),
-                      // SizedBox(width: 140,),
-                      // Image.asset('assets/images/amber_right.png',scale: 5,),
-              ),
+                  //Image.asset('assets/images/amber_left.png',scale: 3,),
+                  // SizedBox(width: 140,),
+                  Image.asset('assets/images/amber_right.png',scale: 4,),
+                ),
 
-              Positioned(
-                top: -10,
-                left: 210,
-                child:
-                //Image.asset('assets/images/amber_left.png',scale: 3,),
-                // SizedBox(width: 140,),
-                Image.asset('assets/images/amber_right.png',scale: 3,),
-              ),
-
-            ],
+              ],
+            ),
           ),
 
 
@@ -117,7 +124,10 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
         body: Stack(
           children: [
             Positioned.fill(child: CommonMap()),
-
+            Positioned(
+                left: 20,
+                top: 60,
+                child: CommonBackButton()),
           ],
         )
     );

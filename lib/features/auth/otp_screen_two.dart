@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/features/auth/set_pass_screen.dart';
-import 'package:project_borla/screens/home-screens/home_screen_one.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 import '../../gen/custom_assets/assets.gen.dart';
 import '../../theme/auth_header.dart';
 import '../../widgets/gradient_button.dart';
@@ -125,7 +125,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     text: 'Verify',
                     onPressed:  () {
                       if(widget.isSignup){
-                        Get.to(()=> HomeScreenOne());
+                        Get.to(()=> UserNavBar());
                       }else{
                         Get.to(()=> SetPassScreen());
                       }

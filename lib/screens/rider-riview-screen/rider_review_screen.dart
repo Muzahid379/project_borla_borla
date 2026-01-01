@@ -1,13 +1,14 @@
+
 import 'package:flutter/material.dart';
-import 'package:project_borla/screens/rider-arrived-screens/rider_arrived_sheet.dart';
+import 'package:project_borla/bottom-sheets/rating_sheet.dart';
 
 import '../../role/components/commonBackButton/common_back_button.dart';
 import '../../role/garbageCollector/map/common_map.dart';
 
-class RiderArrivedScreen extends StatelessWidget {
-  const RiderArrivedScreen({super.key});
+class RiderReviewScreen extends StatelessWidget {
+  const RiderReviewScreen({super.key});
 
-  void ShowRiderArrivedSheet (BuildContext context) {
+  void ShowRiderReviewSheet (BuildContext context) {
 
     showModalBottomSheet(
 
@@ -17,7 +18,7 @@ class RiderArrivedScreen extends StatelessWidget {
       isScrollControlled: true,
       //showDragHandle: true,
       useSafeArea: true,
-      builder: (context) => RiderArrivedSheet(),
+      builder: (context) => RatingSheet(),
 
     );
 
@@ -29,13 +30,14 @@ class RiderArrivedScreen extends StatelessWidget {
         body: Stack(
           children: [
             Positioned.fill(child: CommonMap()),
+
             Positioned(
                 left: 20,
                 top: 60,
                 child: CommonBackButton()),
             Align(
                 alignment: Alignment.bottomCenter,
-                child:RiderArrivedSheet()
+                child:RatingSheet()
             )
           ],
         )

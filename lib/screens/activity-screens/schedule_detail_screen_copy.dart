@@ -43,7 +43,7 @@ class ScheduleDetailScreen extends StatelessWidget {
                     width: Get.width,
                     height: 100,
                     borderRadius: 8,
-                    borderColor: AppColors.green100 ,
+                    borderColor: AppColors.orange100 ,
                     child: Stack(
                       children: [
                         Center(

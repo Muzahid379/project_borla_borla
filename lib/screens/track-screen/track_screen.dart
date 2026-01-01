@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_borla/screens/track-screen/track_screen_sheet.dart';
 
+import '../../role/components/commonBackButton/common_back_button.dart';
 import '../../role/garbageCollector/map/common_map.dart';
 
 class UserTrackScreen extends StatefulWidget {
@@ -28,16 +29,6 @@ class _UserTrackScreenState extends State<UserTrackScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowUserTrackScreenSheet(context);
-    },);
-
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +36,14 @@ class _UserTrackScreenState extends State<UserTrackScreen> {
         body: Stack(
           children: [
             Positioned.fill(child: CommonMap()),
-
+            Positioned(
+                left: 20,
+                top: 60,
+                child: CommonBackButton()),
+            Align(
+                alignment: Alignment.bottomCenter,
+                child:TrackScreenSheet()
+            )
           ],
         )
     );

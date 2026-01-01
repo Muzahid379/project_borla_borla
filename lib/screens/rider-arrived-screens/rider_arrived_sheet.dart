@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:project_borla/screens/driver-information-screens/driver_information_screen.dart';
+import 'package:project_borla/screens/payment-success-screens/payment_success_screeen.dart';
 
 import '../../role/components/text/common_text.dart';
 import '../../role/garbageCollector/activity/controller/activity_controller.dart';
@@ -106,7 +107,7 @@ class _RiderArrivedSheetState extends State<RiderArrivedSheet> {
                   child: GradientButton(
                     text: 'Pay Now',
                     onPressed: () {
-                      Get.to(()=> DriverInformationScreen());
+                      Get.to(()=> PaymentSuccessScreeen());
                     },
                   ),
                 ),

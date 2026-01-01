@@ -30,15 +30,15 @@ class _ChooseRideScreenState extends State<ChooseRideScreen> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    Future.microtask(() {
-      ShowChooseRiderSheet(context);
-    },);
-
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   Future.microtask(() {
+  //     ShowChooseRiderSheet(context);
+  //   },);
+  //
+  // }
 
 
   @override
@@ -50,7 +50,11 @@ class _ChooseRideScreenState extends State<ChooseRideScreen> {
             Positioned(
                 left: 20,
                 top: 60,
-                child: CommonBackButton())
+                child: CommonBackButton()),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child:ChooseRideSheet()
+            )
           ],
         )
     );

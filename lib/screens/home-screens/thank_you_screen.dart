@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:project_borla/bottom-sheets/choose_ride_sheet.dart';
 import 'package:project_borla/bottom-sheets/current_location_sheet.dart';
 import 'package:project_borla/bottom-sheets/search_location_sheet.dart';
+import 'package:project_borla/screens/home-screens/user_nav_bar.dart';
 
 import '../../bottom-sheets/payment_sheet.dart';
 import '../../bottom-sheets/rating_sheet.dart';
@@ -97,6 +99,8 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
 
   }
 
+  final navbarController = Get.put(UserNavBarController());
+
 
   @override
   Widget build(BuildContext context) {
@@ -134,12 +138,8 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
               child: GradientButton(
                 text: 'Back To Home',
                 onPressed: () {
-                  //Get.to(RegisterScreen());
-                  //ShowSearchLocationSheet(context);
-                  //ShowCurrentLocationSheet(context);
-                  //ShowRatingSheet(context);
-                  //ShowChooseRideSheet(context);
-                  ShowPaymentSheet(context);
+                  navbarController.tabIndex.value =0 ;
+                  Get.offAll(UserNavBar());
                 },
               ),
             ),

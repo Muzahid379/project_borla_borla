@@ -57,6 +57,10 @@ class $AssetsIconsGen {
   AssetGenImage get callIcon =>
       const AssetGenImage('assets/icons/callIcon.png');
 
+  /// File path: assets/icons/clockIcon.png
+  AssetGenImage get clockIcon =>
+      const AssetGenImage('assets/icons/clockIcon.png');
+
   /// File path: assets/icons/creditCardIcon.png
   AssetGenImage get creditCardIcon =>
       const AssetGenImage('assets/icons/creditCardIcon.png');
@@ -149,6 +153,14 @@ class $AssetsIconsGen {
   AssetGenImage get profileSolidIcon =>
       const AssetGenImage('assets/icons/profileSolidIcon.png');
 
+  /// File path: assets/icons/scheduleCalenderIcon.png
+  AssetGenImage get scheduleCalenderIcon =>
+      const AssetGenImage('assets/icons/scheduleCalenderIcon.png');
+
+  /// File path: assets/icons/scotterIcon.png
+  AssetGenImage get scotterIcon =>
+      const AssetGenImage('assets/icons/scotterIcon.png');
+
   /// File path: assets/icons/searchIcon.png
   AssetGenImage get searchIcon =>
       const AssetGenImage('assets/icons/searchIcon.png');
@@ -160,6 +172,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/shopIcon.png
   AssetGenImage get shopIcon =>
       const AssetGenImage('assets/icons/shopIcon.png');
+
+  /// File path: assets/icons/starIcon.png
+  AssetGenImage get starIcon =>
+      const AssetGenImage('assets/icons/starIcon.png');
 
   /// File path: assets/icons/terms&Conditions.png
   AssetGenImage get termsConditions =>
@@ -190,6 +206,7 @@ class $AssetsIconsGen {
     arriveLocationIcon,
     calenderIcon,
     callIcon,
+    clockIcon,
     creditCardIcon,
     daySunIcon,
     dobCalenderIcon,
@@ -213,9 +230,12 @@ class $AssetsIconsGen {
     privacyPolicy,
     profileIcon,
     profileSolidIcon,
+    scheduleCalenderIcon,
+    scotterIcon,
     searchIcon,
     shadowStarIcon,
     shopIcon,
+    starIcon,
     termsConditions,
     trasparentStarIcon,
     vanIcon,
@@ -231,13 +251,13 @@ class $AssetsImagesGen {
   AssetGenImage get addButton =>
       const AssetGenImage('assets/images/add_button.png');
 
-  /// File path: assets/images/amber_pattern_left.png
-  AssetGenImage get amberPatternLeft =>
-      const AssetGenImage('assets/images/amber_pattern_left.png');
+  /// File path: assets/images/amber_left.png
+  AssetGenImage get amberLeft =>
+      const AssetGenImage('assets/images/amber_left.png');
 
-  /// File path: assets/images/amber_pattern_right.png
-  AssetGenImage get amberPatternRight =>
-      const AssetGenImage('assets/images/amber_pattern_right.png');
+  /// File path: assets/images/amber_right.png
+  AssetGenImage get amberRight =>
+      const AssetGenImage('assets/images/amber_right.png');
 
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
@@ -249,6 +269,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/backgroundShadow.png
   AssetGenImage get backgroundShadow =>
       const AssetGenImage('assets/images/backgroundShadow.png');
+
+  /// File path: assets/images/calender_icon.png
+  AssetGenImage get calenderIcon =>
+      const AssetGenImage('assets/images/calender_icon.png');
 
   /// File path: assets/images/camera_btn.png
   AssetGenImage get cameraBtn =>
@@ -296,6 +320,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/icon.png
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
+
+  /// File path: assets/images/leftPatterHighDense.png
+  AssetGenImage get leftPatterHighDense =>
+      const AssetGenImage('assets/images/leftPatterHighDense.png');
 
   /// File path: assets/images/location_pin.png
   AssetGenImage get locationPin =>
@@ -393,6 +421,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/rider.png
   AssetGenImage get rider => const AssetGenImage('assets/images/rider.png');
 
+  /// File path: assets/images/rightPatternHighDense.png
+  AssetGenImage get rightPatternHighDense =>
+      const AssetGenImage('assets/images/rightPatternHighDense.png');
+
   /// File path: assets/images/saved_icon.png
   AssetGenImage get savedIcon =>
       const AssetGenImage('assets/images/saved_icon.png');
@@ -461,14 +493,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/wallet2.png
   AssetGenImage get wallet2 => const AssetGenImage('assets/images/wallet2.png');
 
+  /// File path: assets/images/wave_tick.png
+  AssetGenImage get waveTick =>
+      const AssetGenImage('assets/images/wave_tick.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     addButton,
-    amberPatternLeft,
-    amberPatternRight,
+    amberLeft,
+    amberRight,
     apple,
     background,
     backgroundShadow,
+    calenderIcon,
     cameraBtn,
     cash,
     circleImage,
@@ -483,6 +520,7 @@ class $AssetsImagesGen {
     home,
     home2,
     icon,
+    leftPatterHighDense,
     locationPin,
     locationPinTwo,
     logo,
@@ -510,6 +548,7 @@ class $AssetsImagesGen {
     payment,
     plastic,
     rider,
+    rightPatternHighDense,
     savedIcon,
     scheduleImg,
     secondPin,
@@ -529,6 +568,7 @@ class $AssetsImagesGen {
     walk,
     wallet,
     wallet2,
+    waveTick,
   ];
 }
 
