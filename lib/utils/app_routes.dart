@@ -21,7 +21,7 @@ import 'package:project_borla/screens/profile-screens/address_screen.dart';
 import 'package:project_borla/screens/profile-screens/change_password_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/edit_profile_screen_copy.dart';
 import 'package:project_borla/screens/profile-screens/profile_screen_copy.dart';
-import 'package:project_borla/screens/rider-review-screen/rider_review_screen.dart';
+// import 'package:project_borla/screens/rider-review-screen/rider_review_screen.dart';
 import 'package:project_borla/screens/rider-searching-screen/rider_searching_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/cancel_ride_screen.dart';
 import 'package:project_borla/screens/scheduled-screens/schedule_ride_two.dart';
@@ -246,10 +246,10 @@ class AppRoute {
         page: () => DriverInformationScreen(),
         transition: Transition.rightToLeftWithFade),
 
-    GetPage(
-        name: riderReview,
-        page: () => RiderReviewScreen(),
-        transition: Transition.rightToLeftWithFade),
+    // GetPage(
+    //     name: riderReview,
+    //     page: () => RiderReviewScreen(),
+    //     transition: Transition.rightToLeftWithFade),
 
   ];
 
