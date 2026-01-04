@@ -133,7 +133,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
 
                         CustomTextField(
                           hint: 'Bin Size',
-                          prefix: Image.asset('assets/images/second_pin.png'),
+                          prefix: Image.asset('assets/images/second_pin_2.png', scale: 3.5),
                         ),
 
                         const SizedBox(height: 14),
@@ -147,7 +147,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
 
                         CustomTextField(
                           hint: 'Bin Quantity',
-                          prefix: Image.asset('assets/images/second_pin.png'),
+                          prefix: Image.asset('assets/images/second_pin_2.png', scale: 3.5),
                         ),
 
                         const SizedBox(height: 14),
@@ -161,7 +161,7 @@ class _WasteQtyScreenState extends State<WasteQtyScreen> {
 
                         CustomTextField(
                           hint: 'Waste Size',
-                          prefix: Image.asset('assets/images/second_pin.png'),
+                          prefix: Image.asset('assets/images/second_pin_2.png', scale: 3.5),
                         ),
 
                         //const SizedBox(height: 14),

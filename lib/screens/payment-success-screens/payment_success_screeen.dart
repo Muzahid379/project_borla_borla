@@ -90,21 +90,21 @@ class _PaymentSuccessScreeenState extends State<PaymentSuccessScreeen> {
                 ),
 
                 Positioned(
-                  top: 0,
-                    left: 0,
+                  top: 2,
+                    left: 4,
                     child:
-                        Image.asset('assets/images/amber_left.png',scale: 4,),
+                        Image.asset('assets/images/amber_left_2.png',scale: 4,),
                         // SizedBox(width: 140,),
                         // Image.asset('assets/images/amber_right.png',scale: 5,),
                 ),
 
                 Positioned(
-                  top: 0,
-                  right: 0,
+                  top: 1,
+                  right: 4,
                   child:
                   //Image.asset('assets/images/amber_left.png',scale: 3,),
                   // SizedBox(width: 140,),
-                  Image.asset('assets/images/amber_right.png',scale: 4,),
+                  Image.asset('assets/images/amber_right_2.png',scale: 4,),
                 ),
 
               ],

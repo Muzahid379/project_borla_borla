@@ -14,8 +14,8 @@ Stack bttmNavBar(bttmNavBarIndex, onItemTapped, context) {
 
             //icon: Icon(Icons.list_alt),
             icon: bttmNavBarIndex == 0 ?
-                      Image.asset('assets/images/home2.png')
-                      : Image.asset('assets/images/home.png'),
+                      Image.asset('assets/images/home_two.png', scale: 3.5,)
+                      : Image.asset('assets/images/home_one.png', scale: 3.5,),
             label: 'Home',
 
           ),
@@ -23,21 +23,21 @@ Stack bttmNavBar(bttmNavBarIndex, onItemTapped, context) {
           BottomNavigationBarItem(
 
              // icon: onItemTapped == 1 ? Image.asset('assets/images/wallet.png') : Image.asset('assets/images/home.png') ,
-              icon: bttmNavBarIndex == 1 ? Image.asset('assets/images/wallet2.png') : Image.asset('assets/images/wallet.png')  ,
+              icon: bttmNavBarIndex == 1 ? Image.asset('assets/images/wallet_two.png', scale: 3.5,) : Image.asset('assets/images/wallet_one.png', scale: 3.5,)  ,
               label: 'Activity'
 
           ),
 
           BottomNavigationBarItem(
 
-              icon: bttmNavBarIndex == 2 ? Image.asset('assets/images/notify2.png') : Image.asset('assets/images/notify.png'),
+              icon: bttmNavBarIndex == 2 ? Image.asset('assets/images/notify_two.png', scale: 3.5,) : Image.asset('assets/images/notify_one.png', scale: 3.5,),
               label: 'Notification'
 
           ),
 
           BottomNavigationBarItem(
 
-              icon: bttmNavBarIndex == 3 ? Image.asset('assets/images/user2.png') : Image.asset('assets/images/user.png'),
+              icon: bttmNavBarIndex == 3 ? Image.asset('assets/images/user_two.png', scale: 3.5,) : Image.asset('assets/images/user_one.png', scale: 3.5,),
               label: 'Profile'
 
           ),

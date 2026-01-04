@@ -80,7 +80,7 @@ class _EditPlaceState extends State<EditPlace> {
 
             SizedBox(height: 20,),
 
-            Image.asset('assets/images/map.png'),
+            Image.asset('assets/images/map_2.png'),
 
             SizedBox(height: 40),
 
@@ -160,7 +160,7 @@ class _EditPlaceState extends State<EditPlace> {
 
                   CustomTextField(
                     hint: 'Hotel',
-                    prefix: Image.asset('assets/images/second_pin.png'),
+                    prefix: Image.asset('assets/images/second_pin_2.png'),
                   ),
 
                   const SizedBox(height: 14),
@@ -174,7 +174,7 @@ class _EditPlaceState extends State<EditPlace> {
 
                   CustomTextField(
                     hint: 'Chittagong, Ghana',
-                    prefix: Image.asset('assets/images/second_pin.png'),
+                    prefix: Image.asset('assets/images/second_pin_2.png'),
                   ),
 
                   const SizedBox(height: 14),
@@ -192,7 +192,7 @@ class _EditPlaceState extends State<EditPlace> {
                     //suffix: Image.asset('assets/images/third_pin.png'),
                     suffix: Padding(
                       padding: const EdgeInsets.only(right: 12.0),
-                      child: Image.asset('assets/images/target_icon.png',),
+                      child: Image.asset('assets/images/target_2.png',),
                     ),
                   ),
 

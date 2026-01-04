@@ -77,7 +77,7 @@ class _CurrentLocationSheetState extends State<CurrentLocationSheet> {
 
               children: [
 
-                Image.asset('assets/images/saved_icon.png', scale: 0.8,),
+                Image.asset('assets/images/saved_icon_2.png', scale: 3.5,),
 
                 SizedBox(width: 8,),
 

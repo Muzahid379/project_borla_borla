@@ -213,7 +213,7 @@ class _RejectRiderSheetState extends State<RejectRiderSheet> {
             width: 90,
             top: -50,
             right: 160,
-            child: Image.asset('assets/images/user_cross.png')
+            child: Image.asset('assets/images/user_cross_2.png', scale: 6.3,)
         ),
       ],
     );

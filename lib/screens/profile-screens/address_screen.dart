@@ -142,7 +142,7 @@ class _AddressScreenState extends State<AddressScreen> {
                       Spacer(),
                       InkWell(
                         onTap: (){},
-                        child: Image.asset('assets/images/dots.png'),
+                        child: Image.asset('assets/images/dots_2.png' , scale: 3.5,),
                       )
 
                     ],

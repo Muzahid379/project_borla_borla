@@ -22,6 +22,8 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
   Widget buildCategoryCard({
     required int index,
     required String image,
+    required String label,
+    required double scale,
   }) {
     final bool isSelected = selectedIndex == index;
 
@@ -55,15 +57,34 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
             ],
           ),
         ),
-        child: Card(
-          elevation: 0,
-          color: Colors.white,
-          shape: RoundedRectangleBorder(
+        child: Container(
+          //padding: EdgeInsets.all(10),
+          //margin: EdgeInsets.all(2),
+          height: 170,
+          width: 177,
+          //elevation: 0,
+          //color: Colors.white,
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(12),
+          // ),
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
+            //color: Colors.white
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 10, 30, 16),
-            child: Image.asset(image, scale: 0.9),
+            //padding: const EdgeInsets.fromLTRB(30, 10, 30, 16),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Column(
+              children: [
+                Image.asset(image, scale: scale,),
+                SizedBox(height: 6,),
+                Text(label, style: TextStyle(
+                  color: Colors.grey.shade500,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w800
+                ),),
+              ],
+            ),
           ),
         ),
       ),
@@ -99,7 +120,7 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
             ),
             Padding(
               //padding: const EdgeInsets.all(20.0),
-              padding: const EdgeInsets.fromLTRB(17, 68, 17, 22),
+              padding: const EdgeInsets.fromLTRB(20, 68, 17, 22),
               child: Column(
                 children: [
 
@@ -155,22 +176,26 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                           buildCategoryCard(
                             index: 0,
-                            image: 'assets/images/organic.png',
+                            image: 'assets/images/organic_2.png',
+                            label: 'Organic',
+                            scale: 4.3
                           ),
 
-                          SizedBox(width: 12),
+                          SizedBox(width: 18),
 
 
                           buildCategoryCard(
                             index: 1,
-                            image: 'assets/images/metal.png',
+                            image: 'assets/images/metal_2.png',
+                              label: 'Metal',
+                              scale: 4.3
                           ),
 
                         ],
 
 
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 18),
                       Row(
 
                         children: [
@@ -178,14 +203,18 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                           buildCategoryCard(
                             index: 2,
-                            image: 'assets/images/plastic.png',
+                            image: 'assets/images/plastic_2.png',
+                              label: 'Plastic',
+                              scale: 7.5
                           ),
 
-                          const SizedBox(width: 12),
+                          const SizedBox(width: 18),
 
                           buildCategoryCard(
                             index: 3,
-                            image: 'assets/images/general.png',
+                            image: 'assets/images/general_2.png',
+                              label: 'General',
+                              scale: 4.3
                           ),
 
 
@@ -194,7 +223,7 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
 
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 18),
                       Row(
 
                         children: [
@@ -203,10 +232,12 @@ class _WasteCategoryScreenState extends State<WasteCategoryScreen> {
 
                           buildCategoryCard(
                             index: 4,
-                            image: 'assets/images/paper.png',
+                            image: 'assets/images/paper_2.png',
+                              label: 'Paper',
+                              scale: 7.5
                           ),
 
-                          SizedBox(width: 12),
+                          SizedBox(width: 18),
 
 
                         ],

@@ -328,8 +328,8 @@ class _BookingAcceptedSheetState extends State<BookingAcceptedSheet> {
         ),
         Positioned(
           top: -40,
-            right: 170,
-            child: Image.asset('assets/images/orange_tick.png')
+            right: 166,
+            child: Image.asset('assets/images/orange_tick_2.png', scale: 6.5,)
         ),
       ],
     );

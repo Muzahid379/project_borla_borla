@@ -127,9 +127,23 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
             Padding(
               padding:  const EdgeInsets.fromLTRB(20, 240, 20, 20),
               
-              child: Image.asset('assets/images/thanks.png'),
+              child: Image.asset('assets/images/thanks_2.png', scale: 2,),
 
             ),
+
+           Text('Thank you for your review!', style: TextStyle(
+             fontSize: 24,
+             fontWeight: FontWeight.w600,
+             color: Colors.grey.shade700
+           ),),
+
+            SizedBox(height: 16,),
+
+            Text("You help fellow users find what's good out \n there in discovering the best experience.", style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey.shade500
+            ),),
 
 
 

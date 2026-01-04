@@ -95,8 +95,8 @@ class _PaymentSheetState extends State<PaymentSheet> {
                           )
                         ),
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(38, 10, 38, 10),
-                            child: Image.asset('assets/images/momo.png', scale: 0.9,),
+                            padding: const EdgeInsets.fromLTRB(36, 10, 36, 10),
+                            child: Image.asset('assets/images/momo_2.png', scale: 5,),
                           )
                       ),
                     ),
@@ -126,8 +126,18 @@ class _PaymentSheetState extends State<PaymentSheet> {
 
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.fromLTRB(38, 10, 38, 10),
-                            child: Image.asset('assets/images/cash.png', scale: 0.9,),
+                            padding: const EdgeInsets.fromLTRB(34, 12, 42, 12),
+                            child: Row(
+                              children: [
+                                Image.asset('assets/images/cash_2.png', scale: 0.9,),
+                                SizedBox(width: 8,),
+                                Text('Cash', style: TextStyle(
+                                  color: Colors.grey.shade500,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600
+                                ),)
+                              ],
+                            ),
                           )
                       ),
                     ),

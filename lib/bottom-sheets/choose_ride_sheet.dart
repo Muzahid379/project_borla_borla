@@ -122,7 +122,7 @@ class _ChooseRideSheetState extends State<ChooseRideSheet> {
                                       fontWeight: FontWeight.w400
                                   ),),
                                   SizedBox(width: 10,),
-                                  Image.asset('assets/images/walk.png'),
+                                  Image.asset('assets/images/walk_2.png', scale: 3.3),
                                   SizedBox(width: 3,),
                                   Text('22 km', style: TextStyle(
                                       fontWeight: FontWeight.w400

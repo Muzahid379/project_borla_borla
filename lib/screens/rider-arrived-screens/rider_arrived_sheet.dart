@@ -126,7 +126,7 @@ class _RiderArrivedSheetState extends State<RiderArrivedSheet> {
             width: 90,
             top: -50,
             right: 160,
-            child: Image.asset('assets/images/user_large_pin.png')
+            child: Image.asset('assets/images/user_large_pin_2.png', scale: 6.4,)
         ),
       ],
     );
@@ -332,7 +332,7 @@ class _RiderArrivedSheetState extends State<RiderArrivedSheet> {
           //   Icons.payment_outlined,
           //   color: AppColors.primaryColor,
           // ),
-          child: Image.asset('assets/images/payment.png'),
+          child: Image.asset('assets/images/payment_2.png', scale: 3.8,),
         ),
         const SizedBox(width: 12),
         Column(

@@ -46,7 +46,7 @@ class _BookingRequestedScreenState extends State<BookingRequestedScreen> {
                   children: [
                     SizedBox(height: 30,),
 
-                    Image.asset('assets/images/orange_tick.png', scale: 0.9,),
+                    Image.asset('assets/images/orange_tick_2.png', scale: 6.5,),
 
                     SizedBox(height: 24,),
 
